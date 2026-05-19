@@ -2,14 +2,9 @@
   <img src="./header.svg" width="100%" alt="Le Tuan Loc - GitHub Header" />
 </p>
 
-```bash
-LOC@KIDCUTE1412:~$ systemctl status engineer-profile.service
-● engineer-profile.service - Le Tuan Loc (Backend Systems Engineer)
-   Loaded: active (running) since Sep 2023 (University of Science - VNUHCM)
-   Status: "Architecting high-concurrency, real-time & spatial distributed systems"
-   Main Tech: Java (Spring Boot) | Node.js (TypeScript) | PostgreSQL (PostGIS) | Redis
-   Performance: [■■■■■■■■■■■■■■■■■■■■] 100% | High-Performance Mode Initialized.
-```
+<p align="center">
+  <img src="./terminal.svg" width="100%" alt="System Status Terminal" />
+</p>
 
 ---
 
@@ -27,49 +22,49 @@ What makes me stand out as a backend developer:
 
 ## 🛠️ TECH STACK & TOOLCHAIN
 
-I am comfortable working across these languages, frameworks, and infrastructure utilities:
+Comfortable working across these languages, frameworks, databases, and infrastructure tools:
 
 ### 💻 Languages & Core Runtimes
 <p align="left">
-  <a href="#"><img src="https://img.shields.io/badge/Java-0F172A?style=flat-square&logo=java&logoColor=00F0FF" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/TypeScript-0F172A?style=flat-square&logo=typescript&logoColor=00F0FF" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/JavaScript-0F172A?style=flat-square&logo=javascript&logoColor=00F0FF" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/SQL-0F172A?style=flat-square&logo=postgresql&logoColor=00F0FF" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Python-0F172A?style=flat-square&logo=python&logoColor=00F0FF" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/C%2B%2B-0F172A?style=flat-square&logo=cplusplus&logoColor=00F0FF" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=java&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/SQL-00758F?style=flat-square&logo=mysql&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=cplusplus&logoColor=white" height="25" /></a>
 </p>
 
 ### 🚀 Frameworks & Core Libraries
 <p align="left">
-  <a href="#"><img src="https://img.shields.io/badge/Spring_Boot-0F172A?style=flat-square&logo=spring&logoColor=8A2BE2" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Node.js-0F172A?style=flat-square&logo=nodedotjs&logoColor=8A2BE2" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Express-0F172A?style=flat-square&logo=express&logoColor=8A2BE2" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/React_19-0F172A?style=flat-square&logo=react&logoColor=8A2BE2" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Next.js-0F172A?style=flat-square&logo=nextdotjs&logoColor=8A2BE2" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Socket.io-0F172A?style=flat-square&logo=socketdotio&logoColor=8A2BE2" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Flask-0F172A?style=flat-square&logo=flask&logoColor=8A2BE2" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/TailwindCSS-0F172A?style=flat-square&logo=tailwindcss&logoColor=8A2BE2" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/SFML-0F172A?style=flat-square&logo=sfml&logoColor=8A2BE2" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=spring&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/React_19-20232A?style=flat-square&logo=react&logoColor=61DAFB" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Socket.io-010101?style=flat-square&logo=socketdotio&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/SFML-8CC43C?style=flat-square&logo=sfml&logoColor=white" height="25" /></a>
 </p>
 
 ### 💾 Databases, Caching & Cloud Infrastructure
 <p align="left">
-  <a href="#"><img src="https://img.shields.io/badge/PostgreSQL-0F172A?style=flat-square&logo=postgresql&logoColor=00FF7F" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/PostGIS-0F172A?style=flat-square&logo=googlemaps&logoColor=00FF7F" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Redis-0F172A?style=flat-square&logo=redis&logoColor=00FF7F" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/RabbitMQ-0F172A?style=flat-square&logo=rabbitmq&logoColor=00FF7F" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/MongoDB-0F172A?style=flat-square&logo=mongodb&logoColor=00FF7F" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Supabase-0F172A?style=flat-square&logo=supabase&logoColor=00FF7F" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Cloudinary-0F172A?style=flat-square&logo=cloudinary&logoColor=00FF7F" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/PostGIS-339933?style=flat-square&logo=googlemaps&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=flat-square&logo=rabbitmq&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Cloudinary-3448C5?style=flat-square&logo=cloudinary&logoColor=white" height="25" /></a>
 </p>
 
 ### 🛠️ DevOps, Infrastructure & Tools
 <p align="left">
-  <a href="#"><img src="https://img.shields.io/badge/Git-0F172A?style=flat-square&logo=git&logoColor=E2E8F0" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Docker-0F172A?style=flat-square&logo=docker&logoColor=E2E8F0" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Postman-0F172A?style=flat-square&logo=postman&logoColor=E2E8F0" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/AWS-0F172A?style=flat-square&logo=amazonwebservices&logoColor=E2E8F0" height="25" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Linux_Shell-0F172A?style=flat-square&logo=gnubash&logoColor=E2E8F0" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=FF9900" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Linux_Shell-FCC624?style=flat-square&logo=gnubash&logoColor=black" height="25" /></a>
 </p>
 
 ---
@@ -80,18 +75,15 @@ Let's discuss system design, backend architectures, or high-performance APIs!
 
 <p align="left">
   <a href="mailto:letuanloc1412@gmail.com">
-    <img src="https://img.shields.io/badge/Email-letuanloc1412%40gmail.com-0F172A?style=flat-square&logo=gmail&logoColor=00F0FF" height="30" />
-  </a>
-  <a href="https://github.com/KidCute1412">
-    <img src="https://img.shields.io/badge/GitHub-KidCute1412-0F172A?style=flat-square&logo=github&logoColor=8A2BE2" height="30" />
+    <img src="https://img.shields.io/badge/Email-letuanloc1412%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" height="35" />
   </a>
   <a href="https://www.linkedin.com/in/l%E1%BB%99c-l%C3%AA-tu%E1%BA%A5n-341208390/">
-    <img src="https://img.shields.io/badge/LinkedIn-0F172A?style=flat-square&logo=linkedin&logoColor=00F0FF" height="30" />
+    <img src="https://img.shields.io/badge/LinkedIn-L%E1%BB%99c_L%C3%AA_Tu%E1%BA%A5n-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" height="35" />
   </a>
   <a href="https://www.facebook.com/le.tuan.loc.39104/?locale=vi_VN">
-    <img src="https://img.shields.io/badge/Facebook-0F172A?style=flat-square&logo=facebook&logoColor=8A2BE2" height="30" />
+    <img src="https://img.shields.io/badge/Facebook-L%C3%AA_Tu%E1%BA%A5n_L%E1%BB%99c-1877F2?style=for-the-badge&logo=facebook&logoColor=white" height="35" />
   </a>
-  <img src="https://img.shields.io/badge/Location-Ho_Chi_Minh_City-0F172A?style=flat-square&logo=googlemaps&logoColor=00FF7F" height="30" />
+  <img src="https://img.shields.io/badge/Location-Ho_Chi_Minh_City-34A853?style=for-the-badge&logo=googlemaps&logoColor=white" height="35" />
 </p>
 
 ---
