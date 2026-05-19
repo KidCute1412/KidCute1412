@@ -14,15 +14,26 @@
 
 ---
 
-## ⚡ CORE SYSTEMS CAPABILITIES
+## ⚡ TECHNICAL ARCHITECTURE & SYSTEMS ENGINEERING
 
-What makes me stand out as a backend developer:
+Here are the core technical paradigms I specialize in to build resilient, distributed, and highly performant backend systems:
 
-*   **🔒 High Concurrency & State Integrity**: Expert in managing complex race conditions during high-volume operations (e.g. concurrent auction bidding) using **Pessimistic Database Locking (`SELECT FOR UPDATE`)** and transactional boundaries.
-*   **🗺️ Spatial Indexing & Geospatial Queries**: Designing low-latency mapping and routing systems using **Uber H3 Spatial Hexagonal Indexing**, **PostGIS** geo-queries, and **GraphHopper** path calculations.
-*   **⚡ Resilient Real-Time Orchestration**: Building robust bidirectional sync layers using **Socket.io** (with **Connection State Recovery** for network recovery) and **Supabase Realtime**.
-*   **📩 Distributed Messaging & Reliability**: Strong understanding of building fault-tolerant architectures using **RabbitMQ** for asynchronous tasks, and applying **Idempotency** patterns to ensure duplicate-free API processing during network retries.
-*   **🏗️ Modular Clean Architecture**: Designing loose-coupled backend monoliths using asynchronous messaging paradigms like **Spring ApplicationEvents** to keep core domains independent.
+### 🔒 Concurrency Control & State Integrity
+* **The Challenge:** Preventing double-spending, race conditions, and dirty reads during high-frequency events (e.g., live auction bidding or flash sales).
+* **My Approach:** Implementing **Pessimistic Database Locking (`SELECT FOR UPDATE`)** and absolute transactional boundaries to guarantee atomic state changes.
+
+### 🗺️ Geospatial Computing & Hexagonal Indexing
+* **The Challenge:** Designing ultra-low-latency geographical queries and route optimizations for mapping applications.
+* **My Approach:** Indexing coordinates using **Uber H3 Spatial Hexagons** for fast geometric cell matching, powered by **PostGIS** geo-queries and **GraphHopper** routing.
+
+### ⚡ Resilient Event-Driven & Real-Time Sync
+* **The Challenge:** Maintaining seamless state synchronization and messaging over highly unstable network connections.
+* **My Approach:** Orchestrating bi-directional streams using **Socket.io with Connection State Recovery** and decoupling application domains using **Spring ApplicationEvents** to maintain modular clean architecture.
+
+### 📩 Distributed Messaging & Idempotency
+* **The Challenge:** Handling heavy message bursts asynchronously while ensuring zero side-effects from retry mechanisms.
+* **My Approach:** Designing fault-tolerant event queues with **RabbitMQ** and applying robust **API Idempotency Patterns** to reject duplicate transactions during network retries.
+
 
 ---
 
