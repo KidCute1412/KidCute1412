@@ -1,44 +1,141 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 190" width="100%" height="190" style="background: #0B0F19; border-radius: 8px; font-family: 'Courier New', Courier, monospace;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%" height="200" style="background: #0B0F19; border-radius: 12px; font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;">
+  <!-- Defs for filters and gradients -->
   <defs>
-    <linearGradient id="window-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0F1424" />
-      <stop offset="100%" stop-color="#070A14" />
+    <filter id="cyan-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="purple-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="orange-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="green-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070913" />
+      <stop offset="100%" stop-color="#121829" />
     </linearGradient>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#00f0ff" stroke-width="0.5" stroke-opacity="0.04" />
+    </pattern>
   </defs>
 
-  <!-- Main Terminal Window Background -->
-  <rect width="800" height="190" rx="8" fill="url(#window-grad)" stroke="#1F2937" stroke-width="1.5" />
+  <!-- Background Grid -->
+  <rect width="800" height="200" rx="12" fill="url(#bg-grad)" />
+  <rect width="800" height="200" rx="12" fill="url(#grid)" />
 
-  <!-- Window Header / Title Bar -->
-  <path d="M 0 8 A 8 8 0 0 1 8 0 L 792 0 A 8 8 0 0 1 800 8 L 800 30 L 0 30 Z" fill="#161B22" />
-  <line x1="0" y1="30" x2="800" y2="30" stroke="#21262D" stroke-width="1" />
+  <!-- Outlines & Corner Brackets -->
+  <rect x="2" y="2" width="796" height="196" rx="10" fill="none" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.1" />
+  <path d="M 15 2 L 2 2 L 2 15" fill="none" stroke="#00f0ff" stroke-width="2.5" stroke-opacity="0.6" filter="url(#cyan-glow)" />
+  <path d="M 785 2 L 798 2 L 798 15" fill="none" stroke="#00f0ff" stroke-width="2.5" stroke-opacity="0.6" filter="url(#cyan-glow)" />
+  <path d="M 2 185 L 2 198 L 15 198" fill="none" stroke="#00f0ff" stroke-width="2.5" stroke-opacity="0.6" filter="url(#cyan-glow)" />
+  <path d="M 785 198 L 798 198 L 798 185" fill="none" stroke="#00f0ff" stroke-width="2.5" stroke-opacity="0.6" filter="url(#cyan-glow)" />
 
-  <!-- Window Control Buttons (Mac Style) -->
-  <circle cx="20" cy="15" r="5.5" fill="#FF5F56" />
-  <circle cx="38" cy="15" r="5.5" fill="#FFBD2E" />
-  <circle cx="56" cy="15" r="5.5" fill="#27C93F" />
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" fill="#00f0ff" font-size="11" font-weight="bold" letter-spacing="3" font-family="Courier New, monospace" filter="url(#cyan-glow)">
+    ⚡ SYSTEM ARCHITECTURE &amp; ACTIVE DATA STREAM ⚡
+  </text>
 
-  <!-- Title Text -->
-  <text x="400" y="19" text-anchor="middle" fill="#8B949E" font-size="12" font-weight="bold">LOC@KIDCUTE1412: ~ (ssh)</text>
+  <!-- Connection Paths (Data Flows) -->
+  <g fill="none" stroke-linecap="round">
+    <!-- Client to Gateway -->
+    <path id="path-client-gate" d="M 130 115 L 230 115" stroke="#00f0ff" stroke-width="2" stroke-dasharray="4 4" stroke-opacity="0.4" />
+    <!-- Gateway to RabbitMQ -->
+    <path id="path-gate-mq" d="M 350 115 L 450 115" stroke="#8A2BE2" stroke-width="2" stroke-dasharray="4 4" stroke-opacity="0.4" />
+    <!-- RabbitMQ to DB -->
+    <path id="path-mq-db" d="M 570 115 L 670 115" stroke="#00FF7F" stroke-width="2" stroke-dasharray="4 4" stroke-opacity="0.4" />
+  </g>
 
-  <!-- Console Content -->
-  <g font-size="13" font-family="Courier New, monospace" xml:space="preserve">
-    <!-- Command Prompt -->
-    <text x="20" y="55" fill="#58A6FF" font-weight="bold">LOC@KIDCUTE1412:~$ <tspan fill="#F0F6FC" font-weight="normal">systemctl status engineer-profile.service</tspan></text>
+  <!-- Pulsing Data Packets (Flying Elements) -->
+  <!-- Packet 1: Cyan -->
+  <circle r="4" fill="#00f0ff" filter="url(#cyan-glow)">
+    <animateMotion dur="1.5s" repeatCount="indefinite">
+      <mpath href="#path-client-gate" />
+    </animateMotion>
+  </circle>
+  
+  <!-- Packet 2: Purple -->
+  <circle r="4" fill="#8A2BE2" filter="url(#purple-glow)">
+    <animateMotion dur="1.8s" repeatCount="indefinite">
+      <mpath href="#path-gate-mq" />
+    </animateMotion>
+  </circle>
 
-    <!-- Service Status -->
-    <text x="20" y="77" fill="#58A6FF">● <tspan fill="#F0F6FC" font-weight="bold">engineer-profile.service</tspan> - Le Tuan Loc (Backend Systems Engineer)</text>
-    
-    <!-- Loaded State -->
-    <text x="35" y="99" fill="#8B949E">Loaded: <tspan fill="#58A6FF">active (running)</tspan> since Sep 2023 (University of Science - VNUHCM)</text>
+  <!-- Packet 3: Green -->
+  <circle r="4" fill="#00FF7F" filter="url(#green-glow)">
+    <animateMotion dur="1.4s" repeatCount="indefinite">
+      <mpath href="#path-mq-db" />
+    </animateMotion>
+  </circle>
 
-    <!-- Current status message -->
-    <text x="35" y="121" fill="#8B949E">Status: <tspan fill="#FF7B72">"Architecting high-concurrency, real-time &amp; spatial distributed systems"</tspan></text>
+  <!-- Component Nodes -->
+  <!-- 1. Client Node -->
+  <g transform="translate(20, 65)">
+    <rect width="110" height="85" rx="8" fill="#090D1A" stroke="#00f0ff" stroke-width="1.5" stroke-opacity="0.8" filter="url(#cyan-glow)" />
+    <!-- Node Icon (Browser/Client) -->
+    <rect x="47" y="12" width="16" height="12" rx="1.5" fill="none" stroke="#00f0ff" stroke-width="1.2" />
+    <line x1="47" y1="16" x2="63" y2="16" stroke="#00f0ff" stroke-width="1" />
+    <circle cx="50" cy="14" r="0.8" fill="#00f0ff" />
+    <circle cx="53" cy="14" r="0.8" fill="#00f0ff" />
+    <!-- Node Label -->
+    <text x="55" y="44" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">CLIENT STREAM</text>
+    <text x="55" y="58" fill="#00f0ff" font-size="9" font-family="Courier New, monospace" text-anchor="middle">Browser / App</text>
+    <text x="55" y="70" fill="#8f9cae" font-size="8.5" text-anchor="middle">HTTP &amp; WebSocket</text>
+  </g>
 
-    <!-- Tech Stack Summary -->
-    <text x="35" y="143" fill="#8B949E">Main Tech: <tspan fill="#E1E4E8">Java (Spring Boot) | Node.js (TypeScript) | PostgreSQL | Redis</tspan></text>
+  <!-- 2. Gateway/Server Node -->
+  <g transform="translate(240, 65)">
+    <rect width="110" height="85" rx="8" fill="#090D1A" stroke="#8A2BE2" stroke-width="1.5" stroke-opacity="0.8" filter="url(#purple-glow)" />
+    <!-- Node Icon (API Server) -->
+    <rect x="47" y="10" width="16" height="16" rx="2" fill="none" stroke="#8A2BE2" stroke-width="1.2" />
+    <circle cx="55" cy="18" r="3" fill="none" stroke="#8A2BE2" stroke-width="1.2" />
+    <line x1="55" y1="10" x2="55" y2="15" stroke="#8A2BE2" stroke-width="1" />
+    <!-- Node Label -->
+    <text x="55" y="44" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">CORE GATEWAY</text>
+    <text x="55" y="58" fill="#8A2BE2" font-size="9" font-family="Courier New, monospace" text-anchor="middle">Spring / Node</text>
+    <text x="55" y="70" fill="#8f9cae" font-size="8.5" text-anchor="middle">Auth &amp; Routing</text>
+  </g>
 
-    <!-- Loading progress -->
-    <text x="35" y="165" fill="#8B949E">Performance: [<tspan fill="#58A6FF">████████████████████</tspan>] <tspan fill="#58A6FF" font-weight="bold">100%</tspan> | High-Performance Active</text>
+  <!-- 3. Broker Node -->
+  <g transform="translate(460, 65)">
+    <rect width="110" height="85" rx="8" fill="#090D1A" stroke="#FF6600" stroke-width="1.5" stroke-opacity="0.8" filter="url(#orange-glow)" />
+    <!-- Node Icon (RabbitMQ) -->
+    <circle cx="55" cy="18" r="6" fill="none" stroke="#FF6600" stroke-width="1.2" />
+    <path d="M 51 18 L 59 18 M 55 14 L 55 22" stroke="#FF6600" stroke-width="1" />
+    <!-- Node Label -->
+    <text x="55" y="44" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">EVENT BUS</text>
+    <text x="55" y="58" fill="#FF6600" font-size="9" font-family="Courier New, monospace" text-anchor="middle">RabbitMQ</text>
+    <text x="55" y="70" fill="#8f9cae" font-size="8.5" text-anchor="middle">Async Broker</text>
+  </g>
+
+  <!-- 4. Database Node -->
+  <g transform="translate(680, 65)">
+    <rect width="110" height="85" rx="8" fill="#090D1A" stroke="#00FF7F" stroke-width="1.5" stroke-opacity="0.8" filter="url(#green-glow)" />
+    <!-- Node Icon (Database) -->
+    <path d="M 47 13 C 47 10, 63 10, 63 13 L 63 21 C 63 24, 47 24, 47 21 Z" fill="none" stroke="#00FF7F" stroke-width="1.2" />
+    <path d="M 47 16 C 50 18, 60 18, 63 16" fill="none" stroke="#00FF7F" stroke-width="1" />
+    <path d="M 47 20 C 50 22, 60 22, 63 20" fill="none" stroke="#00FF7F" stroke-width="1" />
+    <!-- Node Label -->
+    <text x="55" y="44" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">DATA STORES</text>
+    <text x="55" y="58" fill="#00FF7F" font-size="9" font-family="Courier New, monospace" text-anchor="middle">PGSQL &amp; Redis</text>
+    <text x="55" y="70" fill="#8f9cae" font-size="8.5" text-anchor="middle">Spatial &amp; Cache</text>
   </g>
 </svg>

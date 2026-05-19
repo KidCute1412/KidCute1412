@@ -3,7 +3,13 @@
 </p>
 
 <p align="center">
-  <img src="./terminal.svg" width="100%" alt="System Status Terminal" />
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=15&duration=3000&pause=1500&color=00F0FF&center=true&vCenter=true&width=600&lines=LOC%40KIDCUTE1412%3A%7E%24+systemctl+status+engineer-profile;System+Status%3A+Active+%5BPORT%3A+8080%5D;Prevents+database+race+conditions+via+SELECT+FOR+UPDATE;Geospatial+indexing+with+Uber+H3+%26+PostGIS;Distributed+message+queues+via+RabbitMQ;Resilient+WebSocket+recovery+via+Socket.io" alt="Typing SVG" />
+  </a>
+</p>
+
+<p align="center">
+  <img src="./terminal.svg" width="100%" alt="System Architecture Diagram" />
 </p>
 
 ---
