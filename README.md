@@ -14,34 +14,48 @@
 
 ---
 
-## ⚡ TECHNICAL ARCHITECTURE & SYSTEMS ENGINEERING
+## TECHNICAL ARCHITECTURE & SYSTEMS ENGINEERING
 
-Here are the core technical paradigms I specialize in to build resilient, distributed, and highly performant backend systems:
+A checklist of core backend paradigms and architectural patterns I implement to build resilient, distributed, and high-performance systems:
 
-### 🔒 Concurrency Control & State Integrity
-* **The Challenge:** Preventing double-spending, race conditions, and dirty reads during high-frequency events (e.g., live auction bidding or flash sales).
-* **My Approach:** Implementing **Pessimistic Database Locking (`SELECT FOR UPDATE`)** and absolute transactional boundaries to guarantee atomic state changes.
+### Concurrency & Distributed Locking
+* [x] **Race Condition Prevention:** Implemented database-level pessimistic locking (`SELECT FOR UPDATE`) to guarantee transactional isolation during state changes.
+* [x] **Distributed Locks:** Utilized **Redis (Redlock/Redisson)** to orchestrate distributed locking across horizontally-scaled API instances.
 
-### 🗺️ Geospatial Computing & Hexagonal Indexing
-* **The Challenge:** Designing ultra-low-latency geographical queries and route optimizations for mapping applications.
-* **My Approach:** Indexing coordinates using **Uber H3 Spatial Hexagons** for fast geometric cell matching, powered by **PostGIS** geo-queries and **GraphHopper** routing.
+### High-Availability WebSockets & Sync
+* [x] **Horizontal Scaling:** Scaled WebSocket nodes using **Redis Pub/Sub Adapter** to synchronize connections and broadcast events across multiple instances.
+* [x] **Resilient Reconnection:** Built connection state recovery to automatically buffer and replay missed events upon reconnection.
 
-### ⚡ Resilient Event-Driven & Real-Time Sync
-* **The Challenge:** Maintaining seamless state synchronization and messaging over highly unstable network connections.
-* **My Approach:** Orchestrating bi-directional streams using **Socket.io with Connection State Recovery** and decoupling application domains using **Spring ApplicationEvents** to maintain modular clean architecture.
+### Event-Driven Architecture & Messaging
+* [x] **At-Least-Once Delivery:** Engineered event streams using **RabbitMQ / Kafka** with manual acknowledgements and publisher confirms.
+* [x] **Fault Tolerance:** Implemented **Dead Letter Queues (DLQ)** with exponential backoff retries, and **Idempotency checks** (via Redis tokens) to prevent duplicate processing.
 
-### 📩 Distributed Messaging & Idempotency
-* **The Challenge:** Handling heavy message bursts asynchronously while ensuring zero side-effects from retry mechanisms.
-* **My Approach:** Designing fault-tolerant event queues with **RabbitMQ** and applying robust **API Idempotency Patterns** to reject duplicate transactions during network retries.
+### Multi-Processing & Thread Offloading
+* [x] **CPU-Intensive Task Delegation:** Isolated heavy computations from the main event loop using **Node.js Worker Threads / Child Processes** and **Spring ThreadPoolTaskExecutor**.
+
+### Caching Strategies & Rate Limiting
+* [x] **Cache Patterns:** Applied Cache-Aside pattern using **Redis** with strategic TTLs to minimize database load.
+* [x] **DDoS & API Protection:** Structured sliding-window rate limiters at the gateway and application level utilizing Redis.
+
+### Asynchronous AI Orchestration
+* [x] **Non-Blocking LLM Integration:** Offloaded heavy AI generation/inference requests to background workers using message queues.
+* [x] **Real-time Streaming:** Implemented **Server-Sent Events (SSE)** to stream LLM responses to clients with minimal latency.
+
+### Integration Testing & Reliability
+* [x] **Isolated E2E Testing:** Configured **Testcontainers** (Docker-in-Test) to spin up ephemeral Postgres, Redis, and RabbitMQ instances for deterministic integration testing.
+* [x] **CI/CD Quality Gates:** Maintained high test coverage with automated unit & integration test suites.
+
+### Low-Latency Geospatial Indexing
+* [x] **Spatial Computing:** Indexed coordinates using **Uber H3 Spatial Hexagons** and **PostGIS** for sub-millisecond proximity queries.
 
 
 ---
 
-## 🛠️ TECH STACK & TOOLCHAIN
+## TECH STACK & TOOLCHAIN
 
 Comfortable working across these languages, frameworks, databases, and infrastructure tools:
 
-### 💻 Languages & Core Runtimes
+### Languages & Core Runtimes
 <p align="left">
   <a href="#"><img src="./java.svg" height="25" /></a>
   <a href="#"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" height="25" /></a>
@@ -51,7 +65,7 @@ Comfortable working across these languages, frameworks, databases, and infrastru
   <a href="#"><img src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=cplusplus&logoColor=white" height="25" /></a>
 </p>
 
-### 🚀 Frameworks & Core Libraries
+### Frameworks & Core Libraries
 <p align="left">
   <a href="#"><img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=spring&logoColor=white" height="25" /></a>
   <a href="#"><img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" height="25" /></a>
@@ -64,18 +78,19 @@ Comfortable working across these languages, frameworks, databases, and infrastru
   <a href="#"><img src="https://img.shields.io/badge/SFML-8CC43C?style=flat-square&logo=sfml&logoColor=white" height="25" /></a>
 </p>
 
-### 💾 Databases, Caching & Cloud Infrastructure
+### Databases, Caching & Cloud Infrastructure
 <p align="left">
   <a href="#"><img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" height="25" /></a>
   <a href="#"><img src="https://img.shields.io/badge/PostGIS-339933?style=flat-square&logo=googlemaps&logoColor=white" height="25" /></a>
   <a href="#"><img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" height="25" /></a>
   <a href="#"><img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=flat-square&logo=rabbitmq&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Apache_Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white" height="25" /></a>
   <a href="#"><img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" height="25" /></a>
   <a href="#"><img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" height="25" /></a>
   <a href="#"><img src="https://img.shields.io/badge/Cloudinary-3448C5?style=flat-square&logo=cloudinary&logoColor=white" height="25" /></a>
 </p>
 
-### 🛠️ DevOps, Infrastructure & Tools
+### DevOps, Infrastructure & Tools
 <p align="left">
   <a href="#"><img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" height="25" /></a>
   <a href="#"><img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" height="25" /></a>
@@ -86,7 +101,7 @@ Comfortable working across these languages, frameworks, databases, and infrastru
 
 ---
 
-## 🤝 CONNECTIVITY BOARD
+## CONNECTIVITY BOARD
 
 Let's discuss system design, backend architectures, or high-performance APIs!
 
