@@ -1,79 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 260" width="100%" height="260" style="background: #06080c; border-radius: 16px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 260" width="100%" height="260" style="background: #06080c; border-radius: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <defs>
-    <!-- Fonts -->
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&amp;family=Fira+Code:wght@400;500;700&amp;display=swap');
-      
+      /* Using local system fonts to eliminate Google Font download overhead completely */
       .name-glow {
-        font-family: 'Outfit', sans-serif;
+        font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         font-weight: 900;
         letter-spacing: 0.25em;
         fill: #ffffff;
-        transition: all 0.4s ease;
-        cursor: pointer;
-      }
-      .name-glow:hover {
-        fill: #00f0ff;
-        filter: url(#neon-glow-cyan-intense);
-        letter-spacing: 0.28em;
+        transition: fill 0.3s ease;
       }
       
       .tech-badge {
-        transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.3s ease;
+        transition: transform 0.2s ease;
         cursor: pointer;
       }
-      .tech-badge:hover {
-        transform: translateY(-3px) scale(1.05);
-        filter: brightness(1.2) drop-shadow(0 4px 10px rgba(0, 240, 255, 0.3));
-      }
       
+      /* GPU-Accelerated hardware translation instead of animating coordinate attribute 'y' */
       .scan-line {
-        animation: scanMove 6s linear infinite;
+        transform: translateY(-10px);
+        animation: scanMove 5s linear infinite;
       }
       
       @keyframes scanMove {
-        0% { y: -10; opacity: 0; }
-        10% { opacity: 0.7; }
-        90% { opacity: 0.7; }
-        100% { y: 270; opacity: 0; }
+        0% { transform: translateY(-10px); opacity: 0; }
+        10% { opacity: 0.8; }
+        90% { opacity: 0.8; }
+        100% { transform: translateY(270px); opacity: 0; }
       }
       
       @keyframes pulseGrid {
-        0%, 100% { opacity: 0.15; }
-        50% { opacity: 0.3; }
+        0%, 100% { opacity: 0.08; }
+        50% { opacity: 0.18; }
       }
 
       .grid-interactive {
         animation: pulseGrid 4s ease-in-out infinite;
       }
-
-      /* Hover over HUD corner increases system speed / alert */
-      .hud-corner {
-        transition: all 0.3s ease;
-      }
-      .hud-corner:hover {
-        stroke-width: 4px;
-        filter: drop-shadow(0 0 8px #00f0ff);
-      }
     </style>
 
-    <!-- Glowing Filters -->
-    <filter id="neon-glow-cyan" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="5" result="blur" />
+    <!-- Optimized lightweight Glow Filters (low stdDeviation to avoid laggy rendering) -->
+    <filter id="neon-glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
-    <filter id="neon-glow-cyan-intense" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="10" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-    <filter id="neon-glow-purple" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="6" result="blur" />
+    <filter id="neon-glow-purple" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
@@ -99,9 +73,8 @@
       <stop offset="100%" stop-color="#00f0ff" stop-opacity="0" />
     </linearGradient>
 
-    <!-- Grid Pattern -->
     <pattern id="grid-pattern" width="25" height="25" patternUnits="userSpaceOnUse">
-      <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#00f0ff" stroke-width="0.8" stroke-opacity="0.05" />
+      <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#00f0ff" stroke-width="0.8" stroke-opacity="0.04" />
     </pattern>
   </defs>
 
@@ -109,32 +82,31 @@
   <rect width="800" height="260" rx="16" fill="url(#bg-gradient)" />
   <rect width="800" height="260" rx="16" fill="url(#grid-pattern)" class="grid-interactive" />
 
-  <!-- Laser Scan Effect -->
-  <rect x="0" width="800" height="6" fill="url(#scan-grad)" class="scan-line" />
+  <!-- Optimized Scanline with GPU translation -->
+  <rect width="800" height="6" fill="url(#scan-grad)" class="scan-line" />
 
   <!-- Outer Cybernetic Border -->
-  <rect x="3" y="3" width="794" height="254" rx="13" fill="none" stroke="url(#cyan-purple-grad)" stroke-width="1.2" stroke-opacity="0.2" />
+  <rect x="3" y="3" width="794" height="254" rx="13" fill="none" stroke="url(#cyan-purple-grad)" stroke-width="1.2" stroke-opacity="0.15" />
   
   <!-- Glowing HUD Corners -->
-  <path d="M 30 3 L 3 3 L 3 30" fill="none" stroke="#00f0ff" stroke-width="2.5" class="hud-corner" filter="url(#neon-glow-cyan)" />
-  <path d="M 770 3 L 797 3 L 797 30" fill="none" stroke="#ff007b" stroke-width="2.5" class="hud-corner" filter="url(#neon-glow-purple)" />
-  <path d="M 3 230 L 3 257 L 30 257" fill="none" stroke="#00f0ff" stroke-width="2.5" class="hud-corner" filter="url(#neon-glow-cyan)" />
-  <path d="M 797 230 L 797 257 L 770 257" fill="none" stroke="#ff007b" stroke-width="2.5" class="hud-corner" filter="url(#neon-glow-purple)" />
+  <path d="M 30 3 L 3 3 L 3 30" fill="none" stroke="#00f0ff" stroke-width="2" filter="url(#neon-glow-cyan)" />
+  <path d="M 770 3 L 797 3 L 797 30" fill="none" stroke="#ff007b" stroke-width="2" filter="url(#neon-glow-purple)" />
+  <path d="M 3 230 L 3 257 L 30 257" fill="none" stroke="#00f0ff" stroke-width="2" filter="url(#neon-glow-cyan)" />
+  <path d="M 797 230 L 797 257 L 770 257" fill="none" stroke="#ff007b" stroke-width="2" filter="url(#neon-glow-purple)" />
 
-  <!-- Target Decors & Interactive UI metrics -->
-  <g opacity="0.15">
+  <!-- Target Decors -->
+  <g opacity="0.12">
     <circle cx="85" cy="130" r="65" fill="none" stroke="#00f0ff" stroke-width="1" stroke-dasharray="4 6" />
-    <circle cx="85" cy="130" r="35" fill="none" stroke="#00f0ff" stroke-width="1.5" />
+    <circle cx="85" cy="130" r="35" fill="none" stroke="#00f0ff" stroke-width="1" />
     <path d="M 85 50 L 85 210 M 5 130 L 165 130" stroke="#00f0ff" stroke-width="0.5" />
     
-    <!-- Right side telemetry graphics -->
     <rect x="670" y="80" width="80" height="80" fill="none" stroke="#ff007b" stroke-width="1" stroke-dasharray="2 4" />
     <path d="M 670 120 L 750 120" stroke="#ff007b" stroke-width="0.8" />
-    <circle cx="710" cy="120" r="25" fill="none" stroke="#ff007b" stroke-width="1.2" />
+    <circle cx="710" cy="120" r="25" fill="none" stroke="#ff007b" stroke-width="1" />
   </g>
 
   <!-- Technical Details & Live System Stats -->
-  <g font-family="'Fira Code', monospace" font-size="10" fill="#4b6584" opacity="0.75">
+  <g font-family="Courier New, monospace" font-size="10" fill="#4b6584" opacity="0.75">
     <text x="25" y="30">[ PORT_ACTIVE: 8080 ]</text>
     <text x="25" y="46">LATENCY: &lt; 5ms</text>
     <text x="775" y="30" text-anchor="end">LOC_HOST: localhost</text>
@@ -142,33 +114,32 @@
   </g>
 
   <!-- Flowing animated path lines in BG -->
-  <path d="M 120 130 L 220 130 L 245 105 L 310 105" fill="none" stroke="#00f0ff" stroke-width="1.5" stroke-dasharray="5 5" stroke-opacity="0.5">
-    <animate attributeName="stroke-dashoffset" values="40;0" dur="2s" repeatCount="indefinite" />
+  <path d="M 120 130 L 220 130 L 245 105 L 310 105" fill="none" stroke="#00f0ff" stroke-width="1.5" stroke-dasharray="5 5" stroke-opacity="0.4">
+    <animate attributeName="stroke-dashoffset" values="40;0" dur="2.5s" repeatCount="indefinite" />
   </path>
-  <path d="M 680 130 L 580 130 L 555 155 L 490 155" fill="none" stroke="#ff007b" stroke-width="1.5" stroke-dasharray="5 5" stroke-opacity="0.5">
-    <animate attributeName="stroke-dashoffset" values="-40;0" dur="2s" repeatCount="indefinite" />
+  <path d="M 680 130 L 580 130 L 555 155 L 490 155" fill="none" stroke="#ff007b" stroke-width="1.5" stroke-dasharray="5 5" stroke-opacity="0.4">
+    <animate attributeName="stroke-dashoffset" values="-40;0" dur="2.5s" repeatCount="indefinite" />
   </path>
 
   <!-- Glowing Nodes -->
-  <circle cx="310" cy="105" r="4.5" fill="#00f0ff" filter="url(#neon-glow-cyan)">
-    <animate attributeName="r" values="3.5;6.5;3.5" dur="3s" repeatCount="indefinite" />
+  <circle cx="310" cy="105" r="4" fill="#00f0ff" filter="url(#neon-glow-cyan)">
+    <animate attributeName="r" values="3.5;5.5;3.5" dur="3s" repeatCount="indefinite" />
   </circle>
-  <circle cx="490" cy="155" r="4.5" fill="#ff007b" filter="url(#neon-glow-purple)">
-    <animate attributeName="r" values="3.5;6.5;3.5" dur="3s" repeatCount="indefinite" />
+  <circle cx="490" cy="155" r="4" fill="#ff007b" filter="url(#neon-glow-purple)">
+    <animate attributeName="r" values="3.5;5.5;3.5" dur="3s" repeatCount="indefinite" />
   </circle>
 
   <!-- Interactive Center Group -->
-  <!-- Top Status Pill -->
   <g transform="translate(325, 42)">
     <rect width="150" height="24" rx="12" fill="#090d16" stroke="url(#cyan-purple-grad)" stroke-width="1.2" />
-    <circle cx="16" cy="12" r="4.5" fill="#00ffaa" filter="url(#neon-glow-cyan)">
-      <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite" />
+    <circle cx="16" cy="12" r="4" fill="#00ffaa" filter="url(#neon-glow-cyan)">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
     </circle>
-    <text x="28" y="16" fill="#00ffaa" font-family="'Fira Code', monospace" font-size="9" font-weight="700" letter-spacing="1.5">SERVICE_ONLINE</text>
+    <text x="28" y="16" fill="#00ffaa" font-family="Courier New, monospace" font-size="9" font-weight="700" letter-spacing="1">SERVICE_ONLINE</text>
   </g>
 
   <!-- Main Full Name Header -->
-  <text x="400" y="122" text-anchor="middle" font-size="44" class="name-glow" filter="url(#neon-glow-cyan)">
+  <text x="400" y="122" text-anchor="middle" font-size="42" class="name-glow" filter="url(#neon-glow-cyan)">
     LE TUAN LOC
   </text>
   
@@ -177,32 +148,24 @@
   
   <!-- Interactive Tech Badges -->
   <g transform="translate(200, 158)">
-    <!-- Badge 1: Backend Developer -->
     <g transform="translate(0, 0)" class="tech-badge">
-      <rect width="112" height="22" rx="6" fill="#0d1b2a" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.6" />
-      <text x="56" y="14" fill="#00f0ff" font-family="'Fira Code', monospace" font-size="9" font-weight="bold" text-anchor="middle">⚡ BACKEND_DEV</text>
+      <rect width="112" height="22" rx="6" fill="#0d1b2a" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.5" />
+      <text x="56" y="14" fill="#00f0ff" font-family="Courier New, monospace" font-size="9" font-weight="bold" text-anchor="middle">⚡ BACKEND_DEV</text>
     </g>
-    <!-- Badge 2: System Architect -->
     <g transform="translate(122, 0)" class="tech-badge">
-      <rect width="112" height="22" rx="6" fill="#1b122c" stroke="#7000ff" stroke-width="1" stroke-opacity="0.6" />
-      <text x="56" y="14" fill="#a270ff" font-family="'Fira Code', monospace" font-size="9" font-weight="bold" text-anchor="middle">⚙️ ARCHITECT</text>
+      <rect width="112" height="22" rx="6" fill="#1b122c" stroke="#7000ff" stroke-width="1" stroke-opacity="0.5" />
+      <text x="56" y="14" fill="#a270ff" font-family="Courier New, monospace" font-size="9" font-weight="bold" text-anchor="middle">⚙️ ARCHITECT</text>
     </g>
-    <!-- Badge 3: Cloud Engineer -->
     <g transform="translate(244, 0)" class="tech-badge">
-      <rect width="112" height="22" rx="6" fill="#240f20" stroke="#ff007b" stroke-width="1" stroke-opacity="0.6" />
-      <text x="56" y="14" fill="#ff4da6" font-family="'Fira Code', monospace" font-size="9" font-weight="bold" text-anchor="middle">☁️ CLOUD_ENG</text>
+      <rect width="112" height="22" rx="6" fill="#240f20" stroke="#ff007b" stroke-width="1" stroke-opacity="0.5" />
+      <text x="56" y="14" fill="#ff4da6" font-family="Courier New, monospace" font-size="9" font-weight="bold" text-anchor="middle">☁️ CLOUD_ENG</text>
     </g>
   </g>
 
   <!-- Interactive Terminal Mock Prompt -->
-  <g transform="translate(25, 222)" font-family="'Fira Code', monospace" font-size="11">
+  <g transform="translate(25, 222)" font-family="Courier New, monospace" font-size="11">
     <text x="0" y="0" fill="#00ffaa" opacity="0.9">loc@kidcute1412:~$</text>
-    
-    <!-- Typing command animation simulated by SVG steps -->
-    <text x="145" y="0" fill="#ffffff" opacity="0.9">curl -s https://loc.dev/info | jq .specialties
-      <animate attributeName="opacity" values="0.9;0.5;0.9" dur="2s" repeatCount="indefinite" />
-    </text>
-    
-    <text x="0" y="16" fill="#8f9cae" font-size="9" opacity="0.8">[ "High Availability", "Distributed Systems", "Geospatial Indexing", "Realtime Streams" ]</text>
+    <text x="145" y="0" fill="#ffffff" opacity="0.9">curl -s https://loc.dev/info | jq .specialties</text>
+    <text x="0" y="16" fill="#8f9cae" font-size="9" opacity="0.75">[ "High Availability", "Distributed Systems", "Geospatial Indexing", "Realtime Streams" ]</text>
   </g>
 </svg>

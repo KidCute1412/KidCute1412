@@ -1,30 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="240" style="background: #06080c; border-radius: 16px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="240" style="background: #07090e; border-radius: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
   <defs>
-    <!-- Google Fonts & Interactive Styling -->
+    <!-- Optimized Styles using system fallback fonts to prevent render block -->
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&amp;family=Outfit:wght@600;800&amp;display=swap');
-      
       .title-font {
-        font-family: 'Outfit', sans-serif;
+        font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
         font-weight: 800;
         letter-spacing: 0.15em;
       }
       .mono-font {
-        font-family: 'Fira Code', monospace;
+        font-family: 'Fira Code', 'Courier New', Courier, monospace;
       }
       
-      /* Interactive Architect Node Boxes */
       .arch-node {
-        transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.35s ease;
+        transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
         cursor: pointer;
-      }
-      .arch-node:hover {
-        transform: translateY(-5px);
-        filter: brightness(1.2) drop-shadow(0 8px 16px rgba(0, 240, 255, 0.25));
-      }
-      .arch-node:hover rect {
-        stroke-width: 1.8px;
-        stroke-opacity: 1;
       }
       
       @keyframes dash {
@@ -32,33 +21,11 @@
           stroke-dashoffset: -40;
         }
       }
-      @keyframes pulse-glow {
-        0%, 100% { filter: drop-shadow(0 0 2px rgba(0, 240, 255, 0.4)); }
-        50% { filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.7)); }
-      }
-      @keyframes pulse-glow-purple {
-        0%, 100% { filter: drop-shadow(0 0 2px rgba(112, 0, 255, 0.4)); }
-        50% { filter: drop-shadow(0 0 8px rgba(112, 0, 255, 0.7)); }
-      }
-      @keyframes pulse-glow-orange {
-        0%, 100% { filter: drop-shadow(0 0 2px rgba(255, 102, 0, 0.4)); }
-        50% { filter: drop-shadow(0 0 8px rgba(255, 102, 0, 0.7)); }
-      }
-      @keyframes pulse-glow-green {
-        0%, 100% { filter: drop-shadow(0 0 2px rgba(0, 255, 170, 0.4)); }
-        50% { filter: drop-shadow(0 0 8px rgba(0, 255, 170, 0.7)); }
-      }
       
       .data-stream-1 { stroke-dasharray: 8 6; animation: dash 1.8s linear infinite; }
       .data-stream-2 { stroke-dasharray: 8 6; animation: dash 1.5s linear infinite; }
       .data-stream-3 { stroke-dasharray: 8 6; animation: dash 1.2s linear infinite; }
-      
-      .node-cyan { animation: pulse-glow 3s ease-in-out infinite; }
-      .node-purple { animation: pulse-glow-purple 3.2s ease-in-out infinite; }
-      .node-orange { animation: pulse-glow-orange 2.8s ease-in-out infinite; }
-      .node-green { animation: pulse-glow-green 3.5s ease-in-out infinite; }
 
-      /* Visual telemetry wave animation */
       @keyframes waveOffset {
         0% { stroke-dashoffset: 0; }
         100% { stroke-dashoffset: 30; }
@@ -68,6 +35,36 @@
         animation: waveOffset 1.5s linear infinite;
       }
     </style>
+
+    <!-- Optimized low-blur filters -->
+    <filter id="neon-glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="neon-glow-purple" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="neon-glow-orange" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="neon-glow-green" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
 
     <!-- Gradients -->
     <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -96,11 +93,6 @@
       <stop offset="100%" stop-color="#00ffaa" />
     </linearGradient>
 
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.6" />
-    </filter>
-
-    <!-- Grid -->
     <pattern id="small-grid" width="15" height="15" patternUnits="userSpaceOnUse">
       <path d="M 15 0 L 0 0 0 15" fill="none" stroke="#00f0ff" stroke-width="0.8" stroke-opacity="0.03" />
     </pattern>
@@ -121,11 +113,8 @@
 
   <!-- Connector Streams -->
   <g fill="none">
-    <!-- Client to Gateway -->
     <path id="stream-1" d="M 140 135 L 240 135" stroke="url(#flow-cyan-purple)" stroke-width="2.5" stroke-linecap="round" class="data-stream-1" />
-    <!-- Gateway to Broker -->
     <path id="stream-2" d="M 360 135 L 460 135" stroke="url(#flow-purple-orange)" stroke-width="2.5" stroke-linecap="round" class="data-stream-2" />
-    <!-- Broker to Data Stores -->
     <path id="stream-3" d="M 580 135 L 680 135" stroke="url(#flow-orange-green)" stroke-width="2.5" stroke-linecap="round" class="data-stream-3" />
   </g>
 
@@ -148,66 +137,52 @@
     </animateMotion>
   </circle>
 
-  <!-- ==================== NODE 1: CLIENT ==================== -->
-  <g transform="translate(20, 60)" filter="url(#shadow)" class="arch-node node-cyan">
-    <!-- Outer Node Shell -->
-    <rect width="120" height="135" rx="8" fill="url(#node-bg)" stroke="#00f0ff" stroke-width="1.2" stroke-opacity="0.6" />
-    <!-- Top Accent Bar -->
+  <!-- NODE 1: CLIENT -->
+  <g transform="translate(20, 60)" class="arch-node">
+    <rect width="120" height="135" rx="8" fill="url(#node-bg)" stroke="#00f0ff" stroke-width="1.2" stroke-opacity="0.6" filter="url(#neon-glow-cyan)" />
     <rect x="0" y="0" width="120" height="5" rx="2" fill="#00f0ff" />
-    <!-- Graphic representation -->
     <g transform="translate(15, 18)" stroke="#00f0ff" fill="none" stroke-width="1.2">
-      <!-- Browser window outline -->
       <rect x="0" y="0" width="30" height="22" rx="2" stroke-opacity="0.9" fill="#0c111e" />
       <line x1="0" y1="6" x2="30" y2="6" stroke-opacity="0.8" />
       <circle cx="4" cy="3" r="1" fill="#00f0ff" stroke="none" />
       <circle cx="8" cy="3" r="1" fill="#00f0ff" stroke="none" />
-      <!-- Wave indicator -->
       <path d="M 38 4 Q 45 11 52 4" stroke-opacity="0.6" stroke-width="1" />
       <path d="M 35 11 Q 45 20 55 11" stroke-opacity="0.8" />
       <path d="M 32 18 Q 45 29 58 18" stroke-opacity="0.4" stroke-width="1" />
     </g>
-    <!-- Text Contents -->
     <text x="15" y="62" fill="#ffffff" font-size="11" font-weight="bold">CLIENT PORTAL</text>
     <text x="15" y="78" fill="#00f0ff" font-size="9" class="mono-font">HTTP / WS</text>
-    <!-- Metrics/Details Simulated -->
     <rect x="15" y="90" width="90" height="4" rx="2" fill="#1b2a47" />
     <rect x="15" y="90" width="70" height="4" rx="2" fill="#00f0ff" />
     <text x="15" y="112" fill="#5c7a9c" font-size="8" class="mono-font">RTT: 12ms</text>
     <text x="105" y="112" text-anchor="end" fill="#5c7a9c" font-size="8" class="mono-font">99.9%</text>
   </g>
 
-  <!-- ==================== NODE 2: GATEWAY ==================== -->
-  <g transform="translate(240, 60)" filter="url(#shadow)" class="arch-node node-purple">
-    <rect width="120" height="135" rx="8" fill="url(#node-bg)" stroke="#7000ff" stroke-width="1.2" stroke-opacity="0.6" />
+  <!-- NODE 2: GATEWAY -->
+  <g transform="translate(240, 60)" class="arch-node">
+    <rect width="120" height="135" rx="8" fill="url(#node-bg)" stroke="#7000ff" stroke-width="1.2" stroke-opacity="0.6" filter="url(#neon-glow-purple)" />
     <rect x="0" y="0" width="120" height="5" rx="2" fill="#7000ff" />
-    <!-- Graphic Representation (Server Shield) -->
     <g transform="translate(15, 18)" stroke="#7000ff" fill="none" stroke-width="1.2">
-      <!-- CPU Rack Unit visual -->
       <rect x="0" y="0" width="32" height="22" rx="2" fill="#0c111e" />
       <line x1="4" y1="6" x2="28" y2="6" stroke-opacity="0.5" />
       <line x1="4" y1="12" x2="28" y2="12" stroke-opacity="0.5" />
       <circle cx="7" cy="18" r="1.5" fill="#7000ff" stroke="none" />
       <circle cx="13" cy="18" r="1.5" fill="#7000ff" stroke="none" />
-      
-      <!-- Telemetry Active Signal Wave -->
       <path d="M 38 12 Q 44 2, 50 12 T 62 12" stroke="#7000ff" stroke-width="1.2" class="telemetry-wave" />
     </g>
     <text x="15" y="62" fill="#ffffff" font-size="11" font-weight="bold">API GATEWAY</text>
     <text x="15" y="78" fill="#a270ff" font-size="9" class="mono-font">SPRING &amp; NODE</text>
-    <!-- Load simulated -->
     <rect x="15" y="90" width="90" height="4" rx="2" fill="#201533" />
     <rect x="15" y="90" width="40" height="4" rx="2" fill="#a270ff" />
     <text x="15" y="112" fill="#7d8ea6" font-size="8" class="mono-font">REQ: 2.4k/s</text>
     <text x="105" y="112" text-anchor="end" fill="#7d8ea6" font-size="8" class="mono-font">CPU: 24%</text>
   </g>
 
-  <!-- ==================== NODE 3: BROKER ==================== -->
-  <g transform="translate(460, 60)" filter="url(#shadow)" class="arch-node node-orange">
-    <rect width="120" height="135" rx="8" fill="url(#node-bg)" stroke="#ff6600" stroke-width="1.2" stroke-opacity="0.6" />
+  <!-- NODE 3: BROKER -->
+  <g transform="translate(460, 60)" class="arch-node">
+    <rect width="120" height="135" rx="8" fill="url(#node-bg)" stroke="#ff6600" stroke-width="1.2" stroke-opacity="0.6" filter="url(#neon-glow-orange)" />
     <rect x="0" y="0" width="120" height="5" rx="2" fill="#ff6600" />
-    <!-- Graphic Representation (Event Broker Nodes) -->
     <g transform="translate(15, 18)" stroke="#ff6600" fill="none" stroke-width="1.2">
-      <!-- Nodes pointing to center -->
       <circle cx="10" cy="11" r="4" />
       <circle cx="46" cy="5" r="4" />
       <circle cx="46" cy="17" r="4" />
@@ -216,31 +191,26 @@
     </g>
     <text x="15" y="62" fill="#ffffff" font-size="11" font-weight="bold">MESSAGE BUS</text>
     <text x="15" y="78" fill="#ff8c42" font-size="9" class="mono-font">RABBITMQ / KF</text>
-    <!-- Queue indicator -->
     <rect x="15" y="90" width="90" height="4" rx="2" fill="#361a0f" />
     <rect x="15" y="90" width="55" height="4" rx="2" fill="#ff6600" />
     <text x="15" y="112" fill="#8f9cae" font-size="8" class="mono-font">ACK: 100%</text>
     <text x="105" y="112" text-anchor="end" fill="#8f9cae" font-size="8" class="mono-font">Q: 0 msgs</text>
   </g>
 
-  <!-- ==================== NODE 4: DATA STORES ==================== -->
-  <g transform="translate(680, 60)" filter="url(#shadow)" class="arch-node node-green">
-    <rect width="120" height="135" rx="8" fill="url(#node-bg)" stroke="#00ffaa" stroke-width="1.2" stroke-opacity="0.6" />
+  <!-- NODE 4: DATA STORES -->
+  <g transform="translate(680, 60)" class="arch-node">
+    <rect width="120" height="135" rx="8" fill="url(#node-bg)" stroke="#00ffaa" stroke-width="1.2" stroke-opacity="0.6" filter="url(#neon-glow-green)" />
     <rect x="0" y="0" width="120" height="5" rx="2" fill="#00ffaa" />
-    <!-- Graphic Representation (Database + Cache Lock) -->
     <g transform="translate(15, 18)" stroke="#00ffaa" fill="none" stroke-width="1.2">
-      <!-- Database cylinder -->
       <path d="M 0 5 C 0 2, 22 2, 22 5 L 22 17 C 22 20, 0 20, 0 17 Z" stroke-opacity="0.8" />
       <path d="M 0 9 C 3 11, 19 11, 22 9" stroke-opacity="0.8" />
       <path d="M 0 13 C 3 15, 19 15, 22 13" stroke-opacity="0.8" />
-      <!-- Redis key-value visual -->
       <rect x="34" y="2" width="22" height="16" rx="2" stroke-opacity="0.7" />
       <line x1="38" y1="7" x2="52" y2="7" stroke-width="1" />
       <line x1="38" y1="12" x2="48" y2="12" stroke-width="1" />
     </g>
     <text x="15" y="62" fill="#ffffff" font-size="11" font-weight="bold">DATA LAYER</text>
     <text x="15" y="78" fill="#00ffaa" font-size="9" class="mono-font">PGSQL &amp; REDIS</text>
-    <!-- Storage capacity indicator -->
     <rect x="15" y="90" width="90" height="4" rx="2" fill="#0f3327" />
     <rect x="15" y="90" width="75" height="4" rx="2" fill="#00ffaa" />
     <text x="15" y="112" fill="#8f9cae" font-size="8" class="mono-font">LOCK: REDLOCK</text>
