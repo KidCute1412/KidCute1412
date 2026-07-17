@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="240" style="background: #06080c; border-radius: 16px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <!-- Fonts & Interactive Styles -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&amp;family=Outfit:wght@600;800;900&amp;display=swap');
+      
+      .title-font {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 900;
+        letter-spacing: 0.05em;
+      }
+      .mono-font {
+        font-family: 'Fira Code', monospace;
+      }
+      
+      /* Rotator Animation for HUD Scanner Rings */
+      @keyframes spinClockwise {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes spinCounterClockwise {
+        from { transform: rotate(360deg); }
+        to { transform: rotate(0deg); }
+      }
+      @keyframes drawArc {
+        from { stroke-dashoffset: 283; }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.4; }
+        50% { opacity: 0.9; }
+      }
+
+      .spinner-fast {
+        transform-origin: center;
+        animation: spinClockwise 8s linear infinite;
+      }
+      .spinner-slow {
+        transform-origin: center;
+        animation: spinCounterClockwise 12s linear infinite;
+      }
+      
+      /* Progress Arcs (Circumference of r=45 is 2 * PI * 45 = 282.7) */
+      .arc-95 { stroke-dasharray: 283; stroke-dashoffset: 14; animation: drawArc 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
+      .arc-92 { stroke-dasharray: 283; stroke-dashoffset: 22; animation: drawArc 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
+      .arc-90 { stroke-dasharray: 283; stroke-dashoffset: 28; animation: drawArc 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
+      .arc-88 { stroke-dasharray: 283; stroke-dashoffset: 34; animation: drawArc 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
+      
+      .gauge-card {
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+      .gauge-card:hover {
+        transform: scale(1.03);
+      }
+      
+      .indicator-glow {
+        animation: pulseGlow 2s ease-in-out infinite;
+      }
+    </style>
+
+    <!-- Filters for Neon Glow -->
+    <filter id="neon-cyan" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="neon-purple" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="neon-orange" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="neon-green" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040609" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+
+    <!-- Background Grid -->
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#00f0ff" stroke-width="0.8" stroke-opacity="0.02" />
+    </pattern>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="800" height="240" rx="16" fill="url(#bg-grad)" />
+  <rect width="800" height="240" rx="16" fill="url(#grid)" />
+  <rect x="4" y="4" width="792" height="232" rx="12" fill="none" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.08" />
+
+  <!-- Header Telemetry Info -->
+  <g transform="translate(30, 25)">
+    <text x="0" y="5" fill="#5c7a9c" font-size="10" class="mono-font" font-weight="bold" letter-spacing="1.5">TELEMETRY_RADAR // SKILLS_CORES_DIALS</text>
+    <line x1="0" y1="12" x2="740" y2="12" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.1" />
+  </g>
+
+  <!-- ==================== GAUGE 1: SYSTEM ARCHITECTURE (Cyan) ==================== -->
+  <g transform="translate(100, 130)" class="gauge-card">
+    <!-- Static outer ring -->
+    <circle cx="0" cy="0" r="52" fill="none" stroke="#0f1925" stroke-width="1.5" />
+    <!-- Dotted Scanner Ring (Rotating) -->
+    <circle cx="0" cy="0" r="58" fill="none" stroke="#00f0ff" stroke-width="1" stroke-dasharray="3 7" stroke-opacity="0.3" class="spinner-fast" />
+    <!-- Active Progress Arc -->
+    <circle cx="0" cy="0" r="45" fill="none" stroke="#00f0ff" stroke-width="6" stroke-linecap="round" transform="rotate(-90)" class="arc-95" filter="url(#neon-cyan)" />
+    
+    <!-- Central Text -->
+    <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-size="16" class="title-font" filter="url(#neon-cyan)">95%</text>
+    
+    <!-- Label -->
+    <text x="0" y="80" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold" class="mono-font">SYS_ARCH</text>
+    <text x="0" y="94" text-anchor="middle" fill="#5c7a9c" font-size="8" class="mono-font">Architecture</text>
+  </g>
+
+  <!-- ==================== GAUGE 2: API TUNING (Purple) ==================== -->
+  <g transform="translate(300, 130)" class="gauge-card">
+    <circle cx="0" cy="0" r="52" fill="none" stroke="#1b122c" stroke-width="1.5" />
+    <circle cx="0" cy="0" r="58" fill="none" stroke="#7000ff" stroke-width="1" stroke-dasharray="3 7" stroke-opacity="0.3" class="spinner-slow" />
+    <circle cx="0" cy="0" r="45" fill="none" stroke="#7000ff" stroke-width="6" stroke-linecap="round" transform="rotate(-90)" class="arc-92" filter="url(#neon-purple)" />
+    
+    <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-size="16" class="title-font" filter="url(#neon-purple)">92%</text>
+    
+    <text x="0" y="80" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold" class="mono-font">API_OPT</text>
+    <text x="0" y="94" text-anchor="middle" fill="#5c7a9c" font-size="8" class="mono-font">Performance</text>
+  </g>
+
+  <!-- ==================== GAUGE 3: DATABASE & SPATIAL (Orange) ==================== -->
+  <g transform="translate(500, 130)" class="gauge-card">
+    <circle cx="0" cy="0" r="52" fill="none" stroke="#2d1d15" stroke-width="1.5" />
+    <circle cx="0" cy="0" r="58" fill="none" stroke="#ff6600" stroke-width="1" stroke-dasharray="3 7" stroke-opacity="0.3" class="spinner-fast" />
+    <circle cx="0" cy="0" r="45" fill="none" stroke="#ff6600" stroke-width="6" stroke-linecap="round" transform="rotate(-90)" class="arc-90" filter="url(#neon-orange)" />
+    
+    <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-size="16" class="title-font" filter="url(#neon-orange)">90%</text>
+    
+    <text x="0" y="80" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold" class="mono-font">DB_SCALE</text>
+    <text x="0" y="94" text-anchor="middle" fill="#5c7a9c" font-size="8" class="mono-font">PGSQL &amp; H3</text>
+  </g>
+
+  <!-- ==================== GAUGE 4: ASYNC MESSAGING (Green) ==================== -->
+  <g transform="translate(700, 130)" class="gauge-card">
+    <circle cx="0" cy="0" r="52" fill="none" stroke="#0c1f19" stroke-width="1.5" />
+    <circle cx="0" cy="0" r="58" fill="none" stroke="#00ffaa" stroke-width="1" stroke-dasharray="3 7" stroke-opacity="0.3" class="spinner-slow" />
+    <circle cx="0" cy="0" r="45" fill="none" stroke="#00ffaa" stroke-width="6" stroke-linecap="round" transform="rotate(-90)" class="arc-88" filter="url(#neon-green)" />
+    
+    <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-size="16" class="title-font" filter="url(#neon-green)">88%</text>
+    
+    <text x="0" y="80" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold" class="mono-font">EVENT_BUS</text>
+    <text x="0" y="94" text-anchor="middle" fill="#5c7a9c" font-size="8" class="mono-font">RabbitMQ/Kafka</text>
+  </g>
+</svg>
