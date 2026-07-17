@@ -67,13 +67,16 @@ Comfortable working across these languages, frameworks, databases, and infrastru
   <a href="#"><img src="https://img.shields.io/badge/SQL-00758F?style=flat-square&logo=mysql&logoColor=white" height="25" /></a>
   <a href="#"><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" height="25" /></a>
   <a href="#"><img src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=cplusplus&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black" height="25" /></a>
 </p>
 
 ### Frameworks & Core Libraries
 <p align="left">
   <a href="#"><img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=spring&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white" height="25" /></a>
   <a href="#"><img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" height="25" /></a>
   <a href="#"><img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" height="25" /></a>
   <a href="#"><img src="https://img.shields.io/badge/React_19-20232A?style=flat-square&logo=react&logoColor=61DAFB" height="25" /></a>
   <a href="#"><img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" height="25" /></a>
   <a href="#"><img src="https://img.shields.io/badge/Socket.io-010101?style=flat-square&logo=socketdotio&logoColor=white" height="25" /></a>
@@ -85,6 +88,7 @@ Comfortable working across these languages, frameworks, databases, and infrastru
 ### Databases, Caching & Cloud Infrastructure
 <p align="left">
   <a href="#"><img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" height="25" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Oracle-F80000?style=flat-square&logo=oracle&logoColor=white" height="25" /></a>
   <a href="#"><img src="https://img.shields.io/badge/PostGIS-339933?style=flat-square&logo=googlemaps&logoColor=white" height="25" /></a>
   <a href="#"><img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" height="25" /></a>
   <a href="#"><img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=flat-square&logo=rabbitmq&logoColor=white" height="25" /></a>
