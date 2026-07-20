@@ -162,7 +162,12 @@ Let's discuss system design, backend architectures, or high-performance APIs!
 
 ---
 
-<p align="center" style="font-size: 11px; color: #4b5563;">
-  System Status: Active | Built with passion and high-performance backend pipelines
+<!-- System Operational Status Banner -->
+<p align="center">
+  <img src="https://img.shields.io/badge/System_Status-Active-00ffaa?style=flat-square&logo=statuspage&logoColor=black" alt="System Status" />
+  <img src="https://img.shields.io/badge/Uptime-99.99%25-00f0ff?style=flat-square&logo=uptime&logoColor=black" alt="System Uptime" />
 </p>
 
+<p align="center" style="font-size: 11px; color: #4b5563; font-family: monospace;">
+  ⚡ System Status: Active | Built with passion and high-performance backend pipelines
+</p>

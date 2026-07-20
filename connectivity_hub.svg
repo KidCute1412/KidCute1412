@@ -2,6 +2,16 @@
   <defs>
     <!-- Optimized Styles using system fonts to prevent network blockages inside <img> contexts -->
     <style>
+
+
+
+
+
+
+
+
+
+
       svg {
         background: #06080c;
       }
@@ -9,9 +19,32 @@
         font-family: 'Fira Code', 'Courier New', Courier, monospace;
       }
       .port-card {
-        transition: transform 0.2s ease;
+        transition: transform 0.3s ease, filter 0.3s ease;
         cursor: pointer;
       }
+      .port-card:hover {
+        transform: translateY(-4px);
+        filter: drop-shadow(0 0 8px currentColor);
+      }
+      
+      /* Neon Pulsing effects for ports */
+      @keyframes pulseNeon {
+        0%, 100% { stroke-opacity: 0.5; filter: drop-shadow(0 0 2px currentColor); }
+        50% { stroke-opacity: 1.0; filter: drop-shadow(0 0 10px currentColor); }
+      }
+
+      .card-email { color: #d14836; }
+      .card-linkedin { color: #0077b5; }
+      .card-facebook { color: #1877f2; }
+      .card-location { color: #00ffaa; }
+
+      .port-card rect {
+        animation: pulseNeon 3s infinite;
+      }
+      .port-card:nth-of-type(1) rect { animation-delay: 0s; }
+      .port-card:nth-of-type(2) rect { animation-delay: 0.7s; }
+      .port-card:nth-of-type(3) rect { animation-delay: 1.4s; }
+      .port-card:nth-of-type(4) rect { animation-delay: 2.1s; }
 
       /* Light Mode overrides */
       @media (prefers-color-scheme: light) {

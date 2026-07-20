@@ -192,18 +192,24 @@
   </g>
 
   <!-- Flowing animated path lines in BG -->
-  <path d="M 120 130 L 220 130 L 245 105 L 310 105" fill="none" stroke="#00f0ff" stroke-width="1.5" stroke-dasharray="5 5" stroke-opacity="0.4" class="decor-glow">
-    <animate attributeName="stroke-dashoffset" values="40;0" dur="3s" repeatCount="indefinite" />
+  <path d="M 120 130 L 220 130 L 245 105 L 310 105" fill="none" stroke="#00f0ff" stroke-width="2.5" stroke-dasharray="8 6" stroke-opacity="0.6" class="decor-glow">
+    <animate attributeName="stroke-dashoffset" values="50;0" dur="2s" repeatCount="indefinite" />
   </path>
-  <path d="M 680 130 L 580 130 L 555 155 L 490 155" fill="none" stroke="#ff007b" stroke-width="1.5" stroke-dasharray="5 5" stroke-opacity="0.4" class="decor-glow-pink">
-    <animate attributeName="stroke-dashoffset" values="-40;0" dur="3s" repeatCount="indefinite" />
+  <path d="M 680 130 L 580 130 L 555 155 L 490 155" fill="none" stroke="#ff007b" stroke-width="2.5" stroke-dasharray="8 6" stroke-opacity="0.6" class="decor-glow-pink">
+    <animate attributeName="stroke-dashoffset" values="-50;0" dur="2s" repeatCount="indefinite" />
   </path>
 
-  <!-- Glowing Nodes -->
-  <circle cx="310" cy="105" r="7" fill="#00f0ff" fill-opacity="0.3" class="decor-glow" />
+  <!-- Glowing Nodes with Pulsing Effect -->
+  <circle cx="310" cy="105" r="8" fill="#00f0ff" fill-opacity="0.4" class="decor-glow">
+    <animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="fill-opacity" values="0.2;0.6;0.2" dur="2s" repeatCount="indefinite" />
+  </circle>
   <circle cx="310" cy="105" r="3.5" fill="#ffffff" />
   
-  <circle cx="490" cy="155" r="7" fill="#ff007b" fill-opacity="0.3" class="decor-glow-pink" />
+  <circle cx="490" cy="155" r="8" fill="#ff007b" fill-opacity="0.4" class="decor-glow-pink">
+    <animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="fill-opacity" values="0.2;0.6;0.2" dur="2s" repeatCount="indefinite" />
+  </circle>
   <circle cx="490" cy="155" r="3.5" fill="#ffffff" />
 
   <!-- Center Group -->
@@ -217,10 +223,10 @@
   <!-- Main Full Name Header -->
   <text x="400" y="122" text-anchor="middle" font-size="42" class="name-glow name-glow-stroke" stroke="#00f0ff" stroke-width="6" stroke-opacity="0.3" fill="none">LE TUAN LOC</text>
   <text x="400" y="122" text-anchor="middle" font-size="42" class="name-glow">LE TUAN LOC</text>
-  
+
   <!-- Technology Divider Bar -->
   <rect x="220" y="142" width="360" height="2" rx="1" fill="url(#cyan-purple-grad)" />
-  
+
   <!-- Interactive Tech Badges -->
   <g transform="translate(200, 158)">
     <g transform="translate(0, 0)" class="tech-badge tech-badge-backend">
@@ -239,7 +245,6 @@
 
   <!-- Interactive Terminal Mock Prompt -->
   <g transform="translate(25, 205)" font-family="Courier New, monospace" font-size="11">
-    <!-- Row 1 -->
     <text x="0" y="0" fill="#00ffaa" opacity="0.9" class="term-prompt">loc@kidcute1412:~$</text>
     <text x="145" y="0" fill="#ffffff" opacity="0.9" class="term-cmd">curl -s https://loc.dev/info | jq .specialties</text>
     <text x="0" y="14" fill="#8f9cae" font-size="9" opacity="0.75" class="term-output">[ "High Availability", "Distributed Systems", "Geospatial Indexing", "Realtime Streams" ]</text>
