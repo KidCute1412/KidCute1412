@@ -134,7 +134,7 @@ Comfortable working across these languages, frameworks, databases, and infrastru
     <img src="https://github-readme-stats.shion.dev/api?username=KidCute1412&show_icons=true&theme=tokyonight&bg_color=06080c&title_color=00F0FF&icon_color=00F0FF&text_color=ffffff&border_color=ff007b&count_private=true" height="160" alt="GitHub Stats" />
   </a>
   <a href="https://github.com/KidCute1412">
-    <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=KidCute1412&layout=compact&theme=tokyonight&bg_color=06080c&title_color=00F0FF&text_color=ffffff&border_color=ff007b&langs_count=6" height="160" alt="Top Languages" />
+    <img src="./profile-summary-card-output/tokyonight/most-commit-language.svg" height="160" alt="Top Languages (Commits)" />
   </a>
 </p>
 
