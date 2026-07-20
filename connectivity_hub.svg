@@ -1,7 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120" width="100%" height="120" style="background: #06080c; border-radius: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120" width="100%" height="120" style="border-radius: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
   <defs>
     <!-- Optimized Styles using system fonts to prevent network blockages inside <img> contexts -->
     <style>
+      svg {
+        background: #06080c;
+      }
       .mono-font {
         font-family: 'Fira Code', 'Courier New', Courier, monospace;
       }
@@ -9,59 +12,102 @@
         transition: transform 0.2s ease;
         cursor: pointer;
       }
+
+      /* Light Mode overrides */
+      @media (prefers-color-scheme: light) {
+        svg {
+          background: #ffffff;
+        }
+        .bg-rect-class {
+          fill: #f6f8fa !important;
+        }
+        .inner-border {
+          stroke: #d0d7de !important;
+          stroke-opacity: 0.8 !important;
+        }
+        .text-white {
+          fill: #1f2328 !important;
+        }
+        .text-muted {
+          fill: #57606a !important;
+        }
+
+        /* Email Card (Red) */
+        .card-email rect[fill="#0a0f1d"] { fill: #fdf4f2 !important; stroke: #c53030 !important; }
+        .card-email text[fill="#d14836"] { fill: #c53030 !important; }
+        .card-email path { stroke: #c53030 !important; }
+
+        /* LinkedIn Card (Blue) */
+        .card-linkedin rect[fill="#0a0f1d"] { fill: #f0f7fa !important; stroke: #005d93 !important; }
+        .card-linkedin text[fill="#0077b5"] { fill: #005d93 !important; }
+        .card-linkedin text[fill="#0077b5"] { fill: #005d93 !important; }
+        .card-linkedin rect[stroke="#0077b5"] { stroke: #005d93 !important; }
+
+        /* Facebook Card (Blue-Dark) */
+        .card-facebook rect[fill="#0a0f1d"] { fill: #f0f6ff !important; stroke: #0c59cf !important; }
+        .card-facebook text[fill="#1877f2"] { fill: #0c59cf !important; }
+        .card-facebook text[fill="#1877f2"] { fill: #0c59cf !important; }
+        .card-facebook rect[stroke="#1877f2"] { stroke: #0c59cf !important; }
+
+        /* Location Card (Green) */
+        .card-location rect[fill="#0a0f1d"] { fill: #f0fdf4 !important; stroke: #1a7f37 !important; }
+        .card-location text[fill="#00ffaa"] { fill: #1a7f37 !important; }
+        .card-location path[stroke="#00ffaa"] { stroke: #1a7f37 !important; }
+        .card-location circle[fill="#00ffaa"] { fill: #1a7f37 !important; }
+      }
     </style>
   </defs>
 
   <!-- Background Layer -->
-  <rect width="800" height="120" rx="16" fill="#06080c" />
-  <rect x="4" y="4" width="792" height="112" rx="12" fill="none" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.08" />
+  <rect width="800" height="120" rx="16" fill="#06080c" class="bg-rect-class" />
+  <rect x="4" y="4" width="792" height="112" rx="12" fill="none" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.08" class="inner-border" />
 
   <!-- Port 1: Email -->
   <a href="mailto:letuanloc1412@gmail.com" target="_blank">
-    <g transform="translate(20, 20)" class="port-card">
+    <g transform="translate(20, 20)" class="port-card card-email">
       <rect width="175" height="80" rx="8" fill="#0a0f1d" stroke="#d14836" stroke-width="1.2" stroke-opacity="0.8" />
       <path d="M 0 0 L 175 0" stroke="#d14836" stroke-width="3" stroke-linecap="round" />
       <path d="M 20 25 L 35 35 L 50 25 M 20 25 L 20 45 L 50 45 L 50 25 Z" fill="none" stroke="#d14836" stroke-width="1.5" />
-      <text x="60" y="32" fill="#ffffff" font-size="11" font-weight="bold">PORT: EMAIL</text>
+      <text x="60" y="32" fill="#ffffff" font-size="11" font-weight="bold" class="text-white">PORT: EMAIL</text>
       <text x="60" y="48" fill="#d14836" font-size="9" class="mono-font">letuanloc1412@</text>
-      <text x="60" y="60" fill="#8f9cae" font-size="8.5" class="mono-font">gmail.com</text>
+      <text x="60" y="60" fill="#8f9cae" font-size="8.5" class="mono-font text-muted">gmail.com</text>
     </g>
   </a>
 
   <!-- Port 2: LinkedIn -->
   <a href="https://www.linkedin.com/in/l%E1%BB%99c-l%C3%AA-tu%E1%BA%A5n-341208390/" target="_blank">
-    <g transform="translate(215, 20)" class="port-card">
+    <g transform="translate(215, 20)" class="port-card card-linkedin">
       <rect width="175" height="80" rx="8" fill="#0a0f1d" stroke="#0077b5" stroke-width="1.2" stroke-opacity="0.8" />
       <path d="M 0 0 L 175 0" stroke="#0077b5" stroke-width="3" stroke-linecap="round" />
       <rect x="22" y="24" width="20" height="20" rx="3" fill="none" stroke="#0077b5" stroke-width="1.5" />
       <text x="27" y="38" fill="#0077b5" font-size="12" font-weight="bold">in</text>
-      <text x="60" y="32" fill="#ffffff" font-size="11" font-weight="bold">PORT: LINKEDIN</text>
+      <text x="60" y="32" fill="#ffffff" font-size="11" font-weight="bold" class="text-white">PORT: LINKEDIN</text>
       <text x="60" y="48" fill="#0077b5" font-size="9" class="mono-font">Lộc Lê Tuấn</text>
-      <text x="60" y="60" fill="#8f9cae" font-size="8.5" class="mono-font">Professional Network</text>
+      <text x="60" y="60" fill="#8f9cae" font-size="8.5" class="mono-font text-muted">Professional Network</text>
     </g>
   </a>
 
   <!-- Port 3: Facebook -->
   <a href="https://www.facebook.com/le.tuan.loc.39104/?locale=vi_VN" target="_blank">
-    <g transform="translate(410, 20)" class="port-card">
+    <g transform="translate(410, 20)" class="port-card card-facebook">
       <rect width="175" height="80" rx="8" fill="#0a0f1d" stroke="#1877f2" stroke-width="1.2" stroke-opacity="0.8" />
       <path d="M 0 0 L 175 0" stroke="#1877f2" stroke-width="3" stroke-linecap="round" />
       <rect x="22" y="24" width="20" height="20" rx="3" fill="none" stroke="#1877f2" stroke-width="1.5" />
       <text x="30" y="39" fill="#1877f2" font-size="14" font-weight="bold">f</text>
-      <text x="60" y="32" fill="#ffffff" font-size="11" font-weight="bold">PORT: FACEBOOK</text>
+      <text x="60" y="32" fill="#ffffff" font-size="11" font-weight="bold" class="text-white">PORT: FACEBOOK</text>
       <text x="60" y="48" fill="#1877f2" font-size="9" class="mono-font">Lê Tuấn Lộc</text>
-      <text x="60" y="60" fill="#8f9cae" font-size="8.5" class="mono-font">Social Portal</text>
+      <text x="60" y="60" fill="#8f9cae" font-size="8.5" class="mono-font text-muted">Social Portal</text>
     </g>
   </a>
 
   <!-- Port 4: Location -->
-  <g transform="translate(605, 20)" class="port-card">
+  <g transform="translate(605, 20)" class="port-card card-location">
     <rect width="175" height="80" rx="8" fill="#0a0f1d" stroke="#00ffaa" stroke-width="1.2" stroke-opacity="0.8" />
     <path d="M 0 0 L 175 0" stroke="#00ffaa" stroke-width="3" stroke-linecap="round" />
     <path d="M 32 24 C 27 24, 23 28, 23 33 C 23 39, 32 46, 32 46 C 32 46, 41 39, 41 33 C 41 28, 37 24, 32 24 Z" fill="none" stroke="#00ffaa" stroke-width="1.5" />
     <circle cx="32" cy="32" r="3" fill="#00ffaa" />
-    <text x="60" y="32" fill="#ffffff" font-size="11" font-weight="bold">PORT: LOCATION</text>
+    <text x="60" y="32" fill="#ffffff" font-size="11" font-weight="bold" class="text-white">PORT: LOCATION</text>
     <text x="60" y="48" fill="#00ffaa" font-size="9" class="mono-font">HCM City, VN</text>
-    <text x="60" y="60" fill="#8f9cae" font-size="8.5" class="mono-font">Active Base Coordinate</text>
+    <text x="60" y="60" fill="#8f9cae" font-size="8.5" class="mono-font text-muted">Active Base Coordinate</text>
   </g>
 </svg>

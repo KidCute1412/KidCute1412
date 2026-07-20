@@ -1,7 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="240" style="background: #06080c; border-radius: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="240" style="border-radius: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
   <defs>
     <!-- Fonts & Interactive Styles -->
     <style>
+      svg {
+        background: #06080c;
+      }
       .title-font {
         font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
         font-weight: 900;
@@ -24,11 +27,74 @@
       .gauge-card {
         transition: transform 0.2s ease;
       }
+
+      /* Light Mode overrides */
+      @media (prefers-color-scheme: light) {
+        svg {
+          background: #ffffff;
+        }
+        .bg-rect-class {
+          fill: url(#bg-grad-light) !important;
+        }
+        .outer-border {
+          stroke: #d0d7de !important;
+          stroke-opacity: 0.8 !important;
+        }
+        .hdr-title {
+          fill: #57606a !important;
+        }
+        .hdr-line {
+          stroke: #d0d7de !important;
+        }
+        .text-white {
+          fill: #1f2328 !important;
+        }
+        .text-muted {
+          fill: #57606a !important;
+        }
+        .text-glow {
+          stroke-opacity: 0.2 !important;
+        }
+
+        /* Gauge 1 (Cyan -> Blue) */
+        circle[stroke="#0f1925"] { stroke: #eaeef2 !important; }
+        circle[stroke="#00f0ff"] { stroke: #0969da !important; }
+        .arc-95 { stroke: #0969da !important; }
+        text[fill="#00f0ff"] { fill: #0969da !important; }
+        text[stroke="#00f0ff"] { stroke: #0969da !important; }
+
+        /* Gauge 2 (Purple -> Violet) */
+        circle[stroke="#1b122c"] { stroke: #f5f0fc !important; }
+        circle[stroke="#7000ff"] { stroke: #8250df !important; }
+        .arc-92 { stroke: #8250df !important; }
+        text[fill="#7000ff"] { fill: #8250df !important; }
+        text[stroke="#7000ff"] { stroke: #8250df !important; }
+
+        /* Gauge 3 (Orange -> Brown/Orange) */
+        circle[stroke="#2d1d15"] { stroke: #fdf5f0 !important; }
+        circle[stroke="#ff6600"] { stroke: #bc4c00 !important; }
+        .arc-90 { stroke: #bc4c00 !important; }
+        text[fill="#ff6600"] { fill: #bc4c00 !important; }
+        text[stroke="#ff6600"] { stroke: #bc4c00 !important; }
+
+        /* Gauge 4 (Green -> Dark Green) */
+        circle[stroke="#0c1f19"] { stroke: #f0fdf4 !important; }
+        circle[stroke="#00ffaa"] { stroke: #1a7f37 !important; }
+        .arc-88 { stroke: #1a7f37 !important; }
+        text[fill="#00ffaa"] { fill: #1a7f37 !important; }
+        text[stroke="#00ffaa"] { stroke: #1a7f37 !important; }
+      }
     </style>
 
     <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#040609" />
       <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+
+    <linearGradient id="bg-grad-light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6f8fa" />
+      <stop offset="50%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f0f3f6" />
     </linearGradient>
 
     <!-- Background Grid -->
@@ -38,14 +104,14 @@
   </defs>
 
   <!-- Background Base -->
-  <rect width="800" height="240" rx="16" fill="url(#bg-grad)" />
+  <rect width="800" height="240" rx="16" fill="url(#bg-grad)" class="bg-rect-class" />
   <rect width="800" height="240" rx="16" fill="url(#grid)" />
-  <rect x="4" y="4" width="792" height="232" rx="12" fill="none" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.08" />
+  <rect x="4" y="4" width="792" height="232" rx="12" fill="none" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.08" class="outer-border" />
 
   <!-- Header Telemetry Info -->
   <g transform="translate(30, 25)">
-    <text x="0" y="5" fill="#5c7a9c" font-size="10" class="mono-font" font-weight="bold" letter-spacing="1.5">TELEMETRY_RADAR // SKILLS_CORES_DIALS</text>
-    <line x1="0" y1="12" x2="740" y2="12" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.1" />
+    <text x="0" y="5" fill="#5c7a9c" font-size="10" class="mono-font hdr-title" font-weight="bold" letter-spacing="1.5">TELEMETRY_RADAR // SKILLS_CORES_DIALS</text>
+    <line x1="0" y1="12" x2="740" y2="12" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.1" class="hdr-line" />
   </g>
 
   <!-- ==================== GAUGE 1: SYSTEM ARCHITECTURE (Cyan) ==================== -->
@@ -54,17 +120,17 @@
     <!-- Static detailed tech ring -->
     <circle cx="0" cy="0" r="58" fill="none" stroke="#00f0ff" stroke-width="1" stroke-dasharray="3 7" stroke-opacity="0.25" />
     
-    <!-- Vector glow path (low opacity, thick stroke) -->
+    <!-- Vector glow path -->
     <circle cx="0" cy="0" r="45" fill="none" stroke="#00f0ff" stroke-width="10" stroke-opacity="0.25" transform="rotate(-90)" class="arc-95" />
     <!-- Core arc path -->
     <circle cx="0" cy="0" r="45" fill="none" stroke="#00f0ff" stroke-width="6" stroke-linecap="round" transform="rotate(-90)" class="arc-95" />
     
     <!-- Glow behind text -->
-    <text x="0" y="4" text-anchor="middle" fill="#00f0ff" font-size="16" class="title-font" opacity="0.3" stroke="#00f0ff" stroke-width="3">95%</text>
-    <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-size="16" class="title-font">95%</text>
+    <text x="0" y="4" text-anchor="middle" fill="#00f0ff" font-size="16" class="title-font text-glow" opacity="0.3" stroke="#00f0ff" stroke-width="3">95%</text>
+    <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-size="16" class="title-font text-white">95%</text>
     
-    <text x="0" y="80" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold" class="mono-font">SYS_ARCH</text>
-    <text x="0" y="94" text-anchor="middle" fill="#5c7a9c" font-size="8" class="mono-font">Architecture</text>
+    <text x="0" y="80" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold" class="mono-font text-white">SYS_ARCH</text>
+    <text x="0" y="94" text-anchor="middle" fill="#5c7a9c" font-size="8" class="mono-font text-muted">Architecture</text>
   </g>
 
   <!-- ==================== GAUGE 2: API TUNING (Purple) ==================== -->
@@ -75,11 +141,11 @@
     <circle cx="0" cy="0" r="45" fill="none" stroke="#7000ff" stroke-width="10" stroke-opacity="0.25" transform="rotate(-90)" class="arc-92" />
     <circle cx="0" cy="0" r="45" fill="none" stroke="#7000ff" stroke-width="6" stroke-linecap="round" transform="rotate(-90)" class="arc-92" />
     
-    <text x="0" y="4" text-anchor="middle" fill="#7000ff" font-size="16" class="title-font" opacity="0.3" stroke="#7000ff" stroke-width="3">92%</text>
-    <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-size="16" class="title-font">92%</text>
+    <text x="0" y="4" text-anchor="middle" fill="#7000ff" font-size="16" class="title-font text-glow" opacity="0.3" stroke="#7000ff" stroke-width="3">92%</text>
+    <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-size="16" class="title-font text-white">92%</text>
     
-    <text x="0" y="80" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold" class="mono-font">API_OPT</text>
-    <text x="0" y="94" text-anchor="middle" fill="#5c7a9c" font-size="8" class="mono-font">Performance</text>
+    <text x="0" y="80" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold" class="mono-font text-white">API_OPT</text>
+    <text x="0" y="94" text-anchor="middle" fill="#5c7a9c" font-size="8" class="mono-font text-muted">Performance</text>
   </g>
 
   <!-- ==================== GAUGE 3: DATABASE & SPATIAL (Orange) ==================== -->
@@ -90,11 +156,11 @@
     <circle cx="0" cy="0" r="45" fill="none" stroke="#ff6600" stroke-width="10" stroke-opacity="0.25" transform="rotate(-90)" class="arc-90" />
     <circle cx="0" cy="0" r="45" fill="none" stroke="#ff6600" stroke-width="6" stroke-linecap="round" transform="rotate(-90)" class="arc-90" />
     
-    <text x="0" y="4" text-anchor="middle" fill="#ff6600" font-size="16" class="title-font" opacity="0.3" stroke="#ff6600" stroke-width="3">90%</text>
-    <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-size="16" class="title-font">90%</text>
+    <text x="0" y="4" text-anchor="middle" fill="#ff6600" font-size="16" class="title-font text-glow" opacity="0.3" stroke="#ff6600" stroke-width="3">90%</text>
+    <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-size="16" class="title-font text-white">90%</text>
     
-    <text x="0" y="80" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold" class="mono-font">DB_SCALE</text>
-    <text x="0" y="94" text-anchor="middle" fill="#5c7a9c" font-size="8" class="mono-font">PGSQL &amp; H3</text>
+    <text x="0" y="80" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold" class="mono-font text-white">DB_SCALE</text>
+    <text x="0" y="94" text-anchor="middle" fill="#5c7a9c" font-size="8" class="mono-font text-muted">PGSQL &amp; H3</text>
   </g>
 
   <!-- ==================== GAUGE 4: ASYNC MESSAGING (Green) ==================== -->
@@ -105,10 +171,10 @@
     <circle cx="0" cy="0" r="45" fill="none" stroke="#00ffaa" stroke-width="10" stroke-opacity="0.25" transform="rotate(-90)" class="arc-88" />
     <circle cx="0" cy="0" r="45" fill="none" stroke="#00ffaa" stroke-width="6" stroke-linecap="round" transform="rotate(-90)" class="arc-88" />
     
-    <text x="0" y="4" text-anchor="middle" fill="#00ffaa" font-size="16" class="title-font" opacity="0.3" stroke="#00ffaa" stroke-width="3">88%</text>
-    <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-size="16" class="title-font">88%</text>
+    <text x="0" y="4" text-anchor="middle" fill="#00ffaa" font-size="16" class="title-font text-glow" opacity="0.3" stroke="#00ffaa" stroke-width="3">88%</text>
+    <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-size="16" class="title-font text-white">88%</text>
     
-    <text x="0" y="80" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold" class="mono-font">EVENT_BUS</text>
-    <text x="0" y="94" text-anchor="middle" fill="#5c7a9c" font-size="8" class="mono-font">RabbitMQ/Kafka</text>
+    <text x="0" y="80" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold" class="mono-font text-white">EVENT_BUS</text>
+    <text x="0" y="94" text-anchor="middle" fill="#5c7a9c" font-size="8" class="mono-font text-muted">RabbitMQ/Kafka</text>
   </g>
 </svg>

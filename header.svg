@@ -1,6 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 260" width="100%" height="260" style="background: #06080c; border-radius: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="320" style="border-radius: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
   <defs>
     <style>
+      svg {
+        background: #06080c;
+      }
       .name-glow {
         font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         font-weight: 900;
@@ -23,8 +26,17 @@
         0% { transform: translateY(-10px); opacity: 0; }
         10% { opacity: 0.6; }
         90% { opacity: 0.6; }
-        100% { transform: translateY(270px); opacity: 0; }
+        100% { transform: translateY(330px); opacity: 0; }
       }
+      
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      .cursor {
+        animation: blink 1s infinite;
+      }
+
       
       @keyframes pulseGrid {
         0%, 100% { opacity: 0.08; }
@@ -34,6 +46,79 @@
       .grid-interactive {
         animation: pulseGrid 4s ease-in-out infinite;
       }
+
+      /* Light Mode overrides */
+      @media (prefers-color-scheme: light) {
+        svg {
+          background: #ffffff;
+        }
+        .bg-rect-class {
+          fill: url(#bg-gradient-light) !important;
+        }
+        .outer-border {
+          stroke: #d0d7de !important;
+          stroke-opacity: 0.8 !important;
+        }
+        .hud-corner-1 {
+          stroke: #0969da !important;
+        }
+        .hud-corner-2 {
+          stroke: #bc4c00 !important;
+        }
+        .name-glow {
+          fill: #1f2328 !important;
+        }
+        .name-glow-stroke {
+          stroke: #0969da !important;
+          stroke-opacity: 0.2 !important;
+        }
+        .sys-stat-text {
+          fill: #57606a !important;
+        }
+        .online-badge-bg {
+          fill: #dafbe1 !important;
+          stroke: #2da44e !important;
+        }
+        .online-badge-text {
+          fill: #1a7f37 !important;
+        }
+        .tech-badge-backend rect {
+          fill: #ddf4ff !important;
+          stroke: #0969da !important;
+        }
+        .tech-badge-backend text {
+          fill: #0969da !important;
+        }
+        .tech-badge-architect rect {
+          fill: #fbe8ff !important;
+          stroke: #8250df !important;
+        }
+        .tech-badge-architect text {
+          fill: #8250df !important;
+        }
+        .tech-badge-cloud rect {
+          fill: #ffe3ec !important;
+          stroke: #bf3989 !important;
+        }
+        .tech-badge-cloud text {
+          fill: #bf3989 !important;
+        }
+        .term-prompt {
+          fill: #1a7f37 !important;
+        }
+        .term-cmd {
+          fill: #1f2328 !important;
+        }
+        .term-output {
+          fill: #57606a !important;
+        }
+        .decor-glow {
+          stroke: #0969da !important;
+        }
+        .decor-glow-pink {
+          stroke: #bc4c00 !important;
+        }
+      }
     </style>
 
     <!-- Gradients -->
@@ -41,6 +126,12 @@
       <stop offset="0%" stop-color="#04060a" />
       <stop offset="50%" stop-color="#080c16" />
       <stop offset="100%" stop-color="#030407" />
+    </linearGradient>
+
+    <linearGradient id="bg-gradient-light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6f8fa" />
+      <stop offset="50%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f0f3f6" />
     </linearGradient>
     
     <linearGradient id="cyan-purple-grad" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -61,41 +152,39 @@
   </defs>
 
   <!-- Background Base -->
-  <rect width="800" height="260" rx="16" fill="url(#bg-gradient)" />
-  <rect width="800" height="260" rx="16" fill="url(#grid-pattern)" class="grid-interactive" />
+  <rect width="800" height="320" rx="16" fill="url(#bg-gradient)" class="bg-rect-class" />
+  <rect width="800" height="320" rx="16" fill="url(#grid-pattern)" class="grid-interactive" />
 
   <!-- Laser Scanline -->
   <rect width="800" height="6" fill="url(#scan-grad)" class="scan-line" />
 
   <!-- Outer Cybernetic Border -->
-  <rect x="3" y="3" width="794" height="254" rx="13" fill="none" stroke="url(#cyan-purple-grad)" stroke-width="1.2" stroke-opacity="0.15" />
+  <rect x="3" y="3" width="794" height="314" rx="13" fill="none" stroke="url(#cyan-purple-grad)" stroke-width="1.2" stroke-opacity="0.15" class="outer-border" />
   
-  <!-- HUD Corners (Vector Glow: Layered strokes instead of heavy blur filters) -->
-  <!-- Bottom Layer: Glowing quavs (low opacity, thick stroke) -->
-  <path d="M 30 3 L 3 3 L 3 30" fill="none" stroke="#00f0ff" stroke-width="6" stroke-opacity="0.3" stroke-linecap="round" />
-  <path d="M 770 3 L 797 3 L 797 30" fill="none" stroke="#ff007b" stroke-width="6" stroke-opacity="0.3" stroke-linecap="round" />
-  <path d="M 3 230 L 3 257 L 30 257" fill="none" stroke="#00f0ff" stroke-width="6" stroke-opacity="0.3" stroke-linecap="round" />
-  <path d="M 797 230 L 797 257 L 770 257" fill="none" stroke="#ff007b" stroke-width="6" stroke-opacity="0.3" stroke-linecap="round" />
+  <!-- HUD Corners -->
+  <path d="M 30 3 L 3 3 L 3 30" fill="none" stroke="#00f0ff" stroke-width="6" stroke-opacity="0.3" stroke-linecap="round" class="hud-corner-1" />
+  <path d="M 770 3 L 797 3 L 797 30" fill="none" stroke="#ff007b" stroke-width="6" stroke-opacity="0.3" stroke-linecap="round" class="hud-corner-2" />
+  <path d="M 3 290 L 3 317 L 30 317" fill="none" stroke="#00f0ff" stroke-width="6" stroke-opacity="0.3" stroke-linecap="round" class="hud-corner-1" />
+  <path d="M 797 290 L 797 317 L 770 317" fill="none" stroke="#ff007b" stroke-width="6" stroke-opacity="0.3" stroke-linecap="round" class="hud-corner-2" />
   
-  <!-- Top Layer: Sharp Core lines -->
-  <path d="M 30 3 L 3 3 L 3 30" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" />
-  <path d="M 770 3 L 797 3 L 797 30" fill="none" stroke="#ff007b" stroke-width="2" stroke-linecap="round" />
-  <path d="M 3 230 L 3 257 L 30 257" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" />
-  <path d="M 797 230 L 797 257 L 770 257" fill="none" stroke="#ff007b" stroke-width="2" stroke-linecap="round" />
+  <path d="M 30 3 L 3 3 L 3 30" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" class="hud-corner-1" />
+  <path d="M 770 3 L 797 3 L 797 30" fill="none" stroke="#ff007b" stroke-width="2" stroke-linecap="round" class="hud-corner-2" />
+  <path d="M 3 290 L 3 317 L 30 317" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" class="hud-corner-1" />
+  <path d="M 797 290 L 797 317 L 770 317" fill="none" stroke="#ff007b" stroke-width="2" stroke-linecap="round" class="hud-corner-2" />
 
   <!-- Target Decors -->
   <g opacity="0.12">
-    <circle cx="85" cy="130" r="65" fill="none" stroke="#00f0ff" stroke-width="1" stroke-dasharray="4 6" />
-    <circle cx="85" cy="130" r="35" fill="none" stroke="#00f0ff" stroke-width="1" />
-    <path d="M 85 50 L 85 210 M 5 130 L 165 130" stroke="#00f0ff" stroke-width="0.5" />
+    <circle cx="85" cy="130" r="65" fill="none" stroke="#00f0ff" stroke-width="1" stroke-dasharray="4 6" class="decor-glow" />
+    <circle cx="85" cy="130" r="35" fill="none" stroke="#00f0ff" stroke-width="1" class="decor-glow" />
+    <path d="M 85 50 L 85 210 M 5 130 L 165 130" stroke="#00f0ff" stroke-width="0.5" class="decor-glow" />
     
-    <rect x="670" y="80" width="80" height="80" fill="none" stroke="#ff007b" stroke-width="1" stroke-dasharray="2 4" />
-    <path d="M 670 120 L 750 120" stroke="#ff007b" stroke-width="0.8" />
-    <circle cx="710" cy="120" r="25" fill="none" stroke="#ff007b" stroke-width="1" />
+    <rect x="670" y="80" width="80" height="80" fill="none" stroke="#ff007b" stroke-width="1" stroke-dasharray="2 4" class="decor-glow-pink" />
+    <path d="M 670 120 L 750 120" stroke="#ff007b" stroke-width="0.8" class="decor-glow-pink" />
+    <circle cx="710" cy="120" r="25" fill="none" stroke="#ff007b" stroke-width="1" class="decor-glow-pink" />
   </g>
 
   <!-- Technical Details & Live System Stats -->
-  <g font-family="Courier New, monospace" font-size="10" fill="#4b6584" opacity="0.75">
+  <g font-family="Courier New, monospace" font-size="10" fill="#4b6584" opacity="0.75" class="sys-stat-text">
     <text x="25" y="30">[ PORT_ACTIVE: 8080 ]</text>
     <text x="25" y="46">LATENCY: &lt; 5ms</text>
     <text x="775" y="30" text-anchor="end">LOC_HOST: localhost</text>
@@ -103,30 +192,30 @@
   </g>
 
   <!-- Flowing animated path lines in BG -->
-  <path d="M 120 130 L 220 130 L 245 105 L 310 105" fill="none" stroke="#00f0ff" stroke-width="1.5" stroke-dasharray="5 5" stroke-opacity="0.4">
+  <path d="M 120 130 L 220 130 L 245 105 L 310 105" fill="none" stroke="#00f0ff" stroke-width="1.5" stroke-dasharray="5 5" stroke-opacity="0.4" class="decor-glow">
     <animate attributeName="stroke-dashoffset" values="40;0" dur="3s" repeatCount="indefinite" />
   </path>
-  <path d="M 680 130 L 580 130 L 555 155 L 490 155" fill="none" stroke="#ff007b" stroke-width="1.5" stroke-dasharray="5 5" stroke-opacity="0.4">
+  <path d="M 680 130 L 580 130 L 555 155 L 490 155" fill="none" stroke="#ff007b" stroke-width="1.5" stroke-dasharray="5 5" stroke-opacity="0.4" class="decor-glow-pink">
     <animate attributeName="stroke-dashoffset" values="-40;0" dur="3s" repeatCount="indefinite" />
   </path>
 
-  <!-- Glowing Nodes (Using layered radii instead of filters) -->
-  <circle cx="310" cy="105" r="7" fill="#00f0ff" fill-opacity="0.3" />
+  <!-- Glowing Nodes -->
+  <circle cx="310" cy="105" r="7" fill="#00f0ff" fill-opacity="0.3" class="decor-glow" />
   <circle cx="310" cy="105" r="3.5" fill="#ffffff" />
   
-  <circle cx="490" cy="155" r="7" fill="#ff007b" fill-opacity="0.3" />
+  <circle cx="490" cy="155" r="7" fill="#ff007b" fill-opacity="0.3" class="decor-glow-pink" />
   <circle cx="490" cy="155" r="3.5" fill="#ffffff" />
 
   <!-- Center Group -->
   <g transform="translate(325, 42)">
-    <rect width="150" height="24" rx="12" fill="#090d16" stroke="url(#cyan-purple-grad)" stroke-width="1.2" />
+    <rect width="150" height="24" rx="12" fill="#090d16" stroke="url(#cyan-purple-grad)" stroke-width="1.2" class="online-badge-bg" />
     <circle cx="16" cy="12" r="6" fill="#00ffaa" fill-opacity="0.3" />
     <circle cx="16" cy="12" r="3" fill="#00ffaa" />
-    <text x="28" y="16" fill="#00ffaa" font-family="Courier New, monospace" font-size="9" font-weight="700" letter-spacing="1">SERVICE_ONLINE</text>
+    <text x="28" y="16" fill="#00ffaa" font-family="Courier New, monospace" font-size="9" font-weight="700" letter-spacing="1" class="online-badge-text">SERVICE_ONLINE</text>
   </g>
 
-  <!-- Main Full Name Header (Vector Glow: Duplicate stroke layered beneath fill) -->
-  <text x="400" y="122" text-anchor="middle" font-size="42" class="name-glow" stroke="#00f0ff" stroke-width="6" stroke-opacity="0.3" fill="none">LE TUAN LOC</text>
+  <!-- Main Full Name Header -->
+  <text x="400" y="122" text-anchor="middle" font-size="42" class="name-glow name-glow-stroke" stroke="#00f0ff" stroke-width="6" stroke-opacity="0.3" fill="none">LE TUAN LOC</text>
   <text x="400" y="122" text-anchor="middle" font-size="42" class="name-glow">LE TUAN LOC</text>
   
   <!-- Technology Divider Bar -->
@@ -134,24 +223,35 @@
   
   <!-- Interactive Tech Badges -->
   <g transform="translate(200, 158)">
-    <g transform="translate(0, 0)" class="tech-badge">
+    <g transform="translate(0, 0)" class="tech-badge tech-badge-backend">
       <rect width="112" height="22" rx="6" fill="#0d1b2a" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.5" />
       <text x="56" y="14" fill="#00f0ff" font-family="Courier New, monospace" font-size="9" font-weight="bold" text-anchor="middle">⚡ BACKEND_DEV</text>
     </g>
-    <g transform="translate(122, 0)" class="tech-badge">
+    <g transform="translate(122, 0)" class="tech-badge tech-badge-architect">
       <rect width="112" height="22" rx="6" fill="#1b122c" stroke="#7000ff" stroke-width="1" stroke-opacity="0.5" />
       <text x="56" y="14" fill="#a270ff" font-family="Courier New, monospace" font-size="9" font-weight="bold" text-anchor="middle">⚙️ ARCHITECT</text>
     </g>
-    <g transform="translate(244, 0)" class="tech-badge">
+    <g transform="translate(244, 0)" class="tech-badge tech-badge-cloud">
       <rect width="112" height="22" rx="6" fill="#240f20" stroke="#ff007b" stroke-width="1" stroke-opacity="0.5" />
       <text x="56" y="14" fill="#ff4da6" font-family="Courier New, monospace" font-size="9" font-weight="bold" text-anchor="middle">☁️ CLOUD_ENG</text>
     </g>
   </g>
 
   <!-- Interactive Terminal Mock Prompt -->
-  <g transform="translate(25, 222)" font-family="Courier New, monospace" font-size="11">
-    <text x="0" y="0" fill="#00ffaa" opacity="0.9">loc@kidcute1412:~$</text>
-    <text x="145" y="0" fill="#ffffff" opacity="0.9">curl -s https://loc.dev/info | jq .specialties</text>
-    <text x="0" y="16" fill="#8f9cae" font-size="9" opacity="0.75">[ "High Availability", "Distributed Systems", "Geospatial Indexing", "Realtime Streams" ]</text>
+  <g transform="translate(25, 205)" font-family="Courier New, monospace" font-size="11">
+    <!-- Row 1 -->
+    <text x="0" y="0" fill="#00ffaa" opacity="0.9" class="term-prompt">loc@kidcute1412:~$</text>
+    <text x="145" y="0" fill="#ffffff" opacity="0.9" class="term-cmd">curl -s https://loc.dev/info | jq .specialties</text>
+    <text x="0" y="14" fill="#8f9cae" font-size="9" opacity="0.75" class="term-output">[ "High Availability", "Distributed Systems", "Geospatial Indexing", "Realtime Streams" ]</text>
+    
+    <!-- Row 2 -->
+    <text x="0" y="32" fill="#00ffaa" opacity="0.9" class="term-prompt">loc@kidcute1412:~$</text>
+    <text x="145" y="32" fill="#ffffff" opacity="0.9" class="term-cmd">neofetch --stdout</text>
+    <text x="0" y="46" fill="#8f9cae" font-size="9" opacity="0.75" class="term-output">OS: Ubuntu 24.04 LTS | Host: KidCute1412-Core | Shell: bash | Uptime: 42 days</text>
+    
+    <!-- Row 3 -->
+    <text x="0" y="64" fill="#00ffaa" opacity="0.9" class="term-prompt">loc@kidcute1412:~$</text>
+    <text x="145" y="64" fill="#ffffff" opacity="0.9" class="term-cmd">systemctl status backend-engine<tspan fill="#00ffaa" class="cursor">█</tspan></text>
+    <text x="0" y="78" fill="#00ffaa" font-weight="bold" opacity="0.9" class="term-output">● backend-engine.service - Active (running) since Mon 2026-07-20</text>
   </g>
 </svg>

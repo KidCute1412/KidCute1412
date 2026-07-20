@@ -1,208 +1,249 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="240" style="background: #07090e; border-radius: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="250" style="border-radius: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
   <defs>
     <style>
-      .title-font {
-        font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-        font-weight: 800;
-        letter-spacing: 0.15em;
+      svg {
+        background: #030509;
       }
-      .mono-font {
+      .mono {
         font-family: 'Fira Code', 'Courier New', Courier, monospace;
       }
       
-      .arch-node {
-        transition: transform 0.25s ease;
-        cursor: pointer;
-      }
-      
+      /* Neon Glow Animations */
+      .glow-cyan { filter: drop-shadow(0 0 6px rgba(0, 240, 255, 0.6)); }
+      .glow-purple { filter: drop-shadow(0 0 6px rgba(112, 0, 255, 0.6)); }
+      .glow-orange { filter: drop-shadow(0 0 6px rgba(255, 102, 0, 0.6)); }
+      .glow-green { filter: drop-shadow(0 0 6px rgba(0, 255, 170, 0.6)); }
+
+      /* Flow Line Dash Array Animations */
       @keyframes dash {
         to {
-          stroke-dashoffset: -40;
+          stroke-dashoffset: -60;
         }
       }
-      
-      .data-stream-1 { stroke-dasharray: 8 6; animation: dash 2.5s linear infinite; }
-      .data-stream-2 { stroke-dasharray: 8 6; animation: dash 2.2s linear infinite; }
-      .data-stream-3 { stroke-dasharray: 8 6; animation: dash 1.8s linear infinite; }
+      .flow-path-1 { stroke-dasharray: 10 15; animation: dash 2s linear infinite; }
+      .flow-path-2 { stroke-dasharray: 8 12; animation: dash 1.6s linear infinite; }
+      .flow-path-3 { stroke-dasharray: 12 10; animation: dash 1.8s linear infinite; }
 
-      @keyframes waveOffset {
-        0% { stroke-dashoffset: 0; }
-        100% { stroke-dashoffset: 30; }
+      /* Pulsing animations */
+      @keyframes pulse {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.95; }
       }
-      .telemetry-wave {
-        stroke-dasharray: 4 2;
-        animation: waveOffset 2s linear infinite;
+      .pulse-fast { animation: pulse 1.5s ease-in-out infinite; }
+      .pulse-slow { animation: pulse 3s ease-in-out infinite; }
+
+      /* Scanning Radar Animation */
+      @keyframes radar {
+        0% { transform: scale(0.6) rotate(0deg); opacity: 0.9; }
+        50% { opacity: 0.4; }
+        100% { transform: scale(1.3) rotate(360deg); opacity: 0; }
+      }
+      .radar-circle {
+        transform-origin: 300px 115px;
+        animation: radar 2.5s cubic-bezier(0.21, 0.85, 0.35, 1) infinite;
+      }
+
+      /* Light Mode overrides */
+      @media (prefers-color-scheme: light) {
+        svg {
+          background: #f6f8fa;
+        }
+        .bg-rect {
+          fill: #ffffff !important;
+        }
+        .hud-border {
+          stroke: #d0d7de !important;
+          stroke-opacity: 0.8 !important;
+        }
+        .text-main {
+          fill: #1f2328 !important;
+        }
+        .text-dim {
+          fill: #57606a !important;
+        }
+        .card-bg {
+          fill: #ffffff !important;
+          stroke: #d0d7de !important;
+        }
+        .flow-path-1, .flow-path-2, .flow-path-3 {
+          stroke-opacity: 0.5 !important;
+        }
+        .glow-cyan { filter: drop-shadow(0 0 3px rgba(9, 105, 218, 0.4)); }
+        .glow-purple { filter: drop-shadow(0 0 3px rgba(130, 80, 223, 0.4)); }
+        .glow-orange { filter: drop-shadow(0 0 3px rgba(188, 76, 0, 0.4)); }
+        .glow-green { filter: drop-shadow(0 0 3px rgba(26, 127, 55, 0.4)); }
       }
     </style>
 
-    <!-- Gradients -->
-    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#040609" />
-      <stop offset="50%" stop-color="#080c16" />
-      <stop offset="100%" stop-color="#030406" />
+    <!-- Background Gradients -->
+    <linearGradient id="cyber-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020306" />
+      <stop offset="50%" stop-color="#070b14" />
+      <stop offset="100%" stop-color="#010204" />
     </linearGradient>
 
-    <linearGradient id="node-bg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0d1220" />
-      <stop offset="100%" stop-color="#060910" />
+    <radialGradient id="center-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Node Card Gradients -->
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0c111e" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#05080f" stop-opacity="0.9" />
     </linearGradient>
 
-    <linearGradient id="flow-cyan-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#00f0ff" stroke-width="0.8" stroke-opacity="0.03" />
+    </pattern>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="800" height="250" fill="url(#cyber-bg)" class="bg-rect" />
+  <rect width="800" height="250" fill="url(#grid)" />
+  <rect width="800" height="250" fill="url(#center-glow)" />
+
+  <!-- Outer HUD Frame -->
+  <rect x="5" y="5" width="790" height="240" rx="12" fill="none" stroke="#00f0ff" stroke-width="1.2" stroke-opacity="0.1" class="hud-border" />
+  
+  <!-- Cyber Corner Elements -->
+  <path d="M 12 5 L 5 5 L 5 12 M 788 5 L 795 5 L 795 12 M 5 238 L 5 245 L 12 245 M 795 238 L 795 245 L 788 245" fill="none" stroke="#00f0ff" stroke-width="2" stroke-opacity="0.4" />
+
+  <!-- Title & Status Header -->
+  <g font-size="10" font-weight="bold" class="mono">
+    <text x="25" y="25" fill="#5c7a9c" letter-spacing="1.5" class="text-dim">SYS_ARCHITECTURE // DATA_PIPELINE</text>
+    <text x="775" y="25" text-anchor="end" fill="#00f0ff" class="glow-cyan pulse-fast">● SYSTEM_ONLINE</text>
+  </g>
+
+  <!-- Cybernetic Grid Decorative Targets -->
+  <g stroke="#00f0ff" stroke-opacity="0.05" stroke-width="1" fill="none">
+    <circle cx="210" cy="130" r="45" />
+    <circle cx="590" cy="130" r="45" />
+    <path d="M 140 130 L 660 130" stroke-dasharray="2 4" />
+  </g>
+
+  <!-- Connection Paths (90 degree bends for sci-fi look) -->
+  <g fill="none" stroke-width="2" stroke-linecap="round">
+    <!-- Client to Gateway -->
+    <path id="path-client-gateway" d="M 145 130 L 235 130" stroke="url(#cyan-to-purple)" class="flow-path-1 glow-cyan" />
+    <linearGradient id="cyan-to-purple" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#00f0ff" />
       <stop offset="100%" stop-color="#7000ff" />
     </linearGradient>
-    
-    <linearGradient id="flow-purple-orange" x1="0%" y1="0%" x2="100%" y2="0%">
+
+    <!-- Gateway to Broker -->
+    <path id="path-gateway-broker" d="M 355 130 L 455 130" stroke="url(#purple-to-orange)" class="flow-path-2 glow-purple" />
+    <linearGradient id="purple-to-orange" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#7000ff" />
       <stop offset="100%" stop-color="#ff6600" />
     </linearGradient>
 
-    <linearGradient id="flow-orange-green" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Broker to Data -->
+    <path id="path-broker-data" d="M 575 130 L 655 130" stroke="url(#orange-to-green)" class="flow-path-3 glow-orange" />
+    <linearGradient id="orange-to-green" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#ff6600" />
       <stop offset="100%" stop-color="#00ffaa" />
     </linearGradient>
-
-    <pattern id="small-grid" width="15" height="15" patternUnits="userSpaceOnUse">
-      <path d="M 15 0 L 0 0 0 15" fill="none" stroke="#00f0ff" stroke-width="0.8" stroke-opacity="0.03" />
-    </pattern>
-  </defs>
-
-  <!-- Background Layer -->
-  <rect width="800" height="240" rx="16" fill="url(#bg-grad)" />
-  <rect width="800" height="240" rx="16" fill="url(#small-grid)" />
-
-  <!-- Outer HUD Frame -->
-  <rect x="4" y="4" width="792" height="232" rx="12" fill="none" stroke="#00f0ff" stroke-width="1.2" stroke-opacity="0.08" />
-  
-  <!-- Panel Title Header -->
-  <g transform="translate(20, 24)">
-    <text x="0" y="8" fill="#5c7a9c" font-size="10" class="mono-font" font-weight="bold" letter-spacing="1">ARCH_TELEMETRY // DATA_FLOW_VISUALIZER</text>
-    <text x="760" y="8" text-anchor="end" fill="#00ffaa" font-size="10" class="mono-font" font-weight="bold">● ACTIVE_DATA_STREAM</text>
   </g>
 
-  <!-- Connector Streams -->
-  <g fill="none">
-    <path id="stream-1" d="M 140 135 L 240 135" stroke="url(#flow-cyan-purple)" stroke-width="2.5" stroke-linecap="round" class="data-stream-1" />
-    <path id="stream-2" d="M 360 135 L 460 135" stroke="url(#flow-purple-orange)" stroke-width="2.5" stroke-linecap="round" class="data-stream-2" />
-    <path id="stream-3" d="M 580 135 L 680 135" stroke="url(#flow-orange-green)" stroke-width="2.5" stroke-linecap="round" class="data-stream-3" />
-  </g>
+  <!-- API Gateway Radar Pulse -->
+  <circle cx="300" cy="115" r="30" fill="none" stroke="#7000ff" stroke-width="1.5" class="radar-circle" />
 
-  <!-- Dynamic Flying Packets (Vector dropshadow) -->
-  <circle r="7.5" fill="#00f0ff" fill-opacity="0.3">
-    <animateMotion dur="2.5s" repeatCount="indefinite">
-      <mpath href="#stream-1" />
-    </animateMotion>
-  </circle>
-  <circle r="4" fill="#ffffff">
-    <animateMotion dur="2.5s" repeatCount="indefinite">
-      <mpath href="#stream-1" />
-    </animateMotion>
-  </circle>
-  
-  <circle r="7.5" fill="#7000ff" fill-opacity="0.3">
-    <animateMotion dur="2.2s" repeatCount="indefinite">
-      <mpath href="#stream-2" />
-    </animateMotion>
-  </circle>
-  <circle r="4" fill="#ffffff">
-    <animateMotion dur="2.2s" repeatCount="indefinite">
-      <mpath href="#stream-2" />
-    </animateMotion>
-  </circle>
-
-  <circle r="7.5" fill="#00ffaa" fill-opacity="0.3">
-    <animateMotion dur="1.8s" repeatCount="indefinite">
-      <mpath href="#stream-3" />
-    </animateMotion>
-  </circle>
-  <circle r="4" fill="#ffffff">
-    <animateMotion dur="1.8s" repeatCount="indefinite">
-      <mpath href="#stream-3" />
-    </animateMotion>
-  </circle>
-
-  <!-- NODE 1: CLIENT -->
-  <g transform="translate(20, 60)" class="arch-node">
-    <!-- Vector glow behind card border -->
-    <rect width="120" height="135" rx="8" fill="none" stroke="#00f0ff" stroke-width="4.5" stroke-opacity="0.2" />
-    <rect width="120" height="135" rx="8" fill="url(#node-bg)" stroke="#00f0ff" stroke-width="1.2" stroke-opacity="0.6" />
-    <rect x="0" y="0" width="120" height="5" rx="2" fill="#00f0ff" />
-    <g transform="translate(15, 18)" stroke="#00f0ff" fill="none" stroke-width="1.2">
-      <rect x="0" y="0" width="30" height="22" rx="2" stroke-opacity="0.9" fill="#0c111e" />
-      <line x1="0" y1="6" x2="30" y2="6" stroke-opacity="0.8" />
-      <circle cx="4" cy="3" r="1" fill="#00f0ff" stroke="none" />
-      <circle cx="8" cy="3" r="1" fill="#00f0ff" stroke="none" />
-      <path d="M 38 4 Q 45 11 52 4" stroke-opacity="0.6" stroke-width="1" />
-      <path d="M 35 11 Q 45 20 55 11" stroke-opacity="0.8" />
-      <path d="M 32 18 Q 45 29 58 18" stroke-opacity="0.4" stroke-width="1" />
+  <!-- NODE 1: CLIENT PORTAL -->
+  <g transform="translate(25, 55)">
+    <rect width="120" height="150" rx="8" fill="url(#card-grad)" stroke="#00f0ff" stroke-width="1.5" stroke-opacity="0.4" class="card-bg glow-cyan" />
+    <rect width="120" height="4" rx="2" fill="#00f0ff" class="glow-cyan" />
+    
+    <!-- Decorative Tech Graphics -->
+    <g transform="translate(15, 18)" stroke="#00f0ff" stroke-opacity="0.7" fill="none" stroke-width="1.2">
+      <!-- Mini Dashboard Icon -->
+      <rect x="0" y="0" width="30" height="20" rx="2" />
+      <line x1="0" y1="6" x2="30" y2="6" />
+      <!-- Animated Telemetry Lines -->
+      <path d="M 38 12 Q 44 4, 50 12 T 62 12" stroke="#00f0ff" stroke-opacity="0.8" />
     </g>
-    <text x="15" y="62" fill="#ffffff" font-size="11" font-weight="bold">CLIENT PORTAL</text>
-    <text x="15" y="78" fill="#00f0ff" font-size="9" class="mono-font">HTTP / WS</text>
-    <rect x="15" y="90" width="90" height="4" rx="2" fill="#1b2a47" />
-    <rect x="15" y="90" width="70" height="4" rx="2" fill="#00f0ff" />
-    <text x="15" y="112" fill="#5c7a9c" font-size="8" class="mono-font">RTT: 12ms</text>
-    <text x="105" y="112" text-anchor="end" fill="#5c7a9c" font-size="8" class="mono-font">99.9%</text>
+    
+    <text x="15" y="65" fill="#ffffff" font-size="11" font-weight="bold" class="text-main">CLIENT PORTAL</text>
+    <text x="15" y="80" fill="#00f0ff" font-size="9" class="mono glow-cyan">WS / HTTP 1.1</text>
+    
+    <!-- Mini load bar -->
+    <rect x="15" y="95" width="90" height="4" rx="2" fill="#1b2a47" />
+    <rect x="15" y="95" width="75" height="4" rx="2" fill="#00f0ff" class="glow-cyan pulse-fast" />
+    
+    <text x="15" y="118" fill="#5c7a9c" font-size="8" class="mono text-dim">RTT: 12ms</text>
+    <text x="15" y="132" fill="#5c7a9c" font-size="8" class="mono text-dim">ACTIVE_SESS: 8.4k</text>
   </g>
 
-  <!-- NODE 2: GATEWAY -->
-  <g transform="translate(240, 60)" class="arch-node">
-    <rect width="120" height="135" rx="8" fill="none" stroke="#7000ff" stroke-width="4.5" stroke-opacity="0.2" />
-    <rect width="120" height="135" rx="8" fill="url(#node-bg)" stroke="#7000ff" stroke-width="1.2" stroke-opacity="0.6" />
-    <rect x="0" y="0" width="120" height="5" rx="2" fill="#7000ff" />
-    <g transform="translate(15, 18)" stroke="#7000ff" fill="none" stroke-width="1.2">
-      <rect x="0" y="0" width="32" height="22" rx="2" fill="#0c111e" />
-      <line x1="4" y1="6" x2="28" y2="6" stroke-opacity="0.5" />
-      <line x1="4" y1="12" x2="28" y2="12" stroke-opacity="0.5" />
-      <circle cx="7" cy="18" r="1.5" fill="#7000ff" stroke="none" />
-      <circle cx="13" cy="18" r="1.5" fill="#7000ff" stroke="none" />
-      <path d="M 38 12 Q 44 2, 50 12 T 62 12" stroke="#7000ff" stroke-width="1.2" class="telemetry-wave" />
+  <!-- NODE 2: API GATEWAY (PROXY/ROUTER) -->
+  <g transform="translate(235, 55)">
+    <rect width="120" height="150" rx="8" fill="url(#card-grad)" stroke="#7000ff" stroke-width="1.5" stroke-opacity="0.4" class="card-bg glow-purple" />
+    <rect width="120" height="4" rx="2" fill="#7000ff" class="glow-purple" />
+    
+    <!-- Decorative Tech Graphics -->
+    <g transform="translate(15, 18)" stroke="#7000ff" stroke-opacity="0.7" fill="none" stroke-width="1.2">
+      <!-- Shield / Gateway Icon -->
+      <polygon points="15,0 30,8 30,22 15,30 0,22 0,8" />
+      <line x1="15" y1="0" x2="15" y2="30" stroke-dasharray="2 2" />
     </g>
-    <text x="15" y="62" fill="#ffffff" font-size="11" font-weight="bold">API GATEWAY</text>
-    <text x="15" y="78" fill="#a270ff" font-size="9" class="mono-font">SPRING &amp; NODE</text>
-    <rect x="15" y="90" width="90" height="4" rx="2" fill="#201533" />
-    <rect x="15" y="90" width="40" height="4" rx="2" fill="#a270ff" />
-    <text x="15" y="112" fill="#7d8ea6" font-size="8" class="mono-font">REQ: 2.4k/s</text>
-    <text x="105" y="112" text-anchor="end" fill="#7d8ea6" font-size="8" class="mono-font">CPU: 24%</text>
+    
+    <text x="15" y="65" fill="#ffffff" font-size="11" font-weight="bold" class="text-main">API GATEWAY</text>
+    <text x="15" y="80" fill="#a270ff" font-size="9" class="mono glow-purple">EXPRESS / SOCKETS</text>
+    
+    <!-- Mini load bar -->
+    <rect x="15" y="95" width="90" height="4" rx="2" fill="#24143a" />
+    <rect x="15" y="95" width="50" height="4" rx="2" fill="#a270ff" class="glow-purple" />
+    
+    <text x="15" y="118" fill="#7d8ea6" font-size="8" class="mono text-dim">RATE_LIMIT: ACTIVE</text>
+    <text x="15" y="132" fill="#7d8ea6" font-size="8" class="mono text-dim">REQ_SEC: 2.1k/s</text>
   </g>
 
-  <!-- NODE 3: BROKER -->
-  <g transform="translate(460, 60)" class="arch-node">
-    <rect width="120" height="135" rx="8" fill="none" stroke="#ff6600" stroke-width="4.5" stroke-opacity="0.2" />
-    <rect width="120" height="135" rx="8" fill="url(#node-bg)" stroke="#ff6600" stroke-width="1.2" stroke-opacity="0.6" />
-    <rect x="0" y="0" width="120" height="5" rx="2" fill="#ff6600" />
-    <g transform="translate(15, 18)" stroke="#ff6600" fill="none" stroke-width="1.2">
-      <circle cx="10" cy="11" r="4" />
-      <circle cx="46" cy="5" r="4" />
-      <circle cx="46" cy="17" r="4" />
-      <line x1="14" y1="11" x2="42" y2="5" stroke-opacity="0.7" />
-      <line x1="14" y1="11" x2="42" y2="17" stroke-opacity="0.7" />
+  <!-- NODE 3: MESSAGE BUS -->
+  <g transform="translate(455, 55)">
+    <rect width="120" height="150" rx="8" fill="url(#card-grad)" stroke="#ff6600" stroke-width="1.5" stroke-opacity="0.4" class="card-bg glow-orange" />
+    <rect width="120" height="4" rx="2" fill="#ff6600" class="glow-orange" />
+    
+    <!-- Decorative Tech Graphics -->
+    <g transform="translate(15, 18)" stroke="#ff6600" stroke-opacity="0.7" fill="none" stroke-width="1.2">
+      <!-- Messaging Queues Circles -->
+      <circle cx="6" cy="15" r="5" />
+      <circle cx="24" cy="15" r="5" />
+      <line x1="11" y1="15" x2="19" y2="15" stroke-dasharray="2 1" />
+      <circle cx="48" cy="15" r="3" fill="#ff6600" stroke="none" class="pulse-fast" />
     </g>
-    <text x="15" y="62" fill="#ffffff" font-size="11" font-weight="bold">MESSAGE BUS</text>
-    <text x="15" y="78" fill="#ff8c42" font-size="9" class="mono-font">RABBITMQ / KF</text>
-    <rect x="15" y="90" width="90" height="4" rx="2" fill="#361a0f" />
-    <rect x="15" y="90" width="55" height="4" rx="2" fill="#ff6600" />
-    <text x="15" y="112" fill="#8f9cae" font-size="8" class="mono-font">ACK: 100%</text>
-    <text x="105" y="112" text-anchor="end" fill="#8f9cae" font-size="8" class="mono-font">Q: 0 msgs</text>
+    
+    <text x="15" y="65" fill="#ffffff" font-size="11" font-weight="bold" class="text-main">MESSAGE BUS</text>
+    <text x="15" y="80" fill="#ff8c42" font-size="9" class="mono glow-orange">RABBITMQ / KAFKA</text>
+    
+    <!-- Mini load bar -->
+    <rect x="15" y="95" width="90" height="4" rx="2" fill="#3a1c0d" />
+    <rect x="15" y="95" width="65" height="4" rx="2" fill="#ff6600" class="glow-orange" />
+    
+    <text x="15" y="118" fill="#8f9cae" font-size="8" class="mono text-dim">Q_HEALTH: 100%</text>
+    <text x="15" y="132" fill="#8f9cae" font-size="8" class="mono text-dim">ACK_RATE: 99.8%</text>
   </g>
 
   <!-- NODE 4: DATA STORES -->
-  <g transform="translate(680, 60)" class="arch-node">
-    <rect width="120" height="135" rx="8" fill="none" stroke="#00ffaa" stroke-width="4.5" stroke-opacity="0.2" />
-    <rect width="120" height="135" rx="8" fill="url(#node-bg)" stroke="#00ffaa" stroke-width="1.2" stroke-opacity="0.6" />
-    <rect x="0" y="0" width="120" height="5" rx="2" fill="#00ffaa" />
-    <g transform="translate(15, 18)" stroke="#00ffaa" fill="none" stroke-width="1.2">
-      <path d="M 0 5 C 0 2, 22 2, 22 5 L 22 17 C 22 20, 0 20, 0 17 Z" stroke-opacity="0.8" />
-      <path d="M 0 9 C 3 11, 19 11, 22 9" stroke-opacity="0.8" />
-      <path d="M 0 13 C 3 15, 19 15, 22 13" stroke-opacity="0.8" />
-      <rect x="34" y="2" width="22" height="16" rx="2" stroke-opacity="0.7" />
-      <line x1="38" y1="7" x2="52" y2="7" stroke-width="1" />
-      <line x1="38" y1="12" x2="48" y2="12" stroke-width="1" />
+  <g transform="translate(655, 55)">
+    <rect width="120" height="150" rx="8" fill="url(#card-grad)" stroke="#00ffaa" stroke-width="1.5" stroke-opacity="0.4" class="card-bg glow-green" />
+    <rect width="120" height="4" rx="2" fill="#00ffaa" class="glow-green" />
+    
+    <!-- Decorative Tech Graphics -->
+    <g transform="translate(15, 18)" stroke="#00ffaa" stroke-opacity="0.7" fill="none" stroke-width="1.2">
+      <!-- Database Cylinders -->
+      <path d="M 5 5 C 5 2, 25 2, 25 5 L 25 20 C 25 23, 5 23, 5 20 Z" />
+      <path d="M 5 10 C 8 12, 22 12, 25 10" />
+      <path d="M 5 15 C 8 17, 22 17, 25 15" />
     </g>
-    <text x="15" y="62" fill="#ffffff" font-size="11" font-weight="bold">DATA LAYER</text>
-    <text x="15" y="78" fill="#00ffaa" font-size="9" class="mono-font">PGSQL &amp; REDIS</text>
-    <rect x="15" y="90" width="90" height="4" rx="2" fill="#0f3327" />
-    <rect x="15" y="90" width="75" height="4" rx="2" fill="#00ffaa" />
-    <text x="15" y="112" fill="#8f9cae" font-size="8" class="mono-font">LOCK: REDLOCK</text>
-    <text x="105" y="112" text-anchor="end" fill="#8f9cae" font-size="8" class="mono-font">HIT: 94%</text>
+    
+    <text x="15" y="65" fill="#ffffff" font-size="11" font-weight="bold" class="text-main">DATA STORAGE</text>
+    <text x="15" y="80" fill="#00ffaa" font-size="9" class="mono glow-green">POSTGRES / REDIS</text>
+    
+    <!-- Mini load bar -->
+    <rect x="15" y="95" width="90" height="4" rx="2" fill="#093627" />
+    <rect x="15" y="95" width="80" height="4" rx="2" fill="#00ffaa" class="glow-green pulse-slow" />
+    
+    <text x="15" y="118" fill="#8f9cae" font-size="8" class="mono text-dim">LOCK: REDIS_REDLOCK</text>
+    <text x="15" y="132" fill="#8f9cae" font-size="8" class="mono text-dim">CACHE_HIT: 94.2%</text>
   </g>
 </svg>

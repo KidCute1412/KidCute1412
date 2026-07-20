@@ -8,12 +8,31 @@
   </a>
 </p>
 
-<p align="center">
-  <img src="./terminal.svg" width="100%" alt="System Architecture Diagram" />
-</p>
+## ABOUT ME
+
+* **Computer Science Student** at **VNUHCM University of Science** (Class 23CLC03).
+* **Backend Engineer** focusing on building distributed systems, asynchronous processing, database optimization, and real-time systems.
+* **System Design & IoT Enthusiast** passionate about exploring system architectures, handling race conditions, and developing embedded/IoT systems.
+
+---
+
+## FEATURED PROJECTS AND SYSTEMS SHOWCASE
+
+| Project | Technologies | Architecture & Highlights |
+| :--- | :--- | :--- |
+| [**miracle-auction-platform**](https://github.com/KidCute1412/miracle-auction-platform) | `TypeScript` `Express` `Socket.io` `Prisma` | **Online Auction Platform:** Handles low-latency real-time auction flows, resolves concurrent bidding race conditions, and synchronizes Socket.io connections. |
+| [**AidBridge**](https://github.com/phatnguyen975/AidBridge) | `Java` `Spring Boot` `AI` | **Disaster Response System:** A real-time system leveraging AI to categorize emergency levels and bridge the gap between victims, sponsors, and volunteers for efficient disaster response. |
+| [**UniHub**](https://github.com/Luke23127006/UniHub) | `JavaScript` `System Design` | **UniHub System Design:** A system design project optimized to handle disputes, mutant load traffic spikes, and offline check-in mechanisms. |
+| [**VietnameseHackAIthon2026-SocialMedia**](https://github.com/KidCute1412/VietnameseHackAIthon2026-SocialMedia) | `Python` `AI Orchestration` | **AI Social Media Backend:** Processed and integrated AI data streams for a social network during the Vietnamese HackAIthon 2026. |
+| [**Mario-Reflourished**](https://github.com/Luke23127006/Mario-Reflourished) | `C++` `SFML` | **Mario Game Refactoring:** A C++ game development project focusing on clean code architecture and graphics rendering optimization. |
+
+
+---
+
+## SYSTEM ARCHITECTURE DIAGRAM AND TELEMETRY
 
 <p align="center">
-  <img src="./skills_telemetry.svg" width="100%" alt="System Core Skills Telemetry" />
+  <img src="./terminal.svg" width="100%" alt="System Architecture Diagram" />
 </p>
 
 ---
@@ -51,7 +70,6 @@ A checklist of core backend paradigms and architectural patterns I implement to 
 
 ### Low-Latency Geospatial Indexing
 * ✦ **Spatial Computing:** Indexed coordinates using **Uber H3 Spatial Hexagons** and **PostGIS** for sub-millisecond proximity queries.
-
 
 ---
 
@@ -109,6 +127,19 @@ Comfortable working across these languages, frameworks, databases, and infrastru
 
 ---
 
+## GITHUB TELEMETRY
+
+<p align="center">
+  <a href="https://github.com/KidCute1412">
+    <img src="https://github-readme-stats.shion.dev/api?username=KidCute1412&show_icons=true&theme=tokyonight&bg_color=06080c&title_color=00F0FF&icon_color=00F0FF&text_color=ffffff&border_color=ff007b&count_private=true" height="160" alt="GitHub Stats" />
+  </a>
+  <a href="https://github.com/KidCute1412">
+    <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=KidCute1412&layout=compact&theme=tokyonight&bg_color=06080c&title_color=00F0FF&text_color=ffffff&border_color=ff007b&langs_count=6" height="160" alt="Top Languages" />
+  </a>
+</p>
+
+---
+
 ## CONNECTIVITY BOARD
 
 Let's discuss system design, backend architectures, or high-performance APIs!
@@ -117,7 +148,21 @@ Let's discuss system design, backend architectures, or high-performance APIs!
   <img src="./connectivity_hub.svg" width="100%" alt="Connectivity Hub Ports" />
 </p>
 
----
-<p align="center" style="font-size: 11px; color: #4b5563;">
-  System Status: Active | Built with ❤️ and high-performance backend pipelines
+<p align="center">
+  <a href="mailto:letuanloc1412@gmail.com">
+    <img src="https://img.shields.io/badge/Email-00F0FF?style=for-the-badge&logo=gmail&logoColor=black" alt="Email" />
+  </a>
+  <a href="https://www.linkedin.com/in/loc-le-tuan/">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="https://www.facebook.com/le.tuan.loc.39104/">
+    <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook" />
+  </a>
 </p>
+
+---
+
+<p align="center" style="font-size: 11px; color: #4b5563;">
+  System Status: Active | Built with passion and high-performance backend pipelines
+</p>
+
