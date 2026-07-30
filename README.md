@@ -166,7 +166,7 @@ Comfortable working across these languages, frameworks, databases, and infrastru
 ## CONTRIBUTION ACTIVITY SNAKE
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/KidCute1412/KidCute1412/snake-output/github-contribution-grid-snake-dark.svg" width="100%" alt="GitHub Contribution Snake" />
+  <img src="./assets/github-contribution-grid-snake-dark.svg" width="100%" alt="GitHub Contribution Snake" />
 </p>
 
 ---
