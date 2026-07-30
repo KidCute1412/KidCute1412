@@ -21,6 +21,22 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         with:
           USERNAME: ${{ github.repository_owner }}
-          # You can specify the theme here. Options include:
-          # github, github_dark, rad, noctis_minimus, tokyonight, solarized_light, etc.
           THEME: tokyonight
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Generate Custom Top Languages Card (All Repos & Years)
+        env:
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        run: |
+          python scripts/generate_top_langs.py
+
+      - name: Commit & Push Updated Telemetry Cards
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add profile-summary-card-output/ top-languages-commits.svg
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(telemetry): update top languages card with external repo commit metrics" && git push)
