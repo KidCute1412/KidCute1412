@@ -131,10 +131,10 @@ Comfortable working across these languages, frameworks, databases, and infrastru
 
 <p align="center">
   <a href="https://github.com/KidCute1412">
-    <img src="https://github-readme-stats.shion.dev/api?username=KidCute1412&show_icons=true&theme=tokyonight&bg_color=06080c&title_color=00F0FF&icon_color=00F0FF&text_color=ffffff&border_color=ff007b&count_private=true" height="165" alt="GitHub Stats" />
+    <img src="https://github-readme-stats.shion.dev/api?username=KidCute1412&show_icons=true&theme=tokyonight&bg_color=06080c&title_color=00F0FF&icon_color=00F0FF&text_color=ffffff&border_color=ff007b&count_private=true" height="190" alt="GitHub Stats" />
   </a>
   <a href="https://github.com/KidCute1412">
-    <img src="./profile-summary-card-output/tokyonight/2-most-commit-language.svg" height="165" alt="Top Languages by Commit" />
+    <img src="./profile-summary-card-output/tokyonight/2-most-commit-language.svg" height="190" alt="Top Languages by Commit" />
   </a>
 </p>
 
