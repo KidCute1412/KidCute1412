@@ -154,16 +154,10 @@ Comfortable working across these languages, frameworks, databases, and infrastru
 
 <p align="center">
   <a href="https://github.com/KidCute1412">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=KidCute1412&theme=tokyonight&background=06080c&border=ff007b&stroke=00F0FF&ring=00F0FF&fire=ff007b&currStreakNum=00F0FF&sideNums=ffffff" height="195" alt="GitHub Streak Stats" />
+    <img src="./github-streak-stats.svg" height="195" alt="GitHub Streak Stats" />
   </a>
   <a href="https://github.com/KidCute1412">
     <img src="./profile-summary-card-output/tokyonight/4-productive-time.svg" height="195" alt="Productive Time Telemetry" />
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/KidCute1412">
-    <img src="./profile-summary-card-output/tokyonight/1-repos-per-language.svg" height="195" alt="Repos Per Language" />
   </a>
 </p>
 
