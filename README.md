@@ -8,6 +8,10 @@
   </a>
 </p>
 
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=KidCute1412&color=00F0FF&style=for-the-badge&label=PROFILE+VIEWS" alt="Profile Views" />
+</p>
+
 ## ABOUT ME
 
 * **Computer Science Student** at **VNUHCM University of Science** (Class 23CLC03).
@@ -127,15 +131,48 @@ Comfortable working across these languages, frameworks, databases, and infrastru
 
 ---
 
-## GITHUB TELEMETRY
+## GITHUB ACHIEVEMENTS & TROPHIES
 
 <p align="center">
   <a href="https://github.com/KidCute1412">
-    <img src="https://github-readme-stats.shion.dev/api?username=KidCute1412&show_icons=true&theme=tokyonight&bg_color=06080c&title_color=00F0FF&icon_color=00F0FF&text_color=ffffff&border_color=ff007b&count_private=true" height="190" alt="GitHub Stats" />
+    <img src="https://github-profile-trophy.vercel.app/?username=KidCute1412&theme=tokyonight&margin-w=10&margin-h=10&no-bg=true&no-frame=false&column=6" width="100%" alt="GitHub Trophies" />
+  </a>
+</p>
+
+---
+
+## GITHUB TELEMETRY & SYSTEM ANALYTICS
+
+<p align="center">
+  <a href="https://github.com/KidCute1412">
+    <img src="https://github-readme-stats.shion.dev/api?username=KidCute1412&show_icons=true&theme=tokyonight&bg_color=06080c&title_color=00F0FF&icon_color=00F0FF&text_color=ffffff&border_color=ff007b&count_private=true" height="195" alt="GitHub Stats" />
   </a>
   <a href="https://github.com/KidCute1412">
-    <img src="./profile-summary-card-output/tokyonight/2-most-commit-language.svg" height="190" alt="Top Languages by Commit" />
+    <img src="./profile-summary-card-output/tokyonight/2-most-commit-language.svg" height="195" alt="Top Languages by Commit" />
   </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/KidCute1412">
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=KidCute1412&theme=tokyonight&background=06080c&border=ff007b&stroke=00F0FF&ring=00F0FF&fire=ff007b&currStreakNum=00F0FF&sideNums=ffffff" height="195" alt="GitHub Streak Stats" />
+  </a>
+  <a href="https://github.com/KidCute1412">
+    <img src="./profile-summary-card-output/tokyonight/4-productive-time.svg" height="195" alt="Productive Time Telemetry" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/KidCute1412">
+    <img src="./profile-summary-card-output/tokyonight/1-repos-per-language.svg" height="195" alt="Repos Per Language" />
+  </a>
+</p>
+
+---
+
+## CONTRIBUTION ACTIVITY SNAKE
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/KidCute1412/KidCute1412/snake-output/github-contribution-grid-snake-dark.svg" width="100%" alt="GitHub Contribution Snake" />
 </p>
 
 ---
