@@ -131,16 +131,6 @@ Comfortable working across these languages, frameworks, databases, and infrastru
 
 ---
 
-## GITHUB ACHIEVEMENTS & TROPHIES
-
-<p align="center">
-  <a href="https://github.com/KidCute1412">
-    <img src="https://github-profile-trophy.vercel.app/?username=KidCute1412&theme=tokyonight&margin-w=10&margin-h=10&no-bg=true&no-frame=false&column=6" width="100%" alt="GitHub Trophies" />
-  </a>
-</p>
-
----
-
 ## GITHUB TELEMETRY & SYSTEM ANALYTICS
 
 <p align="center">
