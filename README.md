@@ -163,14 +163,6 @@ Comfortable working across these languages, frameworks, databases, and infrastru
 
 ---
 
-## CONTRIBUTION ACTIVITY SNAKE
-
-<p align="center">
-  <img src="./assets/github-contribution-grid-snake-dark.svg" width="100%" alt="GitHub Contribution Snake" />
-</p>
-
----
-
 ## CONNECTIVITY BOARD
 
 Let's discuss system design, backend architectures, or high-performance APIs!
