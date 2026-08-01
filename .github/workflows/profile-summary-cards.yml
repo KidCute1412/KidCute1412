@@ -2,8 +2,8 @@ name: GitHub-Profile-Summary-Cards
 
 on:
   schedule:
-    # Runs every 24 hours (at 00:00 UTC)
-    - cron: "0 0 * * *"
+    # Refresh telemetry hourly so contribution and streak data stay current.
+    - cron: "15 * * * *"
   workflow_dispatch:
 
 jobs:
@@ -38,5 +38,5 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add profile-summary-card-output/ top-languages-commits.svg
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(telemetry): update top languages card with external repo commit metrics" && git push)
+          git add profile-summary-card-output/ top-languages-commits.svg github-streak-stats.svg
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(telemetry): refresh GitHub analytics cards" && git push)
