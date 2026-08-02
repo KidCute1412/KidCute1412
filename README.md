@@ -175,6 +175,22 @@ Let's discuss system design, backend architectures, or high-performance APIs!
 
 ---
 
+## 🐍 CONTRIBUTION MATRIX ANIMATION
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/KidCute1412/KidCute1412/output/github-contribution-grid-snake.svg" alt="Snake Animation" />
+</p>
+
+---
+
+## ⚡ DEV QUOTE & MOTTO
+
+<p align="center">
+  <img src="https://readme-daily-quotes.vercel.app/api?theme=tokyonight&authorColor=00F0FF&quoteColor=ffffff" alt="Daily Dev Quote" />
+</p>
+
+---
+
 <!-- System Operational Status Banner -->
 <p align="center">
   <img src="https://img.shields.io/badge/System_Status-Active-00ffaa?style=flat-square&logo=statuspage&logoColor=black" alt="System Status" />
