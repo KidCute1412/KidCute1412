@@ -178,7 +178,7 @@ Let's discuss system design, backend architectures, or high-performance APIs!
 ## 🐍 CONTRIBUTION MATRIX ANIMATION
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/KidCute1412/KidCute1412/output/github-contribution-grid-snake.svg" alt="Snake Animation" />
+  <img src="https://raw.githubusercontent.com/KidCute1412/KidCute1412/output/github-contribution-grid-snake-dark.svg" alt="Snake Contribution Animation" />
 </p>
 
 ---
