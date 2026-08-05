@@ -80,8 +80,8 @@
 <circle cx="26" cy="88" r="4.5" fill="#3178c6" filter="url(#glow)" />
 <text x="40" y="92" class="lang-name">TypeScript</text>
 <text x="440" y="92" text-anchor="end">
-  <tspan class="lang-pct">31.0% </tspan>
-  <tspan class="lang-count">(352 commits)</tspan>
+  <tspan class="lang-pct">31.1% </tspan>
+  <tspan class="lang-count">(353 commits)</tspan>
 </text>
 <rect x="20" y="97" width="420" height="4" rx="2" fill="url(#barTrack)" />
 <rect x="20" y="97" width="130" height="4" rx="2" fill="url(#grad_TypeScript)" />
