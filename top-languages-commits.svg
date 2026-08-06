@@ -81,7 +81,7 @@
 <text x="40" y="92" class="lang-name">TypeScript</text>
 <text x="440" y="92" text-anchor="end">
   <tspan class="lang-pct">31.4% </tspan>
-  <tspan class="lang-count">(362 commits)</tspan>
+  <tspan class="lang-count">(363 commits)</tspan>
 </text>
 <rect x="20" y="97" width="420" height="4" rx="2" fill="url(#barTrack)" />
 <rect x="20" y="97" width="132" height="4" rx="2" fill="url(#grad_TypeScript)" />
@@ -104,8 +104,8 @@
 <circle cx="26" cy="172" r="4.5" fill="#e34c26" filter="url(#glow)" />
 <text x="40" y="176" class="lang-name">HTML</text>
 <text x="440" y="176" text-anchor="end">
-  <tspan class="lang-pct">12.7% </tspan>
-  <tspan class="lang-count">(146 commits)</tspan>
+  <tspan class="lang-pct">12.8% </tspan>
+  <tspan class="lang-count">(148 commits)</tspan>
 </text>
 <rect x="20" y="181" width="420" height="4" rx="2" fill="url(#barTrack)" />
 <rect x="20" y="181" width="53" height="4" rx="2" fill="url(#grad_HTML)" />
