@@ -125,7 +125,7 @@
   <!-- Terminal Mock Prompt -->
   <g transform="translate(25, 205)" font-family="Courier New, monospace" font-size="11">
     <text x="0" y="0" fill="#00ffaa" opacity="0.9" class="term-prompt">loc@kidcute1412:~$</text>
-    <text x="145" y="0" fill="#ffffff" opacity="0.9" class="term-cmd">curl -s https://loc.dev/info | jq .specialties</text>
+    <text x="145" y="0" fill="#ffffff" opacity="0.9" class="term-cmd">curl -s https://lok1412.site/info | jq .specialties</text>
     <text x="0" y="14" fill="#8f9cae" font-size="9" opacity="0.75" class="term-output">[ "High Availability", "Distributed Systems", "Geospatial Indexing", "Realtime Streams" ]</text>
     
     <!-- Row 2 -->
