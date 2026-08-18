@@ -24,7 +24,7 @@
 
 | Project | Technologies | Architecture & Highlights |
 | :--- | :--- | :--- |
-| [**miracle-auction-platform**](https://github.com/KidCute1412/miracle-auction-platform) | `TypeScript` `Express` `Socket.io` `Prisma` | **Online Auction Platform:** Handles low-latency real-time auction flows, resolves concurrent bidding race conditions, and synchronizes Socket.io connections. |
+| [**miracle-auction-platform**](https://github.com/KidCute1412/miracle-auction-platform) | `TypeScript` `Redis Lua` `Kafka` `PostgreSQL` `Socket.io` | **Real-Time Distributed Auction Platform:** Engineered for high-concurrency bidding using atomic Redis Lua decisions (`EVALSHA`), append-only Redis Streams, ordered PostgreSQL projection, transactional outbox relays to Apache Kafka, and post-commit Socket.io broadcasts. |
 | [**AidBridge**](https://github.com/phatnguyen975/AidBridge) | `Java` `Spring Boot` `AI` | **Disaster Response System:** A real-time system leveraging AI to categorize emergency levels and bridge the gap between victims, sponsors, and volunteers for efficient disaster response. |
 | [**UniHub**](https://github.com/Luke23127006/UniHub) | `JavaScript` `System Design` | **UniHub System Design:** A system design project optimized to handle disputes, mutant load traffic spikes, and offline check-in mechanisms. |
 | [**VietnameseHackAIthon2026-SocialMedia**](https://github.com/KidCute1412/VietnameseHackAIthon2026-SocialMedia) | `Python` `AI Orchestration` | **AI Social Media Backend:** Processed and integrated AI data streams for a social network during the Vietnamese HackAIthon 2026. |
@@ -45,35 +45,39 @@
 
 A checklist of core backend paradigms and architectural patterns I implement to build resilient, distributed, and high-performance systems:
 
-### Concurrency & Distributed Locking
-* ✦ **Race Condition Prevention:** Implemented database-level pessimistic locking (`SELECT FOR UPDATE`) to guarantee transactional isolation during state changes.
-* ✦ **Distributed Locks:** Utilized **Redis (Redlock/Redisson)** to orchestrate distributed locking across horizontally-scaled API instances.
+### ✦ In-Memory Atomic Authority & Concurrency Control
+* **Atomic Lua Mutations:** Engineered zero-race-condition hot paths using **Redis Lua Scripts (`EVALSHA`)** to atomically validate bidding windows, anti-sniping dynamic extensions, proxy bid increments, and balance checks in sub-millisecond time.
+* **Synchronous Replica Acknowledgment:** Utilized `WAIT 1` replica acknowledgments to ensure high durability and prevent split-brain data loss before HTTP response resolution.
+* **Pessimistic & Distributed Locking:** Applied database-level `SELECT FOR UPDATE` and **Redis distributed locks (Redlock/Redisson)** for cross-instance coordination and transactional state isolation.
 
-### High-Availability WebSockets & Sync
-* ✦ **Horizontal Scaling:** Scaled WebSocket nodes using **Redis Pub/Sub Adapter** to synchronize connections and broadcast events across multiple instances.
-* ✦ **Resilient Reconnection:** Built connection state recovery to automatically buffer and replay missed events upon reconnection.
+### ✦ Event Streaming & Ordered Durable Projection
+* **Append-Only Stream Ingestion:** Logged mutation events into **Redis Streams** as an ordered durable commit log, decoupling high-throughput ingest from disk I/O.
+* **Idempotent Single Projector:** Designed background workers (`auction-worker`) consuming streams with sequence fencing and per-entity sequence counters to project authoritative state into **PostgreSQL** without duplication or reordering.
 
-### Event-Driven Architecture & Messaging
-* ✦ **At-Least-Once Delivery:** Engineered event streams using **RabbitMQ / Kafka** with manual acknowledgements and publisher confirms.
-* ✦ **Fault Tolerance:** Implemented **Dead Letter Queues (DLQ)** with exponential backoff retries, and **Idempotency checks** (via Redis tokens) to prevent duplicate processing.
+### ✦ Dual-Write Elimination & Messaging (Transactional Outbox)
+* **Transactional Outbox Pattern:** Eliminated dual-write hazards by storing outbound domain events directly inside PostgreSQL transactional boundaries.
+* **Asynchronous Outbox Relay:** Built dedicated polling/leasing relays to stream committed events to **Apache Kafka** with aggregate partition keys for guaranteed partition ordering.
+* **Fault Tolerance & DLQ:** Configured **Dead Letter Queues (DLQ)** with exponential backoff retries and consumer idempotency fences.
 
-### Multi-Processing & Thread Offloading
-* ✦ **CPU-Intensive Task Delegation:** Isolated heavy computations from the main event loop using **Node.js Worker Threads / Child Processes** and **Spring ThreadPoolTaskExecutor**.
+### ✦ Post-Commit Real-Time Synchronization
+* **Speculative-Free WebSocket Broadcast:** Broadcasted live state updates via **Socket.IO (Redis Pub/Sub Adapter)** *strictly after* PostgreSQL transactions commit, preventing dirty/phantom reads on client UIs.
+* **Connection State Recovery:** Implemented heartbeat telemetry, room partitioning, and event buffering for seamless reconnection and state reconciliation.
 
-### Caching Strategies & Rate Limiting
-* ✦ **Cache Patterns:** Applied Cache-Aside pattern using **Redis** with strategic TTLs to minimize database load.
-* ✦ **DDoS & API Protection:** Structured sliding-window rate limiters at the gateway and application level utilizing Redis.
+### ✦ Modular Monolith & Process Isolation
+* **Multi-Process Architecture:** Structured backends with decoupled composition roots (`API Process`, `Projector Worker`, `Outbox Relay`, `Async Worker`) sharing core domain contracts while isolating HTTP ingress latency from background tasks.
+* **Thread & CPU Offloading:** Isolated heavy computations and background workers from the main event loop using **Node.js Worker Threads** and **Spring ThreadPoolTaskExecutor**.
 
-### Asynchronous AI Orchestration
-* ✦ **Non-Blocking LLM Integration:** Offloaded heavy AI generation/inference requests to background workers using message queues.
-* ✦ **Real-time Streaming:** Implemented **Server-Sent Events (SSE)** to stream LLM responses to clients with minimal latency.
+### ✦ API Defense, Security & Caching
+* **Defense-in-Depth Protection:** Structured sliding-window rate limiters via Redis, strict CORS, CSRF token validation, Helmet headers, and RBAC permissions.
+* **End-to-End Traceability:** Injected `X-Request-ID` correlation tokens across the HTTP gateway, database transactions, Kafka events, and structured logs.
+* **Cache-Aside & Strategic Invalidation:** Optimized reads using Redis cache layers with strategic TTLs to minimize database load.
 
-### Integration Testing & Reliability
-* ✦ **Isolated E2E Testing:** Configured **Testcontainers** (Docker-in-Test) to spin up ephemeral Postgres, Redis, and RabbitMQ instances for deterministic integration testing.
-* ✦ **CI/CD Quality Gates:** Maintained high test coverage with automated unit & integration test suites.
+### ✦ Deterministic Testing & Performance Benchmarking
+* **Containerized Integration Testing:** Configured **Testcontainers** (Docker-in-Test) to orchestrate ephemeral PostgreSQL, Redis primary/replica, and Kafka clusters for deterministic CI/CD pipelines.
+* **Concurrency & Load Profiling:** Validated system throughput, p99 latency, and race condition immunity under concurrent traffic spikes using **k6 load test suites**.
 
-### Low-Latency Geospatial Indexing
-* ✦ **Spatial Computing:** Indexed coordinates using **Uber H3 Spatial Hexagons** and **PostGIS** for sub-millisecond proximity queries.
+### ✦ Low-Latency Geospatial Indexing
+* **Spatial Computing:** Indexed coordinates using **Uber H3 Spatial Hexagons** and **PostGIS** for sub-millisecond proximity queries.
 
 ---
 
