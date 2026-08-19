@@ -56,7 +56,13 @@ I build transaction-safe APIs, event-driven workflows, real-time systems, and da
 
 ## CORE STRENGTHS
 
-Selected backend and systems concepts demonstrated across my projects:
+Key capabilities demonstrated across my projects:
+
+- **Backend & Data:** Transaction-safe APIs, PostgreSQL, Redis, search, and concurrency control.
+- **Event-Driven Systems:** Redis Streams, Kafka, transactional outbox, workers, retries, and idempotency.
+- **Real-Time Applications:** WebSocket/Socket.IO synchronization and reconnect recovery.
+- **Security & Quality:** Authentication, CSRF, RBAC, rate limiting, integration testing, Docker, and CI/CD.
+- **Applied Systems:** PostGIS, Uber H3, route-aware dispatch, and real-time tracking.
 
 ### ✦ In-Memory Atomic Authority & Concurrency Control
 * **Atomic Lua Mutations:** Used **Redis Lua Scripts (`EVALSHA`)** to atomically validate bidding windows, anti-sniping extensions, proxy bid increments, and balance checks.
