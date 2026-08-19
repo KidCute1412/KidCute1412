@@ -27,7 +27,7 @@ I build transaction-safe APIs, event-driven workflows, real-time systems, and da
 | Project | Technologies | Highlights |
 | :--- | :--- | :--- |
 | [**Miracle Auction Platform**](https://github.com/KidCute1412/miracle-auction-platform) | `TypeScript` `PostgreSQL` `Redis` `Kafka` `Socket.IO` | Real-time auction platform with concurrency-safe bidding, ordered event projection, transactional outbox delivery, reconnect recovery, and operational diagnostics. |
-| **Mutux** | `TypeScript` `NestJS` `PostgreSQL` `Next.js` | Five-person gaming-gear rental project. Served as Backend Head and contributed to authentication, KYC, credit workflows, transactional finance, catalog search, testing, and deployment. |
+| [**Mutux**](https://github.com/KidCute1412/startup-k23-hcmus) | `TypeScript` `NestJS` `PostgreSQL` `Next.js` | Five-person gaming-gear rental project. Served as Backend Head and contributed to authentication, KYC, credit workflows, transactional finance, catalog search, testing, and deployment. |
 | [**UniHub**](https://github.com/Luke23127006/UniHub) | `JavaScript` `System Design` | University platform designed around high-concurrency registration, dispute handling, traffic spikes, asynchronous AI processing, and offline QR check-in. |
 
 ### AI & Applied Systems
