@@ -64,6 +64,8 @@ Key capabilities demonstrated across my projects:
 - **Security & Quality:** Authentication, CSRF, RBAC, rate limiting, integration testing, Docker, and CI/CD.
 - **Applied Systems:** PostGIS, Uber H3, route-aware dispatch, and real-time tracking.
 
+<!-- Detailed implementation notes are maintained in the project case studies.
+
 ### ✦ In-Memory Atomic Authority & Concurrency Control
 * **Atomic Lua Mutations:** Used **Redis Lua Scripts (`EVALSHA`)** to atomically validate bidding windows, anti-sniping extensions, proxy bid increments, and balance checks.
 * **Synchronous Replica Acknowledgment:** Used `WAIT 1` replica acknowledgments in the benchmarked bid path to improve write durability before responding.
@@ -97,6 +99,8 @@ Key capabilities demonstrated across my projects:
 
 ### ✦ Low-Latency Geospatial Indexing
 * **Spatial Computing:** Used **Uber H3 Spatial Hexagons** and **PostGIS** for geospatial indexing and proximity queries.
+
+-->
 
 ---
 
