@@ -14,21 +14,34 @@
 
 ## ABOUT ME
 
-* **Computer Science Student** at **VNUHCM University of Science** (Class 23CLC03).
-* **Backend Engineer** focusing on building distributed systems, asynchronous processing, database optimization, and real-time systems.
-* **System Design & IoT Enthusiast** passionate about exploring system architectures, handling race conditions, and developing embedded/IoT systems.
+Computer Science student at **VNUHCM University of Science** with a focus on backend and full-stack engineering.
+
+I build transaction-safe APIs, event-driven workflows, real-time systems, and data-intensive applications with TypeScript, Node.js, PostgreSQL, Redis, and Kafka. I am particularly interested in concurrency control, system reliability, asynchronous processing, and practical system design.
 
 ---
 
-## FEATURED PROJECTS AND SYSTEMS SHOWCASE
+## FEATURED PROJECTS
 
-| Project | Technologies | Architecture & Highlights |
+### Backend & Distributed Systems
+
+| Project | Technologies | Highlights |
 | :--- | :--- | :--- |
-| [**miracle-auction-platform**](https://github.com/KidCute1412/miracle-auction-platform) | `TypeScript` `Redis Lua` `Kafka` `PostgreSQL` `Socket.io` | **Real-Time Distributed Auction Platform:** Engineered for high-concurrency bidding using atomic Redis Lua decisions (`EVALSHA`), append-only Redis Streams, ordered PostgreSQL projection, transactional outbox relays to Apache Kafka, and post-commit Socket.io broadcasts. |
-| [**AidBridge**](https://github.com/phatnguyen975/AidBridge) | `Java` `Spring Boot` `AI` | **Disaster Response System:** A real-time system leveraging AI to categorize emergency levels and bridge the gap between victims, sponsors, and volunteers for efficient disaster response. |
-| [**UniHub**](https://github.com/Luke23127006/UniHub) | `JavaScript` `System Design` | **UniHub System Design:** A system design project optimized to handle disputes, mutant load traffic spikes, and offline check-in mechanisms. |
-| [**VietnameseHackAIthon2026-SocialMedia**](https://github.com/KidCute1412/VietnameseHackAIthon2026-SocialMedia) | `Python` `AI Orchestration` | **AI Social Media Backend:** Processed and integrated AI data streams for a social network during the Vietnamese HackAIthon 2026. |
-| [**Mario-Reflourished**](https://github.com/Luke23127006/Mario-Reflourished) | `C++` `SFML` | **Mario Game Refactoring:** A C++ game development project focusing on clean code architecture and graphics rendering optimization. |
+| [**Miracle Auction Platform**](https://github.com/KidCute1412/miracle-auction-platform) | `TypeScript` `PostgreSQL` `Redis` `Kafka` `Socket.IO` | Real-time auction platform with concurrency-safe bidding, ordered event projection, transactional outbox delivery, reconnect recovery, and operational diagnostics. |
+| **Mutux** | `TypeScript` `NestJS` `PostgreSQL` `Next.js` | Five-person gaming-gear rental project. Served as Backend Head and contributed to authentication, KYC, credit workflows, transactional finance, catalog search, testing, and deployment. |
+| [**UniHub**](https://github.com/Luke23127006/UniHub) | `JavaScript` `System Design` | University platform designed around high-concurrency registration, dispute handling, traffic spikes, asynchronous AI processing, and offline QR check-in. |
+
+### AI & Applied Systems
+
+| Project | Technologies | Highlights |
+| :--- | :--- | :--- |
+| [**HypeRoom**](https://github.com/KidCute1412/VietnameseHackAIthon2026-SocialMedia) | `Python` `FastAPI` `Redis/RQ` `React` `WebSocket` | AI-assisted newsroom workflow for evidence retrieval, claim analysis, risk reporting, and editorial support. Qualified for Round 2 of the Vietnamese Student HackAIthon 2026. |
+| [**AidBridge**](https://github.com/phatnguyen975/AidBridge/tree/feature/backend) | `Java` `Spring Boot` `PostGIS` `Uber H3` | Disaster-relief coordination system using geospatial indexing, route-aware volunteer dispatch, real-time tracking, and retryable mission workflows. |
+
+### Software Engineering & Game Development
+
+| Project | Technologies | Highlights |
+| :--- | :--- | :--- |
+| [**Mario-Reflourished**](https://github.com/Luke23127006/Mario-Reflourished) | `C++` `SFML` `OOP` | Game project focused on refactoring gameplay code, improving object-oriented structure, and organizing rendering and game-state logic. |
 
 
 ---
@@ -41,13 +54,13 @@
 
 ---
 
-## TECHNICAL ARCHITECTURE & SYSTEMS ENGINEERING
+## CORE STRENGTHS
 
-A checklist of core backend paradigms and architectural patterns I implement to build resilient, distributed, and high-performance systems:
+Selected backend and systems concepts demonstrated across my projects:
 
 ### ✦ In-Memory Atomic Authority & Concurrency Control
-* **Atomic Lua Mutations:** Engineered zero-race-condition hot paths using **Redis Lua Scripts (`EVALSHA`)** to atomically validate bidding windows, anti-sniping dynamic extensions, proxy bid increments, and balance checks in sub-millisecond time.
-* **Synchronous Replica Acknowledgment:** Utilized `WAIT 1` replica acknowledgments to ensure high durability and prevent split-brain data loss before HTTP response resolution.
+* **Atomic Lua Mutations:** Used **Redis Lua Scripts (`EVALSHA`)** to atomically validate bidding windows, anti-sniping extensions, proxy bid increments, and balance checks.
+* **Synchronous Replica Acknowledgment:** Used `WAIT 1` replica acknowledgments in the benchmarked bid path to improve write durability before responding.
 * **Pessimistic & Distributed Locking:** Applied database-level `SELECT FOR UPDATE` and **Redis distributed locks (Redlock/Redisson)** for cross-instance coordination and transactional state isolation.
 
 ### ✦ Event Streaming & Ordered Durable Projection
@@ -60,7 +73,7 @@ A checklist of core backend paradigms and architectural patterns I implement to 
 * **Fault Tolerance & DLQ:** Configured **Dead Letter Queues (DLQ)** with exponential backoff retries and consumer idempotency fences.
 
 ### ✦ Post-Commit Real-Time Synchronization
-* **Speculative-Free WebSocket Broadcast:** Broadcasted live state updates via **Socket.IO (Redis Pub/Sub Adapter)** *strictly after* PostgreSQL transactions commit, preventing dirty/phantom reads on client UIs.
+* **Post-Commit WebSocket Broadcast:** Broadcasted live state updates via **Socket.IO (Redis Pub/Sub Adapter)** after PostgreSQL projection commits.
 * **Connection State Recovery:** Implemented heartbeat telemetry, room partitioning, and event buffering for seamless reconnection and state reconciliation.
 
 ### ✦ Modular Monolith & Process Isolation
@@ -74,16 +87,16 @@ A checklist of core backend paradigms and architectural patterns I implement to 
 
 ### ✦ Deterministic Testing & Performance Benchmarking
 * **Containerized Integration Testing:** Configured **Testcontainers** (Docker-in-Test) to orchestrate ephemeral PostgreSQL, Redis primary/replica, and Kafka clusters for deterministic CI/CD pipelines.
-* **Concurrency & Load Profiling:** Validated system throughput, p99 latency, and race condition immunity under concurrent traffic spikes using **k6 load test suites**.
+* **Concurrency & Load Profiling:** Measured throughput and latency under concurrent traffic using **k6 load test suites**.
 
 ### ✦ Low-Latency Geospatial Indexing
-* **Spatial Computing:** Indexed coordinates using **Uber H3 Spatial Hexagons** and **PostGIS** for sub-millisecond proximity queries.
+* **Spatial Computing:** Used **Uber H3 Spatial Hexagons** and **PostGIS** for geospatial indexing and proximity queries.
 
 ---
 
-## TECH STACK & TOOLCHAIN
+## TECH STACK
 
-Comfortable working across these languages, frameworks, databases, and infrastructure tools:
+Primary technologies used across my projects:
 
 ### Languages & Core Runtimes
 <p align="left">
