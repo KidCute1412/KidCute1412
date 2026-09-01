@@ -69,26 +69,26 @@
 <rect x="315" y="20" width="125" height="20" class="badge-bg" />
 <text x="378" y="34" class="badge-text" text-anchor="middle">ALL-TIME TELEMETRY</text>
 <rect x="20" y="52" width="420" height="6" rx="3" fill="url(#barTrack)" />
-<rect x="20" y="52" width="147" height="6" fill="#3178c6" />
-<rect x="167" y="52" width="59" height="6" fill="#f1e05a" />
-<rect x="226" y="52" width="53" height="6" fill="#e34c26" />
-<rect x="279" y="52" width="50" height="6" fill="#f34b7d" />
-<rect x="329" y="52" width="46" height="6" fill="#3572A5" />
-<rect x="375" y="52" width="34" height="6" fill="#b07219" />
-<rect x="409" y="52" width="13" height="6" fill="#DA5B0B" />
-<rect x="422" y="52" width="3" height="6" fill="#663399" />
+<rect x="20" y="52" width="148" height="6" fill="#3178c6" />
+<rect x="168" y="52" width="59" height="6" fill="#f1e05a" />
+<rect x="227" y="52" width="53" height="6" fill="#e34c26" />
+<rect x="280" y="52" width="50" height="6" fill="#f34b7d" />
+<rect x="330" y="52" width="46" height="6" fill="#3572A5" />
+<rect x="376" y="52" width="34" height="6" fill="#b07219" />
+<rect x="410" y="52" width="13" height="6" fill="#DA5B0B" />
+<rect x="423" y="52" width="3" height="6" fill="#663399" />
 <circle cx="26" cy="88" r="4.5" fill="#3178c6" filter="url(#glow)" />
 <text x="40" y="92" class="lang-name">TypeScript</text>
 <text x="440" y="92" text-anchor="end">
-  <tspan class="lang-pct">35.2% </tspan>
-  <tspan class="lang-count">(449 commits)</tspan>
+  <tspan class="lang-pct">35.3% </tspan>
+  <tspan class="lang-count">(450 commits)</tspan>
 </text>
 <rect x="20" y="97" width="420" height="4" rx="2" fill="url(#barTrack)" />
-<rect x="20" y="97" width="147" height="4" rx="2" fill="url(#grad_TypeScript)" />
+<rect x="20" y="97" width="148" height="4" rx="2" fill="url(#grad_TypeScript)" />
 <circle cx="26" cy="116" r="4.5" fill="#f1e05a" filter="url(#glow)" />
 <text x="40" y="120" class="lang-name">JavaScript</text>
 <text x="440" y="120" text-anchor="end">
-  <tspan class="lang-pct">14.3% </tspan>
+  <tspan class="lang-pct">14.2% </tspan>
   <tspan class="lang-count">(182 commits)</tspan>
 </text>
 <rect x="20" y="125" width="420" height="4" rx="2" fill="url(#barTrack)" />
