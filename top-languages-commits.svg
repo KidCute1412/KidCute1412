@@ -74,9 +74,9 @@
 <rect x="226" y="52" width="52" height="6" fill="#e34c26" />
 <rect x="278" y="52" width="50" height="6" fill="#f34b7d" />
 <rect x="328" y="52" width="45" height="6" fill="#3572A5" />
-<rect x="373" y="52" width="37" height="6" fill="#b07219" />
-<rect x="410" y="52" width="13" height="6" fill="#DA5B0B" />
-<rect x="423" y="52" width="3" height="6" fill="#663399" />
+<rect x="373" y="52" width="38" height="6" fill="#b07219" />
+<rect x="411" y="52" width="13" height="6" fill="#DA5B0B" />
+<rect x="424" y="52" width="3" height="6" fill="#663399" />
 <circle cx="26" cy="88" r="4.5" fill="#3178c6" filter="url(#glow)" />
 <text x="40" y="92" class="lang-name">TypeScript</text>
 <text x="440" y="92" text-anchor="end">
@@ -120,11 +120,11 @@
 <circle cx="26" cy="228" r="4.5" fill="#b07219" filter="url(#glow)" />
 <text x="40" y="232" class="lang-name">Java</text>
 <text x="440" y="232" text-anchor="end">
-  <tspan class="lang-pct">9.0% </tspan>
-  <tspan class="lang-count">(116 commits)</tspan>
+  <tspan class="lang-pct">9.1% </tspan>
+  <tspan class="lang-count">(118 commits)</tspan>
 </text>
 <rect x="20" y="237" width="420" height="4" rx="2" fill="url(#barTrack)" />
-<rect x="20" y="237" width="37" height="4" rx="2" fill="url(#grad_Java)" />
+<rect x="20" y="237" width="38" height="4" rx="2" fill="url(#grad_Java)" />
 <circle cx="26" cy="256" r="4.5" fill="#DA5B0B" filter="url(#glow)" />
 <text x="40" y="260" class="lang-name">Jupyter Notebook</text>
 <text x="440" y="260" text-anchor="end">
