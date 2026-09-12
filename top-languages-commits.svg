@@ -73,14 +73,14 @@
 <rect x="164" y="52" width="57" height="6" fill="#f1e05a" />
 <rect x="221" y="52" width="51" height="6" fill="#e34c26" />
 <rect x="272" y="52" width="49" height="6" fill="#f34b7d" />
-<rect x="321" y="52" width="46" height="6" fill="#b07219" />
-<rect x="367" y="52" width="44" height="6" fill="#3572A5" />
-<rect x="411" y="52" width="13" height="6" fill="#DA5B0B" />
-<rect x="424" y="52" width="3" height="6" fill="#663399" />
+<rect x="321" y="52" width="47" height="6" fill="#b07219" />
+<rect x="368" y="52" width="44" height="6" fill="#3572A5" />
+<rect x="412" y="52" width="13" height="6" fill="#DA5B0B" />
+<rect x="425" y="52" width="3" height="6" fill="#663399" />
 <circle cx="26" cy="88" r="4.5" fill="#3178c6" filter="url(#glow)" />
 <text x="40" y="92" class="lang-name">TypeScript</text>
 <text x="440" y="92" text-anchor="end">
-  <tspan class="lang-pct">34.4% </tspan>
+  <tspan class="lang-pct">34.3% </tspan>
   <tspan class="lang-count">(454 commits)</tspan>
 </text>
 <rect x="20" y="97" width="420" height="4" rx="2" fill="url(#barTrack)" />
@@ -112,11 +112,11 @@
 <circle cx="26" cy="200" r="4.5" fill="#b07219" filter="url(#glow)" />
 <text x="40" y="204" class="lang-name">Java</text>
 <text x="440" y="204" text-anchor="end">
-  <tspan class="lang-pct">11.1% </tspan>
-  <tspan class="lang-count">(147 commits)</tspan>
+  <tspan class="lang-pct">11.3% </tspan>
+  <tspan class="lang-count">(149 commits)</tspan>
 </text>
 <rect x="20" y="209" width="420" height="4" rx="2" fill="url(#barTrack)" />
-<rect x="20" y="209" width="46" height="4" rx="2" fill="url(#grad_Java)" />
+<rect x="20" y="209" width="47" height="4" rx="2" fill="url(#grad_Java)" />
 <circle cx="26" cy="228" r="4.5" fill="#3572A5" filter="url(#glow)" />
 <text x="40" y="232" class="lang-name">Python</text>
 <text x="440" y="232" text-anchor="end">
