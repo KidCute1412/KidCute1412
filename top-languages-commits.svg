@@ -80,8 +80,8 @@
 <circle cx="26" cy="88" r="4.5" fill="#3178c6" filter="url(#glow)" />
 <text x="40" y="92" class="lang-name">TypeScript</text>
 <text x="440" y="92" text-anchor="end">
-  <tspan class="lang-pct">34.2% </tspan>
-  <tspan class="lang-count">(466 commits)</tspan>
+  <tspan class="lang-pct">34.3% </tspan>
+  <tspan class="lang-count">(468 commits)</tspan>
 </text>
 <rect x="20" y="97" width="420" height="4" rx="2" fill="url(#barTrack)" />
 <rect x="20" y="97" width="143" height="4" rx="2" fill="url(#grad_TypeScript)" />
@@ -120,7 +120,7 @@
 <circle cx="26" cy="228" r="4.5" fill="#3572A5" filter="url(#glow)" />
 <text x="40" y="232" class="lang-name">Python</text>
 <text x="440" y="232" text-anchor="end">
-  <tspan class="lang-pct">10.5% </tspan>
+  <tspan class="lang-pct">10.4% </tspan>
   <tspan class="lang-count">(143 commits)</tspan>
 </text>
 <rect x="20" y="237" width="420" height="4" rx="2" fill="url(#barTrack)" />
