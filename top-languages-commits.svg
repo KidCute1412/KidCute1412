@@ -71,12 +71,12 @@
 <rect x="20" y="52" width="420" height="6" rx="3" fill="url(#barTrack)" />
 <rect x="20" y="52" width="143" height="6" fill="#3178c6" />
 <rect x="163" y="52" width="55" height="6" fill="#f1e05a" />
-<rect x="218" y="52" width="52" height="6" fill="#b07219" />
-<rect x="270" y="52" width="49" height="6" fill="#e34c26" />
-<rect x="319" y="52" width="47" height="6" fill="#f34b7d" />
-<rect x="366" y="52" width="43" height="6" fill="#3572A5" />
-<rect x="409" y="52" width="12" height="6" fill="#DA5B0B" />
-<rect x="421" y="52" width="4" height="6" fill="#663399" />
+<rect x="218" y="52" width="53" height="6" fill="#b07219" />
+<rect x="271" y="52" width="49" height="6" fill="#e34c26" />
+<rect x="320" y="52" width="47" height="6" fill="#f34b7d" />
+<rect x="367" y="52" width="43" height="6" fill="#3572A5" />
+<rect x="410" y="52" width="12" height="6" fill="#DA5B0B" />
+<rect x="422" y="52" width="4" height="6" fill="#663399" />
 <circle cx="26" cy="88" r="4.5" fill="#3178c6" filter="url(#glow)" />
 <text x="40" y="92" class="lang-name">TypeScript</text>
 <text x="440" y="92" text-anchor="end">
@@ -96,11 +96,11 @@
 <circle cx="26" cy="144" r="4.5" fill="#b07219" filter="url(#glow)" />
 <text x="40" y="148" class="lang-name">Java</text>
 <text x="440" y="148" text-anchor="end">
-  <tspan class="lang-pct">12.5% </tspan>
-  <tspan class="lang-count">(171 commits)</tspan>
+  <tspan class="lang-pct">12.7% </tspan>
+  <tspan class="lang-count">(173 commits)</tspan>
 </text>
 <rect x="20" y="153" width="420" height="4" rx="2" fill="url(#barTrack)" />
-<rect x="20" y="153" width="52" height="4" rx="2" fill="url(#grad_Java)" />
+<rect x="20" y="153" width="53" height="4" rx="2" fill="url(#grad_Java)" />
 <circle cx="26" cy="172" r="4.5" fill="#e34c26" filter="url(#glow)" />
 <text x="40" y="176" class="lang-name">HTML</text>
 <text x="440" y="176" text-anchor="end">
@@ -128,7 +128,7 @@
 <circle cx="26" cy="256" r="4.5" fill="#DA5B0B" filter="url(#glow)" />
 <text x="40" y="260" class="lang-name">Jupyter Notebook</text>
 <text x="440" y="260" text-anchor="end">
-  <tspan class="lang-pct">3.1% </tspan>
+  <tspan class="lang-pct">3.0% </tspan>
   <tspan class="lang-count">(42 commits)</tspan>
 </text>
 <rect x="20" y="265" width="420" height="4" rx="2" fill="url(#barTrack)" />
