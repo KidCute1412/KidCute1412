@@ -80,7 +80,7 @@
 <circle cx="26" cy="88" r="4.5" fill="#3178c6" filter="url(#glow)" />
 <text x="40" y="92" class="lang-name">TypeScript</text>
 <text x="440" y="92" text-anchor="end">
-  <tspan class="lang-pct">34.3% </tspan>
+  <tspan class="lang-pct">34.2% </tspan>
   <tspan class="lang-count">(468 commits)</tspan>
 </text>
 <rect x="20" y="97" width="420" height="4" rx="2" fill="url(#barTrack)" />
@@ -97,7 +97,7 @@
 <text x="40" y="148" class="lang-name">Java</text>
 <text x="440" y="148" text-anchor="end">
   <tspan class="lang-pct">12.7% </tspan>
-  <tspan class="lang-count">(173 commits)</tspan>
+  <tspan class="lang-count">(174 commits)</tspan>
 </text>
 <rect x="20" y="153" width="420" height="4" rx="2" fill="url(#barTrack)" />
 <rect x="20" y="153" width="53" height="4" rx="2" fill="url(#grad_Java)" />
