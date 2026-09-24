@@ -89,7 +89,7 @@
 <text x="40" y="120" class="lang-name">Java</text>
 <text x="440" y="120" text-anchor="end">
   <tspan class="lang-pct">13.7% </tspan>
-  <tspan class="lang-count">(190 commits)</tspan>
+  <tspan class="lang-count">(191 commits)</tspan>
 </text>
 <rect x="20" y="125" width="420" height="4" rx="2" fill="url(#barTrack)" />
 <rect x="20" y="125" width="57" height="4" rx="2" fill="url(#grad_Java)" />
