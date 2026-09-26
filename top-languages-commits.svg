@@ -88,8 +88,8 @@
 <circle cx="26" cy="116" r="4.5" fill="#b07219" filter="url(#glow)" />
 <text x="40" y="120" class="lang-name">Java</text>
 <text x="440" y="120" text-anchor="end">
-  <tspan class="lang-pct">13.8% </tspan>
-  <tspan class="lang-count">(193 commits)</tspan>
+  <tspan class="lang-pct">13.9% </tspan>
+  <tspan class="lang-count">(194 commits)</tspan>
 </text>
 <rect x="20" y="125" width="420" height="4" rx="2" fill="url(#barTrack)" />
 <rect x="20" y="125" width="58" height="4" rx="2" fill="url(#grad_Java)" />
