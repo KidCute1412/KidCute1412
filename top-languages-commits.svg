@@ -69,62 +69,62 @@
 <rect x="315" y="20" width="125" height="20" class="badge-bg" />
 <text x="378" y="34" class="badge-text" text-anchor="middle">ALL-TIME TELEMETRY</text>
 <rect x="20" y="52" width="420" height="6" rx="3" fill="url(#barTrack)" />
-<rect x="20" y="52" width="139" height="6" fill="#3178c6" />
-<rect x="159" y="52" width="65" height="6" fill="#b07219" />
-<rect x="224" y="52" width="53" height="6" fill="#f1e05a" />
-<rect x="277" y="52" width="47" height="6" fill="#e34c26" />
-<rect x="324" y="52" width="45" height="6" fill="#f34b7d" />
-<rect x="369" y="52" width="42" height="6" fill="#3572A5" />
-<rect x="411" y="52" width="12" height="6" fill="#DA5B0B" />
-<rect x="423" y="52" width="4" height="6" fill="#663399" />
+<rect x="20" y="52" width="140" height="6" fill="#3178c6" />
+<rect x="160" y="52" width="68" height="6" fill="#b07219" />
+<rect x="228" y="52" width="52" height="6" fill="#f1e05a" />
+<rect x="280" y="52" width="46" height="6" fill="#e34c26" />
+<rect x="326" y="52" width="44" height="6" fill="#f34b7d" />
+<rect x="370" y="52" width="41" height="6" fill="#3572A5" />
+<rect x="411" y="52" width="11" height="6" fill="#DA5B0B" />
+<rect x="422" y="52" width="5" height="6" fill="#663399" />
 <circle cx="26" cy="88" r="4.5" fill="#3178c6" filter="url(#glow)" />
 <text x="40" y="92" class="lang-name">TypeScript</text>
 <text x="440" y="92" text-anchor="end">
-  <tspan class="lang-pct">33.2% </tspan>
-  <tspan class="lang-count">(469 commits)</tspan>
+  <tspan class="lang-pct">33.5% </tspan>
+  <tspan class="lang-count">(488 commits)</tspan>
 </text>
 <rect x="20" y="97" width="420" height="4" rx="2" fill="url(#barTrack)" />
-<rect x="20" y="97" width="139" height="4" rx="2" fill="url(#grad_TypeScript)" />
+<rect x="20" y="97" width="140" height="4" rx="2" fill="url(#grad_TypeScript)" />
 <circle cx="26" cy="116" r="4.5" fill="#b07219" filter="url(#glow)" />
 <text x="40" y="120" class="lang-name">Java</text>
 <text x="440" y="120" text-anchor="end">
-  <tspan class="lang-pct">15.7% </tspan>
-  <tspan class="lang-count">(222 commits)</tspan>
+  <tspan class="lang-pct">16.4% </tspan>
+  <tspan class="lang-count">(239 commits)</tspan>
 </text>
 <rect x="20" y="125" width="420" height="4" rx="2" fill="url(#barTrack)" />
-<rect x="20" y="125" width="65" height="4" rx="2" fill="url(#grad_Java)" />
+<rect x="20" y="125" width="68" height="4" rx="2" fill="url(#grad_Java)" />
 <circle cx="26" cy="144" r="4.5" fill="#f1e05a" filter="url(#glow)" />
 <text x="40" y="148" class="lang-name">JavaScript</text>
 <text x="440" y="148" text-anchor="end">
-  <tspan class="lang-pct">12.8% </tspan>
-  <tspan class="lang-count">(181 commits)</tspan>
+  <tspan class="lang-pct">12.5% </tspan>
+  <tspan class="lang-count">(182 commits)</tspan>
 </text>
 <rect x="20" y="153" width="420" height="4" rx="2" fill="url(#barTrack)" />
-<rect x="20" y="153" width="53" height="4" rx="2" fill="url(#grad_JavaScript)" />
+<rect x="20" y="153" width="52" height="4" rx="2" fill="url(#grad_JavaScript)" />
 <circle cx="26" cy="172" r="4.5" fill="#e34c26" filter="url(#glow)" />
 <text x="40" y="176" class="lang-name">HTML</text>
 <text x="440" y="176" text-anchor="end">
-  <tspan class="lang-pct">11.4% </tspan>
+  <tspan class="lang-pct">11.1% </tspan>
   <tspan class="lang-count">(161 commits)</tspan>
 </text>
 <rect x="20" y="181" width="420" height="4" rx="2" fill="url(#barTrack)" />
-<rect x="20" y="181" width="47" height="4" rx="2" fill="url(#grad_HTML)" />
+<rect x="20" y="181" width="46" height="4" rx="2" fill="url(#grad_HTML)" />
 <circle cx="26" cy="200" r="4.5" fill="#f34b7d" filter="url(#glow)" />
 <text x="40" y="204" class="lang-name">C++</text>
 <text x="440" y="204" text-anchor="end">
-  <tspan class="lang-pct">10.9% </tspan>
+  <tspan class="lang-pct">10.6% </tspan>
   <tspan class="lang-count">(154 commits)</tspan>
 </text>
 <rect x="20" y="209" width="420" height="4" rx="2" fill="url(#barTrack)" />
-<rect x="20" y="209" width="45" height="4" rx="2" fill="url(#grad_C)" />
+<rect x="20" y="209" width="44" height="4" rx="2" fill="url(#grad_C)" />
 <circle cx="26" cy="228" r="4.5" fill="#3572A5" filter="url(#glow)" />
 <text x="40" y="232" class="lang-name">Python</text>
 <text x="440" y="232" text-anchor="end">
-  <tspan class="lang-pct">10.0% </tspan>
-  <tspan class="lang-count">(142 commits)</tspan>
+  <tspan class="lang-pct">9.8% </tspan>
+  <tspan class="lang-count">(143 commits)</tspan>
 </text>
 <rect x="20" y="237" width="420" height="4" rx="2" fill="url(#barTrack)" />
-<rect x="20" y="237" width="42" height="4" rx="2" fill="url(#grad_Python)" />
+<rect x="20" y="237" width="41" height="4" rx="2" fill="url(#grad_Python)" />
 <circle cx="26" cy="256" r="4.5" fill="#DA5B0B" filter="url(#glow)" />
 <text x="40" y="260" class="lang-name">Jupyter Notebook</text>
 <text x="440" y="260" text-anchor="end">
@@ -132,15 +132,15 @@
   <tspan class="lang-count">(42 commits)</tspan>
 </text>
 <rect x="20" y="265" width="420" height="4" rx="2" fill="url(#barTrack)" />
-<rect x="20" y="265" width="12" height="4" rx="2" fill="url(#grad_JupyterNotebook)" />
+<rect x="20" y="265" width="11" height="4" rx="2" fill="url(#grad_JupyterNotebook)" />
 <circle cx="26" cy="284" r="4.5" fill="#663399" filter="url(#glow)" />
 <text x="40" y="288" class="lang-name">CSS</text>
 <text x="440" y="288" text-anchor="end">
-  <tspan class="lang-pct">1.1% </tspan>
-  <tspan class="lang-count">(15 commits)</tspan>
+  <tspan class="lang-pct">1.3% </tspan>
+  <tspan class="lang-count">(18 commits)</tspan>
 </text>
 <rect x="20" y="293" width="420" height="4" rx="2" fill="url(#barTrack)" />
-<rect x="20" y="293" width="4" height="4" rx="2" fill="url(#grad_CSS)" />
+<rect x="20" y="293" width="5" height="4" rx="2" fill="url(#grad_CSS)" />
 <circle cx="24" cy="324" r="3" fill="#00ffaa" filter="url(#glow)" />
 <text x="34" y="327" class="footer-text">Tracked across all owned, organization &amp; contributed repos</text>
 </svg>
