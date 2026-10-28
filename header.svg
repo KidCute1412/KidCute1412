@@ -62,7 +62,7 @@
     <path d="M0 12h48m18 0h15" stroke="#e6c99a" stroke-width="1" opacity=".8"/>
     <text x="91" y="16" class="mono eyebrow" fill="#e6c99a" font-size="11" letter-spacing="4">A MIDNIGHT ENTRANCE</text>
   </g>
-  <text class="headline" x="80" y="205" fill="#fffaf4" font-size="68" font-weight="650" letter-spacing="1">LE TUAN LOC</text>
+  <text class="headline" x="80" y="205" fill="#ffffff" font-size="68" font-weight="750" letter-spacing="1" stroke="#182033" stroke-width="1" paint-order="stroke fill">LE TUAN LOC</text>
   <path d="M86 225h345" stroke="url(#silver)" stroke-width="1.5"/>
   <path d="M436 225l8-4 8 4-8 4z" fill="#e6c99a"/>
   <text x="84" y="266" class="serif tagline" fill="#e8d4bb" font-size="24" font-style="italic">Backend engineer by day,</text>

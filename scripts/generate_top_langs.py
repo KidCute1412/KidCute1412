@@ -348,8 +348,10 @@ streak_svg = build_streak_svg(total_contribs, current_streak, longest_streak)
 
 outputs = {
     "profile-summary-card-output/tokyonight/2-most-commit-language.svg": top_langs_svg,
+    "profile-summary-card-output/default/2-most-commit-language.svg": top_langs_svg.replace("#06080c", "#ffffff").replace("#0b0f19", "#f6f8fa").replace("#151d2a", "#eaeef2").replace("#1e293b", "#d0d7de").replace("#f1f5f9", "#1f2328").replace("#64748b", "#57606a").replace("#475569", "#656d76").replace("#00F0FF", "#0969da").replace("#ff007b", "#bf3989"),
     "top-languages-commits.svg": top_langs_svg,
-    "github-streak-stats.svg": streak_svg
+    "github-streak-stats.svg": streak_svg,
+    "github-streak-stats-light.svg": streak_svg.replace("#06080c", "#ffffff").replace("#0d111a", "#f6f8fa").replace("#00F0FF", "#0969da").replace("#ff007b", "#bf3989").replace("#1e293b", "#d0d7de").replace("#94a3b8", "#57606a").replace("#475569", "#656d76")
 }
 
 for path, content in outputs.items():

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./header.svg?v=11" width="100%" alt="Le Tuan Loc - GitHub Header" />
+  <img src="./header.svg?v=12" width="100%" alt="Le Tuan Loc - GitHub Header" />
 </p>
 
 <p align="center">
@@ -162,19 +162,31 @@ Primary technologies used across my projects:
 
 <p align="center">
   <a href="https://github.com/KidCute1412">
-    <img src="https://github-readme-stats.shion.dev/api?username=KidCute1412&show_icons=true&theme=tokyonight&bg_color=06080c&title_color=00F0FF&icon_color=00F0FF&text_color=ffffff&border_color=ff007b&count_private=true" height="195" alt="GitHub Stats" />
+    <picture>
+      <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.shion.dev/api?username=KidCute1412&show_icons=true&theme=default&bg_color=ffffff&title_color=0969da&icon_color=8250df&text_color=1f2328&border_color=d0d7de&count_private=true" />
+      <img src="https://github-readme-stats.shion.dev/api?username=KidCute1412&show_icons=true&theme=tokyonight&bg_color=06080c&title_color=00F0FF&icon_color=00F0FF&text_color=ffffff&border_color=ff007b&count_private=true" height="195" alt="GitHub Stats" />
+    </picture>
   </a>
   <a href="https://github.com/KidCute1412">
-    <img src="./profile-summary-card-output/tokyonight/2-most-commit-language.svg" height="195" alt="Top Languages by Commit" />
+    <picture>
+      <source media="(prefers-color-scheme: light)" srcset="./profile-summary-card-output/default/2-most-commit-language.svg" />
+      <img src="./profile-summary-card-output/tokyonight/2-most-commit-language.svg" height="195" alt="Top Languages by Commit" />
+    </picture>
   </a>
 </p>
 
 <p align="center">
   <a href="https://github.com/KidCute1412">
-    <img src="./github-streak-stats.svg" height="195" alt="GitHub Streak Stats" />
+    <picture>
+      <source media="(prefers-color-scheme: light)" srcset="./github-streak-stats-light.svg" />
+      <img src="./github-streak-stats.svg" height="195" alt="GitHub Streak Stats" />
+    </picture>
   </a>
   <a href="https://github.com/KidCute1412">
-    <img src="./profile-summary-card-output/tokyonight/4-productive-time.svg" height="195" alt="Productive Time Telemetry" />
+    <picture>
+      <source media="(prefers-color-scheme: light)" srcset="./profile-summary-card-output/default/4-productive-time.svg" />
+      <img src="./profile-summary-card-output/tokyonight/4-productive-time.svg" height="195" alt="Productive Time Telemetry" />
+    </picture>
   </a>
 </p>
 
@@ -217,7 +229,10 @@ Let's discuss system design, backend architectures, or high-performance APIs!
 ## ⚡ DEV QUOTE & MOTTO
 
 <p align="center">
-  <img src="https://readme-daily-quotes.vercel.app/api?theme=tokyonight&authorColor=00F0FF&quoteColor=ffffff" alt="Daily Dev Quote" />
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="https://readme-daily-quotes.vercel.app/api?theme=default&authorColor=0969da&quoteColor=1f2328" />
+    <img src="https://readme-daily-quotes.vercel.app/api?theme=tokyonight&authorColor=00F0FF&quoteColor=ffffff" alt="Daily Dev Quote" />
+  </picture>
 </p>
 
 ---
