@@ -32,7 +32,7 @@
       }
       @media (prefers-color-scheme: light) {
         .moon-disc { fill: #d9e3f7; }
-        .orbit { stroke-opacity: .6; }
+        .orbit { stroke-opacity: .76; }
         .eyebrow, .meta { fill: #52627f; }
         .headline { fill: #1a2340; }
         .tagline { fill: #566482; }
@@ -57,8 +57,11 @@
   </g>
   <!-- Moon and fine orbit -->
   <circle class="moon-disc" cx="950" cy="132" r="70" fill="#fff4dd" opacity=".94" mask="url(#moon-crescent)"/>
-  <ellipse class="orbit" cx="930" cy="165" rx="190" ry="50" fill="none" stroke="url(#silver)" stroke-opacity=".34" stroke-width="1" stroke-dasharray="2 8" transform="rotate(-17 930 165)">
+  <ellipse class="orbit" cx="930" cy="165" rx="190" ry="50" fill="none" stroke="url(#silver)" stroke-opacity=".72" stroke-width="1.5" stroke-dasharray="4 6" filter="url(#glow)" transform="rotate(-17 930 165)">
     <animate class="animated" attributeName="stroke-dashoffset" values="0;-100" dur="14s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="930" cy="165" rx="218" ry="66" fill="none" stroke="url(#silver)" stroke-opacity=".4" stroke-width="1.1" stroke-dasharray="1 12" transform="rotate(-17 930 165)">
+    <animate class="animated" attributeName="stroke-dashoffset" values="100;0" dur="20s" repeatCount="indefinite"/>
   </ellipse>
   <g class="motion" fill="#fff5dc" filter="url(#glow)">
     <circle class="animated" r="3"><animateMotion dur="12s" repeatCount="indefinite" path="M740 205 C815 88 1035 80 1110 170 C1040 255 820 255 740 205"/></circle>
@@ -71,56 +74,80 @@
     <animateMotion class="animated" path="M0 0 C70 -42 150 -48 265 -30" dur="7s" begin="1s" repeatCount="indefinite" />
     <animate class="animated" attributeName="opacity" values="0;1;.75;0" keyTimes="0;.12;.3;1" dur="7s" begin="1s" repeatCount="indefinite" />
   </g>
-  <g class="motion" opacity=".9" transform="translate(555 306) scale(.82)">
+  <g class="motion" opacity="0" transform="translate(555 306) scale(.82)">
     <g>
-      <path d="M0-29C-22-15-21 14 0 29C21 14 22-15 0-29Z" fill="url(#rose-petal)" stroke="#f6c1cf" stroke-opacity=".62" stroke-width="1.2"/>
-      <path d="M0 23C3 8 3-8 0-24" fill="none" stroke="#ffe3e9" stroke-opacity=".78" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M0 27C-8 19-22 6-27-7C-31-18-24-27-15-25C-8-24-5-18-5-13C-3-23 5-30 14-26C24-22 26-12 20-1C14 11 6 21 0 27Z" fill="url(#rose-petal)" stroke="#ffe5ef" stroke-opacity=".45" stroke-width=".9"/>
+      <path d="M0 22C-5 12-11 0-15-14M-5-12C1-21 8-23 15-18" fill="none" stroke="#fff4f8" stroke-opacity=".5" stroke-width=".9" stroke-linecap="round"/>
       <animateTransform class="animated" attributeName="transform" type="rotate" values="-7;7;-7" dur="8s" repeatCount="indefinite"/>
     </g>
-    <animateMotion class="animated" path="M0 0C45-35 95-50 145-20C195 10 115 72 55 54C15 42-45 35 0 0" dur="27s" rotate="auto" repeatCount="indefinite"/>
-    <animate class="animated" attributeName="opacity" values=".58;.9;.72;.58" keyTimes="0;.14;.78;1" dur="27s" repeatCount="indefinite"/>
+    <animateMotion class="animated" path="M0 0C45-35 95-50 145-20C195 10 115 72 55 54C15 42-45 35 0 0" dur="20s" rotate="auto" repeatCount="indefinite"/>
+    <animate class="animated" attributeName="opacity" values="0;.9;.72;0" keyTimes="0;.14;.78;1" dur="20s" repeatCount="indefinite"/>
   </g>
   <g class="motion" opacity="0" transform="translate(650 342) scale(.68)">
     <g>
-      <path d="M0-29C-22-15-21 14 0 29C21 14 22-15 0-29Z" fill="url(#rose-petal)" stroke="#f6c1cf" stroke-opacity=".62" stroke-width="1.2"/>
-      <path d="M0 23C3 8 3-8 0-24" fill="none" stroke="#ffe3e9" stroke-opacity=".78" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M0 27C-8 19-22 6-27-7C-31-18-24-27-15-25C-8-24-5-18-5-13C-3-23 5-30 14-26C24-22 26-12 20-1C14 11 6 21 0 27Z" fill="url(#rose-petal)" stroke="#ffe5ef" stroke-opacity=".45" stroke-width=".9"/>
+      <path d="M0 22C-5 12-11 0-15-14M-5-12C1-21 8-23 15-18" fill="none" stroke="#fff4f8" stroke-opacity=".5" stroke-width=".9" stroke-linecap="round"/>
       <animateTransform class="animated" attributeName="transform" type="rotate" values="8;-7;8" dur="10s" repeatCount="indefinite"/>
     </g>
-    <animateMotion class="animated" path="M0 0C-30-48-52-116 18-140C88-164 135-72 56-24C20 0 30 48 0 0" dur="32s" begin="-11s" rotate="auto" repeatCount="indefinite"/>
-    <animate class="animated" attributeName="opacity" values="0;.82;.6;0" keyTimes="0;.14;.78;1" dur="32s" begin="3s" repeatCount="indefinite"/>
+    <animateMotion class="animated" path="M0 0C-30-48-52-116 18-140C88-164 135-72 56-24C20 0 30 48 0 0" dur="23s" begin="2s" rotate="auto" repeatCount="indefinite"/>
+    <animate class="animated" attributeName="opacity" values="0;.82;.6;0" keyTimes="0;.14;.78;1" dur="23s" begin="2s" repeatCount="indefinite"/>
   </g>
   <g class="motion" opacity="0" transform="translate(785 275) scale(.75)">
     <g>
-      <path d="M0-29C-22-15-21 14 0 29C21 14 22-15 0-29Z" fill="url(#rose-petal)" stroke="#f6c1cf" stroke-opacity=".62" stroke-width="1.2"/>
-      <path d="M0 23C3 8 3-8 0-24" fill="none" stroke="#ffe3e9" stroke-opacity=".78" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M0 27C-8 19-22 6-27-7C-31-18-24-27-15-25C-8-24-5-18-5-13C-3-23 5-30 14-26C24-22 26-12 20-1C14 11 6 21 0 27Z" fill="url(#rose-petal)" stroke="#ffe5ef" stroke-opacity=".45" stroke-width=".9"/>
+      <path d="M0 22C-5 12-11 0-15-14M-5-12C1-21 8-23 15-18" fill="none" stroke="#fff4f8" stroke-opacity=".5" stroke-width=".9" stroke-linecap="round"/>
       <animateTransform class="animated" attributeName="transform" type="rotate" values="-6;8;-6" dur="9s" repeatCount="indefinite"/>
     </g>
-    <animateMotion class="animated" path="M0 0C-48-28-110-58-128-18C-147 24-65 82-28 52C-8 36 48 28 0 0" dur="30s" begin="6s" rotate="auto" repeatCount="indefinite"/>
-    <animate class="animated" attributeName="opacity" values="0;.76;.58;0" keyTimes="0;.14;.78;1" dur="30s" begin="6s" repeatCount="indefinite"/>
+    <animateMotion class="animated" path="M0 0C-48-28-110-58-128-18C-147 24-65 82-28 52C-8 36 48 28 0 0" dur="22s" begin="4s" rotate="auto" repeatCount="indefinite"/>
+    <animate class="animated" attributeName="opacity" values="0;.76;.58;0" keyTimes="0;.14;.78;1" dur="22s" begin="4s" repeatCount="indefinite"/>
   </g>
   <g class="motion" opacity="0" transform="translate(520 176) scale(.5)">
-    <path d="M0-29C-22-15-21 14 0 29C21 14 22-15 0-29Z" fill="url(#rose-petal)" stroke="#f6c1cf" stroke-opacity=".62" stroke-width="1.2"/>
-    <path d="M0 23C3 8 3-8 0-24" fill="none" stroke="#ffe3e9" stroke-opacity=".78" stroke-width="1.2" stroke-linecap="round"/>
-    <animateMotion class="animated" path="M0 0C50 35 92 85 138 54C176 27 90-30 42-14C18-8-35-20 0 0" dur="23s" begin="9s" rotate="auto" repeatCount="indefinite"/>
-    <animate class="animated" attributeName="opacity" values="0;.74;.6;0" keyTimes="0;.14;.78;1" dur="23s" begin="9s" repeatCount="indefinite"/>
+    <path d="M0 27C-8 19-22 6-27-7C-31-18-24-27-15-25C-8-24-5-18-5-13C-3-23 5-30 14-26C24-22 26-12 20-1C14 11 6 21 0 27Z" fill="url(#rose-petal)" stroke="#ffe5ef" stroke-opacity=".45" stroke-width=".9"/>
+    <path d="M0 22C-5 12-11 0-15-14M-5-12C1-21 8-23 15-18" fill="none" stroke="#fff4f8" stroke-opacity=".5" stroke-width=".9" stroke-linecap="round"/>
+    <animateMotion class="animated" path="M0 0C50 35 92 85 138 54C176 27 90-30 42-14C18-8-35-20 0 0" dur="18s" begin="6s" rotate="auto" repeatCount="indefinite"/>
+    <animate class="animated" attributeName="opacity" values="0;.74;.6;0" keyTimes="0;.14;.78;1" dur="18s" begin="6s" repeatCount="indefinite"/>
   </g>
   <g class="motion" opacity="0" transform="translate(770 350) scale(.72)">
-    <path d="M0-29C-22-15-21 14 0 29C21 14 22-15 0-29Z" fill="url(#rose-petal)" stroke="#f6c1cf" stroke-opacity=".62" stroke-width="1.2"/>
-    <path d="M0 23C3 8 3-8 0-24" fill="none" stroke="#ffe3e9" stroke-opacity=".78" stroke-width="1.2" stroke-linecap="round"/>
-    <animateMotion class="animated" path="M0 0C-46-34-100-62-135-14C-170 34-70 65-35 38C-15 22 46 34 0 0" dur="34s" begin="12s" rotate="auto" repeatCount="indefinite"/>
-    <animate class="animated" attributeName="opacity" values="0;.86;.72;0" keyTimes="0;.14;.78;1" dur="34s" begin="12s" repeatCount="indefinite"/>
+    <path d="M0 27C-8 19-22 6-27-7C-31-18-24-27-15-25C-8-24-5-18-5-13C-3-23 5-30 14-26C24-22 26-12 20-1C14 11 6 21 0 27Z" fill="url(#rose-petal)" stroke="#ffe5ef" stroke-opacity=".45" stroke-width=".9"/>
+    <path d="M0 22C-5 12-11 0-15-14M-5-12C1-21 8-23 15-18" fill="none" stroke="#fff4f8" stroke-opacity=".5" stroke-width=".9" stroke-linecap="round"/>
+    <animateMotion class="animated" path="M0 0C-46-34-100-62-135-14C-170 34-70 65-35 38C-15 22 46 34 0 0" dur="24s" begin="8s" rotate="auto" repeatCount="indefinite"/>
+    <animate class="animated" attributeName="opacity" values="0;.86;.72;0" keyTimes="0;.14;.78;1" dur="24s" begin="8s" repeatCount="indefinite"/>
   </g>
   <g class="motion" opacity="0" transform="translate(620 125) scale(.55)">
-    <path d="M0-29C-22-15-21 14 0 29C21 14 22-15 0-29Z" fill="url(#rose-petal)" stroke="#f6c1cf" stroke-opacity=".62" stroke-width="1.2"/>
-    <path d="M0 23C3 8 3-8 0-24" fill="none" stroke="#ffe3e9" stroke-opacity=".78" stroke-width="1.2" stroke-linecap="round"/>
-    <animateMotion class="animated" path="M0 0C35-52 88-90 121-46C155-1 62 31 35 13C12-2-35 52 0 0" dur="29s" begin="15s" rotate="auto" repeatCount="indefinite"/>
-    <animate class="animated" attributeName="opacity" values="0;.78;.64;0" keyTimes="0;.14;.78;1" dur="29s" begin="15s" repeatCount="indefinite"/>
+    <path d="M0 27C-8 19-22 6-27-7C-31-18-24-27-15-25C-8-24-5-18-5-13C-3-23 5-30 14-26C24-22 26-12 20-1C14 11 6 21 0 27Z" fill="url(#rose-petal)" stroke="#ffe5ef" stroke-opacity=".45" stroke-width=".9"/>
+    <path d="M0 22C-5 12-11 0-15-14M-5-12C1-21 8-23 15-18" fill="none" stroke="#fff4f8" stroke-opacity=".5" stroke-width=".9" stroke-linecap="round"/>
+    <animateMotion class="animated" path="M0 0C35-52 88-90 121-46C155-1 62 31 35 13C12-2-35 52 0 0" dur="21s" begin="10s" rotate="auto" repeatCount="indefinite"/>
+    <animate class="animated" attributeName="opacity" values="0;.78;.64;0" keyTimes="0;.14;.78;1" dur="21s" begin="10s" repeatCount="indefinite"/>
   </g>
   <g class="motion" opacity="0" transform="translate(810 300) scale(.44)">
-    <path d="M0-29C-22-15-21 14 0 29C21 14 22-15 0-29Z" fill="url(#rose-petal)" stroke="#f6c1cf" stroke-opacity=".62" stroke-width="1.2"/>
-    <path d="M0 23C3 8 3-8 0-24" fill="none" stroke="#ffe3e9" stroke-opacity=".78" stroke-width="1.2" stroke-linecap="round"/>
-    <animateMotion class="animated" path="M0 0C-35-42-88-70-112-28C-136 14-54 58-20 40C-5 31 35 42 0 0" dur="37s" begin="18s" rotate="auto" repeatCount="indefinite"/>
-    <animate class="animated" attributeName="opacity" values="0;.7;.55;0" keyTimes="0;.14;.78;1" dur="37s" begin="18s" repeatCount="indefinite"/>
+    <path d="M0 27C-8 19-22 6-27-7C-31-18-24-27-15-25C-8-24-5-18-5-13C-3-23 5-30 14-26C24-22 26-12 20-1C14 11 6 21 0 27Z" fill="url(#rose-petal)" stroke="#ffe5ef" stroke-opacity=".45" stroke-width=".9"/>
+    <path d="M0 22C-5 12-11 0-15-14M-5-12C1-21 8-23 15-18" fill="none" stroke="#fff4f8" stroke-opacity=".5" stroke-width=".9" stroke-linecap="round"/>
+    <animateMotion class="animated" path="M0 0C-35-42-88-70-112-28C-136 14-54 58-20 40C-5 31 35 42 0 0" dur="26s" begin="12s" rotate="auto" repeatCount="indefinite"/>
+    <animate class="animated" attributeName="opacity" values="0;.7;.55;0" keyTimes="0;.14;.78;1" dur="26s" begin="12s" repeatCount="indefinite"/>
+  </g>
+  <g class="motion" opacity="0">
+    <g transform="scale(.62)">
+    <path d="M0 27C-8 19-22 6-27-7C-31-18-24-27-15-25C-8-24-5-18-5-13C-3-23 5-30 14-26C24-22 26-12 20-1C14 11 6 21 0 27Z" fill="url(#rose-petal)" stroke="#ffe5ef" stroke-opacity=".45" stroke-width=".9"/>
+    <path d="M0 22C-5 12-11 0-15-14M-5-12C1-21 8-23 15-18" fill="none" stroke="#fff4f8" stroke-opacity=".5" stroke-width=".9" stroke-linecap="round"/>
+    </g>
+    <animateMotion class="animated" path="M-80 125C250 35 640 248 1280 112" dur="18s" begin="-7s" rotate="auto" repeatCount="indefinite"/>
+    <animate class="animated" attributeName="opacity" values="0;.8;.68;0" keyTimes="0;.14;.82;1" dur="18s" begin="-7s" repeatCount="indefinite"/>
+  </g>
+  <g class="motion" opacity="0">
+    <g transform="scale(.74)">
+    <path d="M0 27C-8 19-22 6-27-7C-31-18-24-27-15-25C-8-24-5-18-5-13C-3-23 5-30 14-26C24-22 26-12 20-1C14 11 6 21 0 27Z" fill="url(#rose-petal)" stroke="#ffe5ef" stroke-opacity=".45" stroke-width=".9"/>
+    <path d="M0 22C-5 12-11 0-15-14M-5-12C1-21 8-23 15-18" fill="none" stroke="#fff4f8" stroke-opacity=".5" stroke-width=".9" stroke-linecap="round"/>
+    </g>
+    <animateMotion class="animated" path="M1280 278C930 380 570 152 -80 292" dur="21s" begin="-13s" rotate="auto" repeatCount="indefinite"/>
+    <animate class="animated" attributeName="opacity" values="0;.84;.7;0" keyTimes="0;.14;.82;1" dur="21s" begin="-13s" repeatCount="indefinite"/>
+  </g>
+  <g class="motion" opacity="0">
+    <g transform="scale(.52)">
+    <path d="M0 27C-8 19-22 6-27-7C-31-18-24-27-15-25C-8-24-5-18-5-13C-3-23 5-30 14-26C24-22 26-12 20-1C14 11 6 21 0 27Z" fill="url(#rose-petal)" stroke="#ffe5ef" stroke-opacity=".45" stroke-width=".9"/>
+    <path d="M0 22C-5 12-11 0-15-14M-5-12C1-21 8-23 15-18" fill="none" stroke="#fff4f8" stroke-opacity=".5" stroke-width=".9" stroke-linecap="round"/>
+    </g>
+    <animateMotion class="animated" path="M-80 375C300 300 720 430 1280 330" dur="24s" begin="-18s" rotate="auto" repeatCount="indefinite"/>
+    <animate class="animated" attributeName="opacity" values="0;.72;.6;0" keyTimes="0;.14;.82;1" dur="24s" begin="-18s" repeatCount="indefinite"/>
   </g>
 
   <!-- Title -->
