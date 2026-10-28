@@ -2,19 +2,22 @@
   <title id="title">Le Tuan Loc — a midnight magician</title>
   <desc id="desc">A romantic moonlit magician's stage with drifting cards, a rose and the name Le Tuan Loc.</desc>
   <defs>
-    <linearGradient id="night" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#080d22"/><stop offset=".55" stop-color="#17274b"/><stop offset="1" stop-color="#100d27"/></linearGradient>
     <linearGradient id="cape" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".48" stop-color="#dbe8ff"/><stop offset="1" stop-color="#7289bd"/></linearGradient>
     <linearGradient id="silver" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#a8c5ff"/><stop offset=".48" stop-color="#fff4e8"/><stop offset="1" stop-color="#d7b5ee"/></linearGradient>
     <linearGradient id="glint" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#fff" stop-opacity="0"/><stop offset=".48" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
     <radialGradient id="moon"><stop stop-color="#fff8e9" stop-opacity=".34"/><stop offset="1" stop-color="#b9d0ff" stop-opacity="0"/></radialGradient>
     <filter id="soft"><feGaussianBlur stdDeviation="22"/></filter>
+    <filter id="mistblur"><feGaussianBlur stdDeviation="15"/></filter>
+    <linearGradient id="mist-blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9bbaff" stop-opacity="0"/><stop offset=".5" stop-color="#a9baff" stop-opacity=".44"/><stop offset="1" stop-color="#b6d4ff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="mist-rose" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#ed9fc4" stop-opacity="0"/><stop offset=".5" stop-color="#dfa5d2" stop-opacity=".4"/><stop offset="1" stop-color="#b5a7ff" stop-opacity="0"/></linearGradient>
+    <radialGradient id="rose-petal"><stop stop-color="#ffb5c8"/><stop offset=".52" stop-color="#da547e"/><stop offset="1" stop-color="#8d294f"/></radialGradient>
     <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
     <clipPath id="card-art"><rect x="9" y="65" width="172" height="139" rx="5"/></clipPath>
-    <pattern id="stars" width="130" height="100" patternUnits="userSpaceOnUse">
-      <circle cx="12" cy="18" r="1" fill="#fff" opacity=".7"><animate class="animated" attributeName="opacity" values=".2;.9;.2" dur="4s" repeatCount="indefinite"/></circle>
-      <circle cx="82" cy="63" r="1.4" fill="#d7e5ff" opacity=".5"><animate class="animated" attributeName="opacity" values=".7;.15;.7" dur="5s" repeatCount="indefinite"/></circle>
-      <path d="M112 12v7m-3.5-3.5h7" stroke="#fff1da" stroke-width=".7" opacity=".6"/>
-    </pattern>
+    <mask id="moon-crescent" maskUnits="userSpaceOnUse" x="860" y="42" width="160" height="160">
+      <rect x="860" y="42" width="160" height="160" fill="#000"/>
+      <circle cx="950" cy="132" r="70" fill="#fff"/>
+      <circle cx="927" cy="112" r="80" fill="#000"/>
+    </mask>
     <style>
       text { font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
       .serif { font-family: Georgia, 'Times New Roman', serif; }
@@ -22,10 +25,7 @@
       .motion { transform-box: fill-box; transform-origin: center; }
       .card-shine { opacity: .2; }
       @media (prefers-color-scheme: light) {
-        .background { fill: #f3f5fb; }
-        .stars { opacity: .22; }
         .moon-disc { fill: #d9e3f7; }
-        .moon-cutout { fill: #f3f5fb; }
         .orbit { stroke-opacity: .6; }
         .eyebrow, .meta { fill: #52627f; }
         .headline { fill: #1a2340; }
@@ -38,12 +38,18 @@
       }
     </style>
   </defs>
-  <rect class="background" width="1200" height="440" fill="url(#night)"/>
-  <rect class="stars" width="1200" height="440" fill="url(#stars)"/>
   <ellipse cx="890" cy="180" rx="340" ry="285" fill="url(#moon)" filter="url(#soft)"/>
+  <g class="motion" filter="url(#mistblur)" opacity=".52">
+    <path d="M630 243 C720 186 770 232 850 196 C930 159 1010 192 1138 144 C1075 224 1008 244 933 231 C839 214 751 276 630 243Z" fill="url(#mist-blue)">
+      <animateTransform class="animated" attributeName="transform" type="translate" values="-28 0;28 -8;-28 0" dur="19s" repeatCount="indefinite"/>
+      <animate class="animated" attributeName="opacity" values=".35;.8;.35" dur="11s" repeatCount="indefinite"/>
+    </path>
+    <path d="M710 301 C790 262 833 286 900 270 C984 248 1066 274 1159 234 C1103 309 1029 314 956 301 C865 284 792 335 710 301Z" fill="url(#mist-rose)">
+      <animateTransform class="animated" attributeName="transform" type="translate" values="24 6;-24 0;24 6" dur="23s" repeatCount="indefinite"/>
+    </path>
+  </g>
   <!-- Moon and fine orbit -->
-  <circle class="moon-disc" cx="950" cy="132" r="70" fill="#fff4dd" opacity=".94"/>
-  <circle class="moon-cutout" cx="927" cy="112" r="80" fill="#17274b"/>
+  <circle class="moon-disc" cx="950" cy="132" r="70" fill="#fff4dd" opacity=".94" mask="url(#moon-crescent)"/>
   <ellipse class="orbit" cx="930" cy="165" rx="190" ry="50" fill="none" stroke="url(#silver)" stroke-opacity=".34" stroke-width="1" stroke-dasharray="2 8" transform="rotate(-17 930 165)">
     <animate class="animated" attributeName="stroke-dashoffset" values="0;-100" dur="14s" repeatCount="indefinite"/>
   </ellipse>
@@ -97,9 +103,27 @@
       <animateTransform class="animated" attributeName="transform" type="translate" additive="sum" values="0 0;0 -10;0 0" dur="7s" repeatCount="indefinite"/>
     </g>
   </g>
-  <g transform="translate(1140 330)" opacity=".9">
-    <path d="M0 30Q-3 4 3-12M1 13Q-13 5-15-2Q-4-4 2 8M2 20Q12 9 18 11Q16 21 3 26" fill="none" stroke="#739a89" stroke-width="2"/>
-    <path d="M3-12C-12-24-16-8 0-1C16-8 12-24 3-12Z" fill="#c84f70"/>
+  <circle cx="1142" cy="338" r="29" fill="url(#moon)" opacity=".4" class="motion">
+    <animate class="animated" attributeName="opacity" values=".2;.55;.2" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  <g transform="translate(1142 347) scale(1.18)">
+    <path d="M0 4C-1 19 2 32 1 49" fill="none" stroke="#668d7b" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M1 24C-10 15-17 18-18 22C-11 29-5 30 1 29M1 36C10 27 17 29 19 33C14 40 7 42 1 41" fill="#527c6d" stroke="#8bb29a" stroke-width="1"/>
+    <path d="M-15 22l13 6m7 10 11-6" fill="none" stroke="#b4cfb4" stroke-width=".8" opacity=".8"/>
+    <path d="M-3 3C-16-4-14-19-4-21C-3-31 9-32 13-23C24-22 24-8 15-2C10 5 1 8-3 3Z" fill="url(#rose-petal)" stroke="#8d294f" stroke-width="1"/>
+    <path d="M-7-8C-10-16-3-22 3-18C10-24 18-17 13-10C20-5 14 3 7 2C0 8-8 0-7-8Z" fill="#c84470" stroke="#f19ab4" stroke-width="1.1"/>
+    <path d="M-3-9C-3-16 6-17 8-11C13-8 10-1 4-2C0 2-5-2-3-9Z" fill="#812345" stroke="#f3a0b9" stroke-width="1"/>
+    <path d="M-1-9C1-13 6-12 6-8C5-6 3-5 1-5" fill="none" stroke="#ffd0d8" stroke-width="1.2" stroke-linecap="round"/>
+  </g>
+  <g class="motion">
+    <g transform="translate(1070 320) rotate(28)">
+      <path d="M0 0C-12-8-9-21 1-28C12-20 14-8 0 0Z" fill="#e7779b" opacity=".95"/>
+      <animateTransform class="animated" attributeName="transform" type="translate" additive="sum" values="0 0;18 -22;40 -7;0 0" keyTimes="0;.38;.72;1" keySplines=".42 0 .58 1;.42 0 .58 1;.42 0 .58 1" calcMode="spline" dur="9s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(1108 390) rotate(-35)">
+      <path d="M0 0C-10-6-8-18 1-24C11-18 12-7 0 0Z" fill="#f1b2c4" opacity=".85"/>
+      <animateTransform class="animated" attributeName="transform" type="translate" additive="sum" values="0 0;20 -14;46 -3;0 0" keyTimes="0;.4;.75;1" keySplines=".42 0 .58 1;.42 0 .58 1;.42 0 .58 1" calcMode="spline" dur="11s" repeatCount="indefinite"/>
+    </g>
   </g>
   <g class="motion" fill="#f6d99f" opacity=".8">
     <path d="M690 113l4 8 8 4-8 4-4 8-4-8-8-4 8-4z"><animateTransform class="animated" attributeName="transform" type="rotate" from="0 690 125" to="360 690 125" dur="18s" repeatCount="indefinite"/></path>
