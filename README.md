@@ -49,7 +49,11 @@ I build transaction-safe APIs, event-driven workflows, real-time systems, and da
 ## SYSTEM ARCHITECTURE DIAGRAM AND TELEMETRY
 
 <p align="center">
-  <img src="./terminal.svg" width="100%" alt="System Architecture Diagram" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./terminal-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./terminal.svg" />
+    <img src="./terminal-dark.svg" width="100%" alt="System Architecture Diagram" />
+  </picture>
 </p>
 
 ---
@@ -230,8 +234,9 @@ Let's discuss system design, backend architectures, or high-performance APIs!
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: light)" srcset="https://readme-daily-quotes.vercel.app/api?theme=default&authorColor=0969da&quoteColor=1f2328" />
-    <img src="https://readme-daily-quotes.vercel.app/api?theme=tokyonight&authorColor=00F0FF&quoteColor=ffffff" alt="Daily Dev Quote" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://readme-daily-quotes.vercel.app/api?theme=dark&author_color=00F0FF&quote_color=ffffff" />
+    <source media="(prefers-color-scheme: light)" srcset="https://readme-daily-quotes.vercel.app/api?theme=light&author_color=0969da&quote_color=1f2328" />
+    <img src="https://readme-daily-quotes.vercel.app/api?theme=dark&author_color=00F0FF&quote_color=ffffff" alt="Daily Dev Quote" />
   </picture>
 </p>
 
