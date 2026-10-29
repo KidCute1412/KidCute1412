@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./header.svg?v=26" width="100%" alt="Le Tuan Loc - GitHub Header" />
+  <img src="./header.svg?v=27" width="100%" alt="Le Tuan Loc - GitHub Header" />
 </p>
 
 <p align="center">
