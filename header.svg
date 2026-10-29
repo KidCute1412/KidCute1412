@@ -18,6 +18,20 @@
       <circle cx="950" cy="132" r="70" fill="#fff"/>
       <circle cx="927" cy="112" r="80" fill="#000"/>
     </mask>
+    <!-- Realistic comet / meteor tail gradients -->
+    <linearGradient id="meteor-trail-dark" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="35%" stop-color="#b6d5ff" stop-opacity="0.2"/>
+      <stop offset="75%" stop-color="#dceaff" stop-opacity="0.7"/>
+      <stop offset="96%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="meteor-trail-light" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1d2d4d" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#334770" stop-opacity="0.25"/>
+      <stop offset="80%" stop-color="#24375b" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#14213d" stop-opacity="1"/>
+    </linearGradient>
     <linearGradient id="meteor-light-1" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#42567a" stop-opacity="0"/><stop offset=".45" stop-color="#2e4168" stop-opacity=".85"/><stop offset="1" stop-color="#1d2d4d"/></linearGradient>
     <linearGradient id="meteor-light-2" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#63587d" stop-opacity="0"/><stop offset=".5" stop-color="#4b3e6b" stop-opacity=".95"/><stop offset="1" stop-color="#30244f"/></linearGradient>
     <style>
@@ -42,10 +56,10 @@
         .star-group { fill: #36486b !important; }
         .star-item { fill: #36486b !important; }
         .star-diamond { fill: #483d63 !important; }
-        .meteor-tail-1 { stroke: url(#meteor-light-1) !important; stroke-width: 4 !important; }
-        .meteor-head-1 { fill: #1a2d52 !important; }
-        .meteor-tail-2 { stroke: url(#meteor-light-2) !important; stroke-width: 3.5 !important; }
-        .meteor-head-2 { fill: #2c1e4a !important; }
+        .meteor-tail-1 { fill: url(#meteor-trail-light) !important; stroke: none !important; }
+        .meteor-head-1 { fill: #14213d !important; }
+        .meteor-tail-2 { fill: url(#meteor-trail-light) !important; stroke: none !important; }
+        .meteor-head-2 { fill: #1d1b38 !important; }
       }
       @media (prefers-reduced-motion: reduce) {
         .card-shine { display: none; }
@@ -104,21 +118,31 @@
     <circle class="star-item" cx="210" cy="130" r="3.5" opacity=".85"><animate class="animated" attributeName="opacity" values=".3;1;.3" dur="4.8s" begin="1.4s" repeatCount="indefinite"/></circle>
   </g>
 
-  <!-- Dual Shooting Stars (High visibility & out-of-phase) -->
-  <!-- Meteor 1: Quick streak across upper sky above title -->
-  <g class="motion" transform="translate(520 45) rotate(24)">
-    <path class="meteor-tail-1" d="M-120 0 L0 0" stroke="url(#glint)" stroke-width="4.5" stroke-linecap="round" filter="url(#glow)"/>
-    <circle class="meteor-head-1" cx="0" cy="0" r="4.5" fill="#ffffff" filter="url(#glow)"/>
-    <animateMotion class="animated" path="M0 0 L360 0" dur="4s" begin="0s" repeatCount="indefinite"/>
-    <animate class="animated" attributeName="opacity" values="0;1;1;0;0" keyTimes="0;.1;.35;.5;1" dur="4s" begin="0s" repeatCount="indefinite"/>
+  <!-- Dual Shooting Stars with Realistic Tapered Tails -->
+  <!-- Meteor 1: Sleek fast meteor gliding across title space -->
+  <g class="motion" transform="translate(480 35) rotate(22)">
+    <!-- Tapered tail (pinpoint tail -> thick bright head) -->
+    <polygon class="meteor-tail-1" points="-160,0 0,-3.2 0,3.2" fill="url(#meteor-trail-dark)" filter="url(#glow)"/>
+    <!-- Central luminous streak inside tail -->
+    <line x1="-100" y1="0" x2="0" y2="0" stroke="#ffffff" stroke-width="1.8" opacity=".9"/>
+    <!-- Brilliant meteor head with star glint -->
+    <circle class="meteor-head-1" cx="0" cy="0" r="3.8" fill="#ffffff" filter="url(#glow)"/>
+    <circle cx="0" cy="0" r="2" fill="#ffffff"/>
+    <animateMotion class="animated" path="M0 0 L420 0" dur="4.2s" begin="0s" repeatCount="indefinite"/>
+    <animate class="animated" attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.05;.18;.38;.52;1" dur="4.2s" begin="0s" repeatCount="indefinite"/>
   </g>
 
-  <!-- Meteor 2: Slower, graceful meteor traversing above the moon -->
-  <g class="motion" transform="translate(780 35) rotate(19)">
-    <path class="meteor-tail-2" d="M-150 0 L0 0" stroke="url(#silver)" stroke-width="4" stroke-linecap="round" filter="url(#glow)"/>
-    <circle class="meteor-head-2" cx="0" cy="0" r="4.5" fill="#ffffff" filter="url(#glow)"/>
-    <animateMotion class="animated" path="M0 0 L400 0" dur="5s" begin="2s" repeatCount="indefinite"/>
-    <animate class="animated" attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.02;.12;.28;.42;1" dur="5s" begin="2s" repeatCount="indefinite"/>
+  <!-- Meteor 2: Majestic long-tail comet passing over the moon -->
+  <g class="motion" transform="translate(750 25) rotate(18)">
+    <!-- Long tapered tail -->
+    <polygon class="meteor-tail-2" points="-210,0 0,-3.8 0,3.8" fill="url(#meteor-trail-dark)" filter="url(#glow)"/>
+    <!-- Core luminous streak -->
+    <line x1="-140" y1="0" x2="0" y2="0" stroke="#ffffff" stroke-width="2" opacity=".9"/>
+    <!-- Brilliant head -->
+    <circle class="meteor-head-2" cx="0" cy="0" r="4.2" fill="#ffffff" filter="url(#glow)"/>
+    <circle cx="0" cy="0" r="2.2" fill="#ffffff"/>
+    <animateMotion class="animated" path="M0 0 L480 0" dur="5.5s" begin="2.1s" repeatCount="indefinite"/>
+    <animate class="animated" attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.04;.16;.36;.5;1" dur="5.5s" begin="2.1s" repeatCount="indefinite"/>
   </g>
   <g class="motion" opacity="0" transform="translate(555 306) scale(.82)">
     <g>
