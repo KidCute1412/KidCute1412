@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=15&duration=3000&pause=1500&color=00F0FF&center=true&vCenter=true&width=600&lines=LOC%40KIDCUTE1412%3A%7E%24+systemctl+status+backend-engine;Engine+Status%3A+Active+%5BTLS+1.3+%7C+HTTP%2F2%5D;Pessimistic+locking+to+prevent+race+conditions;Distributed+locks+%26+cache+orchestration+via+Redis;High-throughput+async+messaging+via+RabbitMQ;Scaling+real-time+WebSockets+via+Redis+Pub%2FSub;Geospatial+indexing+via+PostGIS+%26+Uber+H3+hexagons" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=15&duration=3000&pause=1500&color=00F0FF&center=true&vCenter=true&width=620&lines=It%20works%20on%20my%20machine...%20ship%20my%20machine%21;Turning%20race%20conditions%20into%20undocumented%20features;git%20push%20--force%20and%20whisper%20a%20prayer;99%20little%20bugs%20in%20code...%20fix%201%2C%20now%20127%20bugs;Production%20is%20my%20favorite%20staging%20environment;Coffee%20in%20-%3E%20Overengineered%20distributed%20system%20out" alt="Typing SVG" />
   </a>
 </p>
 
