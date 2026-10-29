@@ -118,31 +118,27 @@
     <circle class="star-item" cx="210" cy="130" r="3.5" opacity=".85"><animate class="animated" attributeName="opacity" values=".3;1;.3" dur="4.8s" begin="1.4s" repeatCount="indefinite"/></circle>
   </g>
 
-  <!-- Dual Shooting Stars with Realistic Tapered Tails -->
-  <!-- Meteor 1: Sleek fast meteor gliding across title space -->
-  <g class="motion" transform="translate(480 35) rotate(22)">
-    <!-- Tapered tail (pinpoint tail -> thick bright head) -->
-    <polygon class="meteor-tail-1" points="-160,0 0,-3.2 0,3.2" fill="url(#meteor-trail-dark)" filter="url(#glow)"/>
-    <!-- Central luminous streak inside tail -->
-    <line x1="-100" y1="0" x2="0" y2="0" stroke="#ffffff" stroke-width="1.8" opacity=".9"/>
-    <!-- Brilliant meteor head with star glint -->
-    <circle class="meteor-head-1" cx="0" cy="0" r="3.8" fill="#ffffff" filter="url(#glow)"/>
-    <circle cx="0" cy="0" r="2" fill="#ffffff"/>
-    <animateMotion class="animated" path="M0 0 L420 0" dur="4.2s" begin="0s" repeatCount="indefinite"/>
-    <animate class="animated" attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.05;.18;.38;.52;1" dur="4.2s" begin="0s" repeatCount="indefinite"/>
+  <!-- Dual Shooting Stars with Perfectly Aligned Tapered Tails -->
+  <!-- Meteor 1: Falling diagonally across upper sky (from top-left down to bottom-right, angle ~22 deg) -->
+  <g class="motion">
+    <!-- Tapered tail aligned strictly behind head (head is at 0,0, tail extends backward to -160,0) -->
+    <polygon class="meteor-tail-1" points="-160,0 0,-3 0,3" fill="url(#meteor-trail-dark)" filter="url(#glow)"/>
+    <line x1="-110" y1="0" x2="0" y2="0" stroke="#ffffff" stroke-width="1.8" opacity=".95"/>
+    <circle class="meteor-head-1" cx="0" cy="0" r="3.6" fill="#ffffff" filter="url(#glow)"/>
+    <circle cx="0" cy="0" r="1.8" fill="#ffffff"/>
+    <animateMotion class="animated" path="M 450 30 L 850 190" rotate="auto" dur="3.8s" begin="0s" repeatCount="indefinite"/>
+    <animate class="animated" attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.05;.18;.38;.52;1" dur="3.8s" begin="0s" repeatCount="indefinite"/>
   </g>
 
-  <!-- Meteor 2: Majestic long-tail comet passing over the moon -->
-  <g class="motion" transform="translate(750 25) rotate(18)">
-    <!-- Long tapered tail -->
-    <polygon class="meteor-tail-2" points="-210,0 0,-3.8 0,3.8" fill="url(#meteor-trail-dark)" filter="url(#glow)"/>
-    <!-- Core luminous streak -->
-    <line x1="-140" y1="0" x2="0" y2="0" stroke="#ffffff" stroke-width="2" opacity=".9"/>
-    <!-- Brilliant head -->
-    <circle class="meteor-head-2" cx="0" cy="0" r="4.2" fill="#ffffff" filter="url(#glow)"/>
-    <circle cx="0" cy="0" r="2.2" fill="#ffffff"/>
-    <animateMotion class="animated" path="M0 0 L480 0" dur="5.5s" begin="2.1s" repeatCount="indefinite"/>
-    <animate class="animated" attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.04;.16;.36;.5;1" dur="5.5s" begin="2.1s" repeatCount="indefinite"/>
+  <!-- Meteor 2: Slower, grand shooting star gliding high across the moon (angle ~19 deg) -->
+  <g class="motion">
+    <!-- Long tail trailing strictly behind path of travel -->
+    <polygon class="meteor-tail-2" points="-210,0 0,-3.6 0,3.6" fill="url(#meteor-trail-dark)" filter="url(#glow)"/>
+    <line x1="-150" y1="0" x2="0" y2="0" stroke="#ffffff" stroke-width="2" opacity=".95"/>
+    <circle class="meteor-head-2" cx="0" cy="0" r="4" fill="#ffffff" filter="url(#glow)"/>
+    <circle cx="0" cy="0" r="2" fill="#ffffff"/>
+    <animateMotion class="animated" path="M 720 20 L 1180 180" rotate="auto" dur="5.2s" begin="1.9s" repeatCount="indefinite"/>
+    <animate class="animated" attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.04;.16;.36;.5;1" dur="5.2s" begin="1.9s" repeatCount="indefinite"/>
   </g>
   <g class="motion" opacity="0" transform="translate(555 306) scale(.82)">
     <g>
