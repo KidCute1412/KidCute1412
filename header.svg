@@ -18,19 +18,32 @@
       <circle cx="950" cy="132" r="70" fill="#fff"/>
       <circle cx="927" cy="112" r="80" fill="#000"/>
     </mask>
-    <!-- Realistic comet / meteor tail gradients -->
-    <linearGradient id="meteor-trail-dark" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="35%" stop-color="#b6d5ff" stop-opacity="0.2"/>
-      <stop offset="75%" stop-color="#dceaff" stop-opacity="0.7"/>
-      <stop offset="96%" stop-color="#ffffff" stop-opacity="0.95"/>
+    <!-- Refined, ethereal meteor tail gradients -->
+    <linearGradient id="meteor-tail-cyan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#6ee7b7" stop-opacity="0.2"/>
+      <stop offset="75%" stop-color="#b6f0ff" stop-opacity="0.65"/>
+      <stop offset="95%" stop-color="#e0faff" stop-opacity="0.9"/>
       <stop offset="100%" stop-color="#ffffff" stop-opacity="1"/>
     </linearGradient>
-    <linearGradient id="meteor-trail-light" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#1d2d4d" stop-opacity="0"/>
-      <stop offset="40%" stop-color="#334770" stop-opacity="0.25"/>
-      <stop offset="80%" stop-color="#24375b" stop-opacity="0.75"/>
-      <stop offset="100%" stop-color="#14213d" stop-opacity="1"/>
+    <linearGradient id="meteor-tail-silver" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d7b5ee" stop-opacity="0"/>
+      <stop offset="35%" stop-color="#c4b5fd" stop-opacity="0.22"/>
+      <stop offset="70%" stop-color="#e0e7ff" stop-opacity="0.6"/>
+      <stop offset="94%" stop-color="#fff1f2" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="meteor-trail-light-1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#0369a1" stop-opacity="0.35"/>
+      <stop offset="85%" stop-color="#0c4a6e" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#082f49" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="meteor-trail-light-2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#6d28d9" stop-opacity="0.35"/>
+      <stop offset="85%" stop-color="#4c1d95" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#2e1065" stop-opacity="1"/>
     </linearGradient>
     <linearGradient id="meteor-light-1" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#42567a" stop-opacity="0"/><stop offset=".45" stop-color="#2e4168" stop-opacity=".85"/><stop offset="1" stop-color="#1d2d4d"/></linearGradient>
     <linearGradient id="meteor-light-2" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#63587d" stop-opacity="0"/><stop offset=".5" stop-color="#4b3e6b" stop-opacity=".95"/><stop offset="1" stop-color="#30244f"/></linearGradient>
@@ -56,10 +69,10 @@
         .star-group { fill: #36486b !important; }
         .star-item { fill: #36486b !important; }
         .star-diamond { fill: #483d63 !important; }
-        .meteor-tail-1 { fill: url(#meteor-trail-light) !important; stroke: none !important; }
-        .meteor-head-1 { fill: #14213d !important; }
-        .meteor-tail-2 { fill: url(#meteor-trail-light) !important; stroke: none !important; }
-        .meteor-head-2 { fill: #1d1b38 !important; }
+        .meteor-tail-1 { fill: url(#meteor-trail-light-1) !important; stroke: none !important; }
+        .meteor-head-1 { fill: #082f49 !important; }
+        .meteor-tail-2 { fill: url(#meteor-trail-light-2) !important; stroke: none !important; }
+        .meteor-head-2 { fill: #2e1065 !important; }
       }
       @media (prefers-reduced-motion: reduce) {
         .card-shine { display: none; }
@@ -118,27 +131,31 @@
     <circle class="star-item" cx="210" cy="130" r="3.5" opacity=".85"><animate class="animated" attributeName="opacity" values=".3;1;.3" dur="4.8s" begin="1.4s" repeatCount="indefinite"/></circle>
   </g>
 
-  <!-- Dual Shooting Stars with Perfectly Aligned Tapered Tails -->
-  <!-- Meteor 1: Falling diagonally across upper sky (from top-left down to bottom-right, angle ~22 deg) -->
+  <!-- Dual Shooting Stars (Gleaming, lightweight & ethereal) -->
+  <!-- Meteor 1: Sleek Cyan-Moonlight shooting star, fast & airy -->
   <g class="motion">
-    <!-- Tapered tail aligned strictly behind head (head is at 0,0, tail extends backward to -160,0) -->
-    <polygon class="meteor-tail-1" points="-160,0 0,-3 0,3" fill="url(#meteor-trail-dark)" filter="url(#glow)"/>
-    <line x1="-110" y1="0" x2="0" y2="0" stroke="#ffffff" stroke-width="1.8" opacity=".95"/>
-    <circle class="meteor-head-1" cx="0" cy="0" r="3.6" fill="#ffffff" filter="url(#glow)"/>
-    <circle cx="0" cy="0" r="1.8" fill="#ffffff"/>
-    <animateMotion class="animated" path="M 450 30 L 850 190" rotate="auto" dur="3.8s" begin="0s" repeatCount="indefinite"/>
-    <animate class="animated" attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.05;.18;.38;.52;1" dur="3.8s" begin="0s" repeatCount="indefinite"/>
+    <!-- Slender needle-sharp tail (length 110, half-width 1.4) -->
+    <polygon class="meteor-tail-1" points="-110,0 0,-1.4 0,1.4" fill="url(#meteor-tail-cyan)" filter="url(#glow)"/>
+    <!-- Thin luminous spine -->
+    <line x1="-65" y1="0" x2="0" y2="0" stroke="#ffffff" stroke-width="1" opacity=".9"/>
+    <!-- Compact sparkling diamond head -->
+    <circle class="meteor-head-1" cx="0" cy="0" r="2.2" fill="#ffffff" filter="url(#glow)"/>
+    <circle cx="0" cy="0" r="1.1" fill="#e0faff"/>
+    <animateMotion class="animated" path="M 460 35 L 860 195" rotate="auto" dur="3.6s" begin="0s" repeatCount="indefinite"/>
+    <animate class="animated" attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.06;.18;.36;.48;1" dur="3.6s" begin="0s" repeatCount="indefinite"/>
   </g>
 
-  <!-- Meteor 2: Slower, grand shooting star gliding high across the moon (angle ~19 deg) -->
+  <!-- Meteor 2: Elegant Silver-Rose shooting star gliding across the moon -->
   <g class="motion">
-    <!-- Long tail trailing strictly behind path of travel -->
-    <polygon class="meteor-tail-2" points="-210,0 0,-3.6 0,3.6" fill="url(#meteor-trail-dark)" filter="url(#glow)"/>
-    <line x1="-150" y1="0" x2="0" y2="0" stroke="#ffffff" stroke-width="2" opacity=".95"/>
-    <circle class="meteor-head-2" cx="0" cy="0" r="4" fill="#ffffff" filter="url(#glow)"/>
-    <circle cx="0" cy="0" r="2" fill="#ffffff"/>
-    <animateMotion class="animated" path="M 720 20 L 1180 180" rotate="auto" dur="5.2s" begin="1.9s" repeatCount="indefinite"/>
-    <animate class="animated" attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.04;.16;.36;.5;1" dur="5.2s" begin="1.9s" repeatCount="indefinite"/>
+    <!-- Graceful tapered tail (length 140, half-width 1.6) -->
+    <polygon class="meteor-tail-2" points="-140,0 0,-1.6 0,1.6" fill="url(#meteor-tail-silver)" filter="url(#glow)"/>
+    <!-- Delicate spine -->
+    <line x1="-85" y1="0" x2="0" y2="0" stroke="#ffffff" stroke-width="1.1" opacity=".9"/>
+    <!-- Glowing starry head -->
+    <circle class="meteor-head-2" cx="0" cy="0" r="2.4" fill="#ffffff" filter="url(#glow)"/>
+    <circle cx="0" cy="0" r="1.2" fill="#fff1f2"/>
+    <animateMotion class="animated" path="M 730 25 L 1190 185" rotate="auto" dur="4.8s" begin="1.8s" repeatCount="indefinite"/>
+    <animate class="animated" attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.05;.16;.34;.48;1" dur="4.8s" begin="1.8s" repeatCount="indefinite"/>
   </g>
   <g class="motion" opacity="0" transform="translate(555 306) scale(.82)">
     <g>
